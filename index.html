@@ -62,6 +62,170 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Linux的常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/26/Linux的常用命令/" class="article-date">
+  <time datetime="2018-05-26T09:50:16.000Z" itemprop="datePublished">2018-05-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/26/Linux的常用命令/">Linux的常用命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>公网IP:120.79.144.69 私有IP:172.18.55.144</li>
+<li>uname:查看操作系统</li>
+<li>cat /ect/centos-release:查看操作系统版本</li>
+<li>ps -ef (| grep &lt;进程名&gt;):查看进程,使用管道可以查询某个进程</li>
+<li>top :查看进程,是进程的当前状态一次性快照属于动态查看,ps -ef 是进程过去状态的一次性快照,属于静态查看</li>
+<li>netstat -nap:查看进程状态,例如listening ,connected等</li>
+<li>ifconfig -a:查看ip地址</li>
+<li>kill (-9)  PID:关闭一个进程,-9显示最高级别的删除,强制终止,可能会导致数据丢失</li>
+<li>adduser 用户名:创建一个非root的用户,权限较低</li>
+<li>userdel 用户名:删除指定用户</li>
+<li>passwd (用户名):为指定用户添加密码,若用户已有密码,则修改密码,如果不添加用户名,则默认修改当前用户密码</li>
+<li>logout(exit):退出当前用户</li>
+<li>su 用户名:切换用户</li>
+<li>shutdown(init 0):关机</li>
+<li>reboot(init 6):重启</li>
+<li>man 指令:查看指令手册</li>
+<li>info 指令:更为详细的解释指令</li>
+<li>指令 –help:查看指令帮助</li>
+<li>whatis 指令: 简短解释指令</li>
+<li>whereis 指令(文件):从Linux的数据库中查询指定指令或者文件</li>
+<li>find 文件:用于查询文件</li>
+<li>pwd:查看当前所处目录</li>
+<li>sudo 指令:使用管理员身份运行指令,普通用户使用该命令</li>
+<li>mkdir 文件夹:创建一个空的文件夹</li>
+<li>rmdie 文件夹:删除一个空的文件夹</li>
+<li>touch 文件:创建一个文件</li>
+<li>rm -rf 文件(文件夹):递归删除一个文件夹,也可以用户删除文件</li>
+<li>ls -al:查看当前目录所有文件的长格式,包括隐藏文件</li>
+<li>cd :改变目录 </li>
+<li>cat -n 文件:查看文件内容并显示行数</li>
+<li>cat -n | more(less):一页一页的查看文件内容</li>
+<li>head -num 文件:查看文件的开头几行</li>
+<li>tail -num 文件:查看文件的末尾几行</li>
+<li>cp 文件 文件路径/(文件名):将文件拷贝到文件夹中,同时可以对其重命名</li>
+<li>mv 文件 文件:对文件进行重命名</li>
+<li>mv 文件 文件路径/(文件名):将文件剪切到文件夹中,同时可以对其重命名</li>
+<li>grep 搜索内容 文件 :在文件中搜索指定内容</li>
+<li>cat 文件 | grep 内容:在文件中搜索指定内容并查看</li>
+<li>ctrl c:终止正在前台运行的程序</li>
+<li>ctrl z:将前台正在运行的程序拿到后台并停止运行</li>
+<li>jobs:查看后台有无程序在执行</li>
+<li>fg %num:将后台正在执行的任务拿到前台</li>
+<li>bg %num:将后台停止运行的程序继续执行,一般配合ctrl z使用</li>
+<li>wc 文件 (-l -w -c):计算文件中有多少行,多少字符,多少字节</li>
+<li>diff 文件 文件:比较两个文件的差别</li>
+<li>file 文件:查看文件性质</li>
+<li>history:查看历史命令</li>
+<li>last:查看登陆历史</li>
+<li>echo:回声命令,其实功能很强大,暂时还没怎么研究</li>
+<li>ssh + 用户名@IP地址:登陆到其他用户</li>
+<li>ln 文件名 文件夹路径:在某个文件夹中为文件创建一个硬链接<a href="硬链接,软链接,拷贝文件的区别:使用硬链接创建的文件和源文件的inode值是一样的,改变源文件会导致硬链接文件改变,改变硬链接文件也会导致源文件改变,但是硬链接文件并不占用磁盘空间,而拷贝的文件和源文件已经没有关系,他们的inode值也不同,是两个完全独立的文件,而且拷贝的文件需要占用磁盘空间,软链接等于是为源文件创建一个快捷方式,删除源文件会导致该快捷方式无法运行">^1</a></li>
+<li>ln -s 文件路径 /user/bin:为一个程序创建一个软链接</li>
+<li>gunzip 压缩文件(后缀为gz):对一个文件进行解压缩</li>
+<li>gzip 文件:将一个文件压缩成.gz后缀文件</li>
+<li>xz -d 压缩文件(后缀为xz):对一个文件进行解压缩</li>
+<li>xz -z 文件:将一个文件压缩成xz后缀文件</li>
+<li>tar -xvf 归档文件:解归档</li>
+<li>tar -cvf  文件名 文件,文件,…(*):将文件进行归档并对归档后的文件进行命名</li>
+<li>tar -tf 归档文件:读取归档文件中的内容</li>
+<li>wget url:下载指定网址内容</li>
+<li>alias 新命令 ‘旧命令’:为一个命令重新进行命名</li>
+<li>unalias 命令:取消重命名</li>
+<li>chmod 755 文件:将文件的执行模式更改为当前用户可读可写可执行,其他用户或者组成员只能读和执行[^ 2]</li>
+<li>vim的命令模式[^3 ]</li>
+<li>vim的默行模式[^4]</li>
+<li>yum install 软件:安装开源软件</li>
+<li>yum list installed:查看安装的所有软件</li>
+<li>yum search 软件:搜索软件</li>
+<li>yum update 软件:更新软件</li>
+<li>rpm -ivh 软件:安装软件,可以查看安装过程</li>
+<li>rpm -e 软件:删除软件</li>
+<li>rpm -qa:查看所有安装的软件</li>
+<li>rpm -qa | grep 软件:搜索安装的某个文件</li>
+<li>rpm -qa |grep 软件 | xargs rpm -r :搜索软件并将其删除</li>
+<li>nginx:启动nginx</li>
+<li>nginx -s stop:停止nginx,也可以使用kill 进程号来结束进程</li>
+<li>systemctl start mariadb:启动MySQL,systemctl命令用于执行系统服务</li>
+<li>systemctl stop mariadb:停止MySQL</li>
+<li>systemctl status mariadb:查看服务的运行状态</li>
+<li>systemctl enable mariadb:开机自启MySQL</li>
+<li>systemctl disable mariadb:取消自启MySQL</li>
+<li>make &amp;&amp; make install:进行源代码安装</li>
+<li>redis-server redis.conf :启动redis服务器</li>
+<li>redis-cli -h ip:连接redis服务器</li>
+<li>auth password:连接服务器后输入密码</li>
+<li>pip3 install ipython:安装ipython</li>
+<li>ln -s /user/local/python3.6/bin/ipython3 /user/bin/ipython3:创建软链接</li>
+<li>firewall-cmd –zone=public –list-ports:查看防火墙所有的打开端口</li>
+<li>firewall-cmd –zone=public –add-port=80/tcp –permanent:永久打开防火墙80端口</li>
+<li>firewall-cmd –zone=public –remove-port=80/tcp –permanent:永久删除防火墙80端口 </li>
+</ul>
+<h3 id="启动redis服务器"><a href="#启动redis服务器" class="headerlink" title="启动redis服务器"></a>启动redis服务器</h3><ul>
+<li>配置redis.conf文件<ul>
+<li>bind &lt;内网地址&gt;</li>
+<li>port &lt;端口号&gt;</li>
+<li>requirepass &lt;服务器密码&gt;</li>
+</ul>
+</li>
+<li>启动redis服务器<ul>
+<li>redis-server redis.conf &amp;</li>
+</ul>
+</li>
+<li>启动redis客户端<ul>
+<li>redis-cli -h &lt;服务器地址&gt; -p &lt;服务器端口&gt; -a &lt;服务器密码&gt;</li>
+<li>进去之后输入Info replication查看master,slaver信息</li>
+</ul>
+</li>
+</ul>
+<h2 id="redis中主从切换"><a href="#redis中主从切换" class="headerlink" title="redis中主从切换"></a>redis中主从切换</h2><p>在作为master的服务器中:</p>
+<ul>
+<li>在redis.conf文件中写入masterauth &lt;master服务器密码&gt;<a href="该master很有可能在将来成为slave,所有要在配置文件输入以后可能成为master的服务器密码,其实我感觉应该是所有的redis服务器都使用同一个密码,不然谁知道谁成为master.">^5 </a></li>
+<li>在sentinel.conf文件中进行哨兵的配置<a href="哨兵在master和slave服务器都可以进行配置">^6 </a><ul>
+<li>bind &lt;本服务器内网地址&gt;</li>
+<li>port &lt;哨兵端口号&gt;</li>
+<li>sentinel monitor mymaster &lt;master服务器地址&gt;  &lt;master服务器端口号&gt; &lt; 投票数&gt;至少小于哨兵个数的一半)</li>
+<li>sentinel auth-pass mymaster &lt;master服务器密码&gt;</li>
+<li>sentinel down-after-milliseconds mymaster <5000> 5000:指定服务器已经断线所需的毫秒数,超时则主观下线</5000></li>
+<li>sentinel failover-timeout mymaster <18000> 18000:表示master超时期限,超时则客观下线</18000></li>
+</ul>
+</li>
+</ul>
+<p>在作为salve的服务器中:</p>
+<ul>
+<li>在redis.conf文件中写入slaveof &lt;master服务器外网地址&gt; &lt;master服务器端口号 &gt;</li>
+<li>在redis.conf文件中写入 masterauth &lt;master服务器密码&gt;</li>
+</ul>
+<p>[^ 2]: 同时可以使用chmod u+w+r+x,g+w+r+x,o+w+r+x 文件来更改执行模式<br>[^3 ]: dd:删除整行 dw:删除光标所在的单词 g:回到内容的第一行 G:回到内容的最后一行 pg+down:向下翻页 pg+up:向上翻页<br>[^4]: /:搜索关键词,可以使用正则表达式来进行匹配,但是量词前面需要加上/,例如/+,/.,1,%s/…/…/g:全局替换        ! 命令:可以在vim模式下使用外部命令,并且会切换到外部进行执行</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/26/Linux的常用命令/" data-id="cjhn7t2350001zcu77y3jolwk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/26/hello-world/" class="article-date">
@@ -97,7 +261,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/26/hello-world/" data-id="cjhn7qs6900002su7f08gith2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/26/hello-world/" data-id="cjhn7t2350000zcu7r2tk3x81" class="article-share-link">Share</a>
       
       
     </footer>
@@ -136,6 +300,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/05/26/Linux的常用命令/">Linux的常用命令</a>
+          </li>
         
           <li>
             <a href="/2018/05/26/hello-world/">Hello World</a>

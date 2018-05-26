@@ -7,17 +7,17 @@
   
   <title>Linux的常用命令 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="uname:查看操作系统 cat /ect/centos-release:查看操作系统版本 ps -ef (| grep &amp;lt;进程名&amp;gt;):查看进程,使用管道可以查询某个进程 top :查看进程,是进程的当前状态一次性快照属于动态查看,ps -ef 是进程过去状态的一次性快照,属于静态查看 netstat -nap:查看进程状态,例如listening ,connected等 ifcon">
+  <meta name="description" content="公网IP:120.79.144.69 私有IP:172.18.55.144 uname:查看操作系统 cat /ect/centos-release:查看操作系统版本 ps -ef (| grep &amp;lt;进程名&amp;gt;):查看进程,使用管道可以查询某个进程 top :查看进程,是进程的当前状态一次性快照属于动态查看,ps -ef 是进程过去状态的一次性快照,属于静态查看 netstat -na">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux的常用命令">
 <meta property="og:url" content="http://yoursite.com/2018/05/26/Linux的常用命令/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="uname:查看操作系统 cat /ect/centos-release:查看操作系统版本 ps -ef (| grep &amp;lt;进程名&amp;gt;):查看进程,使用管道可以查询某个进程 top :查看进程,是进程的当前状态一次性快照属于动态查看,ps -ef 是进程过去状态的一次性快照,属于静态查看 netstat -nap:查看进程状态,例如listening ,connected等 ifcon">
+<meta property="og:description" content="公网IP:120.79.144.69 私有IP:172.18.55.144 uname:查看操作系统 cat /ect/centos-release:查看操作系统版本 ps -ef (| grep &amp;lt;进程名&amp;gt;):查看进程,使用管道可以查询某个进程 top :查看进程,是进程的当前状态一次性快照属于动态查看,ps -ef 是进程过去状态的一次性快照,属于静态查看 netstat -na">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-26T09:38:13.325Z">
+<meta property="og:updated_time" content="2018-05-26T09:50:46.366Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux的常用命令">
-<meta name="twitter:description" content="uname:查看操作系统 cat /ect/centos-release:查看操作系统版本 ps -ef (| grep &amp;lt;进程名&amp;gt;):查看进程,使用管道可以查询某个进程 top :查看进程,是进程的当前状态一次性快照属于动态查看,ps -ef 是进程过去状态的一次性快照,属于静态查看 netstat -nap:查看进程状态,例如listening ,connected等 ifcon">
+<meta name="twitter:description" content="公网IP:120.79.144.69 私有IP:172.18.55.144 uname:查看操作系统 cat /ect/centos-release:查看操作系统版本 ps -ef (| grep &amp;lt;进程名&amp;gt;):查看进程,使用管道可以查询某个进程 top :查看进程,是进程的当前状态一次性快照属于动态查看,ps -ef 是进程过去状态的一次性快照,属于静态查看 netstat -na">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -67,7 +67,7 @@
         <section id="main"><article id="post-Linux的常用命令" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/26/Linux的常用命令/" class="article-date">
-  <time datetime="2018-05-26T09:34:33.000Z" itemprop="datePublished">2018-05-26</time>
+  <time datetime="2018-05-26T09:50:16.000Z" itemprop="datePublished">2018-05-26</time>
 </a>
     
   </div>
@@ -87,6 +87,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
+<li>公网IP:120.79.144.69 私有IP:172.18.55.144</li>
 <li>uname:查看操作系统</li>
 <li>cat /ect/centos-release:查看操作系统版本</li>
 <li>ps -ef (| grep &lt;进程名&gt;):查看进程,使用管道可以查询某个进程</li>
@@ -177,12 +178,47 @@
 <li>firewall-cmd –zone=public –add-port=80/tcp –permanent:永久打开防火墙80端口</li>
 <li>firewall-cmd –zone=public –remove-port=80/tcp –permanent:永久删除防火墙80端口 </li>
 </ul>
+<h3 id="启动redis服务器"><a href="#启动redis服务器" class="headerlink" title="启动redis服务器"></a>启动redis服务器</h3><ul>
+<li>配置redis.conf文件<ul>
+<li>bind &lt;内网地址&gt;</li>
+<li>port &lt;端口号&gt;</li>
+<li>requirepass &lt;服务器密码&gt;</li>
+</ul>
+</li>
+<li>启动redis服务器<ul>
+<li>redis-server redis.conf &amp;</li>
+</ul>
+</li>
+<li>启动redis客户端<ul>
+<li>redis-cli -h &lt;服务器地址&gt; -p &lt;服务器端口&gt; -a &lt;服务器密码&gt;</li>
+<li>进去之后输入Info replication查看master,slaver信息</li>
+</ul>
+</li>
+</ul>
+<h2 id="redis中主从切换"><a href="#redis中主从切换" class="headerlink" title="redis中主从切换"></a>redis中主从切换</h2><p>在作为master的服务器中:</p>
+<ul>
+<li>在redis.conf文件中写入masterauth &lt;master服务器密码&gt;<a href="该master很有可能在将来成为slave,所有要在配置文件输入以后可能成为master的服务器密码,其实我感觉应该是所有的redis服务器都使用同一个密码,不然谁知道谁成为master.">^5 </a></li>
+<li>在sentinel.conf文件中进行哨兵的配置<a href="哨兵在master和slave服务器都可以进行配置">^6 </a><ul>
+<li>bind &lt;本服务器内网地址&gt;</li>
+<li>port &lt;哨兵端口号&gt;</li>
+<li>sentinel monitor mymaster &lt;master服务器地址&gt;  &lt;master服务器端口号&gt; &lt; 投票数&gt;至少小于哨兵个数的一半)</li>
+<li>sentinel auth-pass mymaster &lt;master服务器密码&gt;</li>
+<li>sentinel down-after-milliseconds mymaster <5000> 5000:指定服务器已经断线所需的毫秒数,超时则主观下线</5000></li>
+<li>sentinel failover-timeout mymaster <18000> 18000:表示master超时期限,超时则客观下线</18000></li>
+</ul>
+</li>
+</ul>
+<p>在作为salve的服务器中:</p>
+<ul>
+<li>在redis.conf文件中写入slaveof &lt;master服务器外网地址&gt; &lt;master服务器端口号 &gt;</li>
+<li>在redis.conf文件中写入 masterauth &lt;master服务器密码&gt;</li>
+</ul>
 <p>[^ 2]: 同时可以使用chmod u+w+r+x,g+w+r+x,o+w+r+x 文件来更改执行模式<br>[^3 ]: dd:删除整行 dw:删除光标所在的单词 g:回到内容的第一行 G:回到内容的最后一行 pg+down:向下翻页 pg+up:向上翻页<br>[^4]: /:搜索关键词,可以使用正则表达式来进行匹配,但是量词前面需要加上/,例如/+,/.,1,%s/…/…/g:全局替换        ! 命令:可以在vim模式下使用外部命令,并且会切换到外部进行执行</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/26/Linux的常用命令/" data-id="cjhn7ddvv0000q4u7u3b3oswq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/26/Linux的常用命令/" data-id="cjhn7t2350001zcu77y3jolwk" class="article-share-link">Share</a>
       
       
     </footer>
