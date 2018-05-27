@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[redis服务器的记本配置]]></title>
-    <url>%2F2018%2F05%2F27%2Fredis%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%AE%B0%E6%9C%AC%E9%85%8D%E7%BD%AE%2F</url>
+    <url>%2F2018%2F05%2F27%2Fredis%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[启动redis服务器 配置redis.conf文件 bind &lt;内网地址&gt; port &lt;端口号&gt; requirepass &lt;服务器密码&gt; 启动redis服务器 redis-server redis.conf &amp; 启动redis客户端 redis-cli -h &lt;服务器地址&gt; -p &lt;服务器端口&gt; -a &lt;服务器密码&gt; 进去之后输入Info replication查看master,slaver信息 redis中主从切换在作为master的服务器中: 在redis.conf文件中写入masterauth &lt;master服务器密码&gt; 注:这里需要输入将来可能成为master的服务器密码,哨兵在投票时可以设定优先级使得指定的slave服务器上位. 在sentinel.conf文件中进行哨兵的配置 bind &lt;本服务器内网地址&gt; port &lt;哨兵端口号&gt; sentinel monitor mymaster &lt;master服务器地址&gt; &lt;master服务器端口号&gt; &lt; 投票数&gt;至少小于哨兵个数的一半) sentinel auth-pass mymaster &lt;master服务器密码&gt; sentinel down-after-milliseconds mymaster 5000:指定服务器已经断线所需的毫秒数,超时则主观下线 sentinel failover-timeout mymaster 18000:表示master上线超时期限,超时则客观下线 在作为salve的服务器中: 在redis.conf文件中写入slaveof &lt;master服务器外网地址&gt; &lt;master服务器端口号 &gt; 在redis.conf文件中写入 masterauth &lt;master服务器密码&gt;]]></content>
       <categories>
         <category>Linux</category>
