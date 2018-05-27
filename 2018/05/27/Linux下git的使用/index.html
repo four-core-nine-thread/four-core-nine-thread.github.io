@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Linux下git的使用 | ninethread&#39;blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="yum install git : 安装git git init:初始化创建本地仓库 git –version :查看git版本 git add :项目放入本地的缓存区 git commit -m ‘描述’:将项目放入本地的仓库中,并附带描述 git status:查看文件状态 git log:查看日志 git relog:当使用reset回到之前的版本时,可以使用该命令查看该版本之后的版本 g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux下git的使用">
+<meta property="og:url" content="http://yoursite.com/2018/05/27/Linux下git的使用/index.html">
+<meta property="og:site_name" content="ninethread&#39;blog">
+<meta property="og:description" content="yum install git : 安装git git init:初始化创建本地仓库 git –version :查看git版本 git add :项目放入本地的缓存区 git commit -m ‘描述’:将项目放入本地的仓库中,并附带描述 git status:查看文件状态 git log:查看日志 git relog:当使用reset回到之前的版本时,可以使用该命令查看该版本之后的版本 g">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-27T05:34:29.137Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux下git的使用">
+<meta name="twitter:description" content="yum install git : 安装git git init:初始化创建本地仓库 git –version :查看git版本 git add :项目放入本地的缓存区 git commit -m ‘描述’:将项目放入本地的仓库中,并附带描述 git status:查看文件状态 git log:查看日志 git relog:当使用reset回到之前的版本时,可以使用该命令查看该版本之后的版本 g">
+  
+    <link rel="alternate" href="/atom.xml" title="ninethread&#39;blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ninethread&#39;blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">categories</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Linux下git的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/27/Linux下git的使用/" class="article-date">
+  <time datetime="2018-05-27T05:32:59.000Z" itemprop="datePublished">2018-05-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux下git的使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>yum install git : 安装git</li>
+<li>git init:初始化创建本地仓库</li>
+<li>git –version :查看git版本</li>
+<li>git add :项目放入本地的缓存区</li>
+<li>git commit -m ‘描述’:将项目放入本地的仓库中,并附带描述</li>
+<li>git status:查看文件状态</li>
+<li>git log:查看日志</li>
+<li>git relog:当使用reset回到之前的版本时,可以使用该命令查看该版本之后的版本</li>
+<li>git reset –hard 标识码:可以回到标识码所标记的版本</li>
+<li>git checkout – (文件名) :撤销缓冲区中的项目,需要修改之后重新提交到缓冲区</li>
+<li>git clone url:从服务器将项目拷贝到本地</li>
+<li>git push origin master:将本地仓库中的文件提交到服务器的master的分支上</li>
+<li>git pull:将服务器中的项目拉下来</li>
+<li>git remote add origin url:将本地仓库与远程仓库对接</li>
+<li>git push -u origin master:对接之后将项目提交到远程仓库</li>
+<li>git branch 分支名:在本地创建分支</li>
+<li>git branch:查看当前所处分支</li>
+<li>git checkout 分支名:切换分支</li>
+<li>git merge 分支名:将分支合并入master分支</li>
+<li>git push origin master:将项目提交到master分支</li>
+<li>git rm 文件名:删除文件</li>
+<li>git branch -D 分支名:删除本地某个分支</li>
+<li>git push origin :分支名:删除远程分支</li>
+</ul>
+<h2 id="Git日常工作流程"><a href="#Git日常工作流程" class="headerlink" title="Git日常工作流程"></a>Git日常工作流程</h2><ul>
+<li>从远端拉取项目(前提是本地无该项目):</li>
+</ul>
+<ol>
+<li>git clone {url}    #从远端克隆项目</li>
+<li>cd {dir}    #克隆到本地后,进入项目</li>
+<li>git branch {name}   # 创建分支,一般修改项目不要在master主分支中修改</li>
+<li>git branch #查看有哪些分支</li>
+<li>git checkout {name} #切换到指定的分支,默认所处分支是master主分支</li>
+<li>git add . # 切换成功后,在非主分支中,将修改的项目提交到缓冲区,&lt;.&gt;代表提交所有文件,也可以输入文件名提交指定的文件,文件不能为空,否则无法提交</li>
+<li>git rm {filename} # 删除文件, 如果是文件夹需要输入git rm -r 文件夹进行遍历删除</li>
+<li>git commit -m ‘描述’ # 将缓冲区的文件提交到本地仓库中并附带描述</li>
+<li>git push origin {branch} # 将本地仓库的文件提交到远程仓库的分支,哪个分支由自己指定</li>
+</ol>
+<ul>
+<li>将本地文件上传到远端(前提是本地有文件):</li>
+</ul>
+<ol>
+<li>cd 文件夹 # 进入文件夹</li>
+<li>git init : # 初始化本地仓库,必须保证该文件夹中没有.git文件</li>
+<li>git add . # 将文件中的内容提交到缓冲区</li>
+<li>git commit -m ‘11’ # 将缓冲区的文件提交到本地仓库</li>
+<li>git remote add origin {url} # 将本地仓库与远程仓库对接</li>
+<li><p>git push -f origin master # 本地强制上传到远程，把远程的覆盖</p>
+<p>注:第6部可以使用git pull –rebase origin master ——-&gt; git push -u origin master代替,但是最好使用第6部的方法,因为–rebase是拉取远端仓库覆盖本地,然后我们再上传,涉及到了两步操作.</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/27/Linux下git的使用/" data-id="cjhoe3bfi0000s8u718yusv3y" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/05/27/redis服务器的基本配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">redis服务器的记本配置</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/05/27/Linux下git的使用/">Linux下git的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/27/redis服务器的基本配置/">redis服务器的记本配置</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/27/Linux常用命令/">Linux常用命令</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/26/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">categories</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

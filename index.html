@@ -64,6 +64,98 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Linux下git的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/27/Linux下git的使用/" class="article-date">
+  <time datetime="2018-05-27T05:32:59.000Z" itemprop="datePublished">2018-05-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/27/Linux下git的使用/">Linux下git的使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>yum install git : 安装git</li>
+<li>git init:初始化创建本地仓库</li>
+<li>git –version :查看git版本</li>
+<li>git add :项目放入本地的缓存区</li>
+<li>git commit -m ‘描述’:将项目放入本地的仓库中,并附带描述</li>
+<li>git status:查看文件状态</li>
+<li>git log:查看日志</li>
+<li>git relog:当使用reset回到之前的版本时,可以使用该命令查看该版本之后的版本</li>
+<li>git reset –hard 标识码:可以回到标识码所标记的版本</li>
+<li>git checkout – (文件名) :撤销缓冲区中的项目,需要修改之后重新提交到缓冲区</li>
+<li>git clone url:从服务器将项目拷贝到本地</li>
+<li>git push origin master:将本地仓库中的文件提交到服务器的master的分支上</li>
+<li>git pull:将服务器中的项目拉下来</li>
+<li>git remote add origin url:将本地仓库与远程仓库对接</li>
+<li>git push -u origin master:对接之后将项目提交到远程仓库</li>
+<li>git branch 分支名:在本地创建分支</li>
+<li>git branch:查看当前所处分支</li>
+<li>git checkout 分支名:切换分支</li>
+<li>git merge 分支名:将分支合并入master分支</li>
+<li>git push origin master:将项目提交到master分支</li>
+<li>git rm 文件名:删除文件</li>
+<li>git branch -D 分支名:删除本地某个分支</li>
+<li>git push origin :分支名:删除远程分支</li>
+</ul>
+<h2 id="Git日常工作流程"><a href="#Git日常工作流程" class="headerlink" title="Git日常工作流程"></a>Git日常工作流程</h2><ul>
+<li>从远端拉取项目(前提是本地无该项目):</li>
+</ul>
+<ol>
+<li>git clone {url}    #从远端克隆项目</li>
+<li>cd {dir}    #克隆到本地后,进入项目</li>
+<li>git branch {name}   # 创建分支,一般修改项目不要在master主分支中修改</li>
+<li>git branch #查看有哪些分支</li>
+<li>git checkout {name} #切换到指定的分支,默认所处分支是master主分支</li>
+<li>git add . # 切换成功后,在非主分支中,将修改的项目提交到缓冲区,&lt;.&gt;代表提交所有文件,也可以输入文件名提交指定的文件,文件不能为空,否则无法提交</li>
+<li>git rm {filename} # 删除文件, 如果是文件夹需要输入git rm -r 文件夹进行遍历删除</li>
+<li>git commit -m ‘描述’ # 将缓冲区的文件提交到本地仓库中并附带描述</li>
+<li>git push origin {branch} # 将本地仓库的文件提交到远程仓库的分支,哪个分支由自己指定</li>
+</ol>
+<ul>
+<li>将本地文件上传到远端(前提是本地有文件):</li>
+</ul>
+<ol>
+<li>cd 文件夹 # 进入文件夹</li>
+<li>git init : # 初始化本地仓库,必须保证该文件夹中没有.git文件</li>
+<li>git add . # 将文件中的内容提交到缓冲区</li>
+<li>git commit -m ‘11’ # 将缓冲区的文件提交到本地仓库</li>
+<li>git remote add origin {url} # 将本地仓库与远程仓库对接</li>
+<li><p>git push -f origin master # 本地强制上传到远程，把远程的覆盖</p>
+<p>注:第6部可以使用git pull –rebase origin master ——-&gt; git push -u origin master代替,但是最好使用第6部的方法,因为–rebase是拉取远端仓库覆盖本地,然后我们再上传,涉及到了两步操作.</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/27/Linux下git的使用/" data-id="cjhoe3bfi0000s8u718yusv3y" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-redis服务器的基本配置" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/27/redis服务器的基本配置/" class="article-date">
@@ -129,7 +221,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/27/redis服务器的基本配置/" data-id="cjhobu1yr000098u7tvcva598" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/27/redis服务器的基本配置/" data-id="cjhoe3bfu0005s8u769lzyi0q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -261,7 +353,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/27/Linux常用命令/" data-id="cjhobsqm10000qwu7mmvdk02e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/27/Linux常用命令/" data-id="cjhoe3bfu0004s8u7775p1mwx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -306,7 +398,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/26/hello-world/" data-id="cjhobsqmc0002qwu7wt0g5iwr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/26/hello-world/" data-id="cjhoe3bfq0002s8u7alvtmbhf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -352,6 +444,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/05/27/Linux下git的使用/">Linux下git的使用</a>
+          </li>
         
           <li>
             <a href="/2018/05/27/redis服务器的基本配置/">redis服务器的记本配置</a>
