@@ -5,19 +5,19 @@
   
 
   
-  <title>Hello World | ninethread&#39;blog</title>
+  <title>redis服务器的记本配置 | ninethread&#39;blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="启动redis服务器 配置redis.conf文件 bind &amp;lt;内网地址&amp;gt; port &amp;lt;端口号&amp;gt; requirepass &amp;lt;服务器密码&amp;gt;   启动redis服务器 redis-server redis.conf &amp;amp;   启动redis客户端 redis-cli -h &amp;lt;服务器地址&amp;gt; -p &amp;lt;服务器端口&amp;gt; -a &amp;lt;服务器密码&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/05/26/hello-world/index.html">
+<meta property="og:title" content="redis服务器的记本配置">
+<meta property="og:url" content="http://yoursite.com/2018/05/27/redis服务器的记本配置/index.html">
 <meta property="og:site_name" content="ninethread&#39;blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="启动redis服务器 配置redis.conf文件 bind &amp;lt;内网地址&amp;gt; port &amp;lt;端口号&amp;gt; requirepass &amp;lt;服务器密码&amp;gt;   启动redis服务器 redis-server redis.conf &amp;amp;   启动redis客户端 redis-cli -h &amp;lt;服务器地址&amp;gt; -p &amp;lt;服务器端口&amp;gt; -a &amp;lt;服务器密码&amp;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-26T07:52:08.511Z">
+<meta property="og:updated_time" content="2018-05-27T04:29:58.767Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="redis服务器的记本配置">
+<meta name="twitter:description" content="启动redis服务器 配置redis.conf文件 bind &amp;lt;内网地址&amp;gt; port &amp;lt;端口号&amp;gt; requirepass &amp;lt;服务器密码&amp;gt;   启动redis服务器 redis-server redis.conf &amp;amp;   启动redis客户端 redis-cli -h &amp;lt;服务器地址&amp;gt; -p &amp;lt;服务器端口&amp;gt; -a &amp;lt;服务器密码&amp;">
   
     <link rel="alternate" href="/atom.xml" title="ninethread&#39;blog" type="application/atom+xml">
   
@@ -66,12 +66,16 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-redis服务器的记本配置" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/05/26/hello-world/" class="article-date">
-  <time datetime="2018-05-26T07:52:08.511Z" itemprop="datePublished">2018-05-26</time>
+    <a href="/2018/05/27/redis服务器的记本配置/" class="article-date">
+  <time datetime="2018-05-27T04:23:17.000Z" itemprop="datePublished">2018-05-27</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -80,7 +84,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      redis服务器的记本配置
     </h1>
   
 
@@ -88,20 +92,46 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h3 id="启动redis服务器"><a href="#启动redis服务器" class="headerlink" title="启动redis服务器"></a>启动redis服务器</h3><ul>
+<li>配置redis.conf文件<ul>
+<li>bind &lt;内网地址&gt;</li>
+<li>port &lt;端口号&gt;</li>
+<li>requirepass &lt;服务器密码&gt;</li>
+</ul>
+</li>
+<li>启动redis服务器<ul>
+<li>redis-server redis.conf &amp;</li>
+</ul>
+</li>
+<li>启动redis客户端<ul>
+<li>redis-cli -h &lt;服务器地址&gt; -p &lt;服务器端口&gt; -a &lt;服务器密码&gt;</li>
+<li>进去之后输入Info replication查看master,slaver信息</li>
+</ul>
+</li>
+</ul>
+<h2 id="redis中主从切换"><a href="#redis中主从切换" class="headerlink" title="redis中主从切换"></a>redis中主从切换</h2><p>在作为master的服务器中:</p>
+<ul>
+<li>在redis.conf文件中写入masterauth &lt;master服务器密码&gt;  注:这里需要输入将来可能成为master的服务器密码,哨兵在投票时可以设定优先级使得指定的slave服务器上位.</li>
+<li>在sentinel.conf文件中进行哨兵的配置<ul>
+<li>bind &lt;本服务器内网地址&gt;</li>
+<li>port &lt;哨兵端口号&gt;</li>
+<li>sentinel monitor mymaster &lt;master服务器地址&gt;  &lt;master服务器端口号&gt; &lt; 投票数&gt;至少小于哨兵个数的一半)</li>
+<li>sentinel auth-pass mymaster &lt;master服务器密码&gt;</li>
+<li>sentinel down-after-milliseconds mymaster <5000> 5000:指定服务器已经断线所需的毫秒数,超时则主观下线</5000></li>
+<li>sentinel failover-timeout mymaster <18000> 18000:表示master上线超时期限,超时则客观下线</18000></li>
+</ul>
+</li>
+</ul>
+<p>在作为salve的服务器中:</p>
+<ul>
+<li>在redis.conf文件中写入slaveof &lt;master服务器外网地址&gt; &lt;master服务器端口号 &gt;</li>
+<li>在redis.conf文件中写入 masterauth &lt;master服务器密码&gt;</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/26/hello-world/" data-id="cjhobsqmc0002qwu7wt0g5iwr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/27/redis服务器的记本配置/" data-id="cjhobsqmc0004qwu73bv4wecw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -110,15 +140,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/05/27/Linux常用命令/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Linux常用命令
-        
-      </div>
-    </a>
   
+    <a href="/2018/05/27/Linux常用命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Linux常用命令</div>
+    </a>
   
 </nav>
 

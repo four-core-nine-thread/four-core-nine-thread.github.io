@@ -48,10 +48,6 @@
         
           <a class="main-nav-link" href="/categories">categories</a>
         
-          <a class="main-nav-link" href="/tags">tags</a>
-        
-          <a class="main-nav-link" href="/about">about</a>
-        
       </nav>
       <nav id="sub-nav">
         
@@ -67,6 +63,81 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-redis服务器的记本配置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/27/redis服务器的记本配置/" class="article-date">
+  <time datetime="2018-05-27T04:23:17.000Z" itemprop="datePublished">2018-05-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/27/redis服务器的记本配置/">redis服务器的记本配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="启动redis服务器"><a href="#启动redis服务器" class="headerlink" title="启动redis服务器"></a>启动redis服务器</h3><ul>
+<li>配置redis.conf文件<ul>
+<li>bind &lt;内网地址&gt;</li>
+<li>port &lt;端口号&gt;</li>
+<li>requirepass &lt;服务器密码&gt;</li>
+</ul>
+</li>
+<li>启动redis服务器<ul>
+<li>redis-server redis.conf &amp;</li>
+</ul>
+</li>
+<li>启动redis客户端<ul>
+<li>redis-cli -h &lt;服务器地址&gt; -p &lt;服务器端口&gt; -a &lt;服务器密码&gt;</li>
+<li>进去之后输入Info replication查看master,slaver信息</li>
+</ul>
+</li>
+</ul>
+<h2 id="redis中主从切换"><a href="#redis中主从切换" class="headerlink" title="redis中主从切换"></a>redis中主从切换</h2><p>在作为master的服务器中:</p>
+<ul>
+<li>在redis.conf文件中写入masterauth &lt;master服务器密码&gt;  注:这里需要输入将来可能成为master的服务器密码,哨兵在投票时可以设定优先级使得指定的slave服务器上位.</li>
+<li>在sentinel.conf文件中进行哨兵的配置<ul>
+<li>bind &lt;本服务器内网地址&gt;</li>
+<li>port &lt;哨兵端口号&gt;</li>
+<li>sentinel monitor mymaster &lt;master服务器地址&gt;  &lt;master服务器端口号&gt; &lt; 投票数&gt;至少小于哨兵个数的一半)</li>
+<li>sentinel auth-pass mymaster &lt;master服务器密码&gt;</li>
+<li>sentinel down-after-milliseconds mymaster <5000> 5000:指定服务器已经断线所需的毫秒数,超时则主观下线</5000></li>
+<li>sentinel failover-timeout mymaster <18000> 18000:表示master上线超时期限,超时则客观下线</18000></li>
+</ul>
+</li>
+</ul>
+<p>在作为salve的服务器中:</p>
+<ul>
+<li>在redis.conf文件中写入slaveof &lt;master服务器外网地址&gt; &lt;master服务器端口号 &gt;</li>
+<li>在redis.conf文件中写入 masterauth &lt;master服务器密码&gt;</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/27/redis服务器的记本配置/" data-id="cjhobsqmc0004qwu73bv4wecw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-Linux常用命令" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -190,7 +261,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/27/Linux常用命令/" data-id="cjhobhebb00024ku7f946yhen" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/27/Linux常用命令/" data-id="cjhobsqm10000qwu7mmvdk02e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -235,7 +306,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/26/hello-world/" data-id="cjhobheb300004ku71gxhy7s6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/26/hello-world/" data-id="cjhobsqmc0002qwu7wt0g5iwr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -283,6 +354,10 @@
       <ul>
         
           <li>
+            <a href="/2018/05/27/redis服务器的记本配置/">redis服务器的记本配置</a>
+          </li>
+        
+          <li>
             <a href="/2018/05/27/Linux常用命令/">Linux常用命令</a>
           </li>
         
@@ -315,10 +390,6 @@
     <a href="/archives" class="mobile-nav-link">Archives</a>
   
     <a href="/categories" class="mobile-nav-link">categories</a>
-  
-    <a href="/tags" class="mobile-nav-link">tags</a>
-  
-    <a href="/about" class="mobile-nav-link">about</a>
   
 </nav>
     
