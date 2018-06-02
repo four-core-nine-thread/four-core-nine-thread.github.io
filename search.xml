@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[创建1.11版本的Django项目]]></title>
+    <url>%2F2018%2F06%2F02%2F%E5%88%9B%E5%BB%BA1-11%E7%89%88%E6%9C%AC%E7%9A%84Django%E9%A1%B9%E7%9B%AE%2F</url>
+    <content type="text"><![CDATA[创建虚拟环境和项目 在一个经常使用的目录下创建一个专门用于存放虚拟环境的文件夹和专门用于存放项目的文件夹,这里我创建的环境文件夹为env,项目文件夹为workspace,做到项目与环境的分离,方便以后管理 打开cmd: 12345cd env[python -m virtualenv practice] # 创建一个名为practice的虚拟环境,自带有第三方包virtualenv --no-site-packages practice #创建一个名字practice的虚拟环境,不带第三方包cd Scriptsactivate # 进入虚拟环境 然后在虚拟环境下: 1234cd ../../.. # 回到用户目录下cd workspace # 进入到项目文件中pip install django==1.11 # 这里可以指定django的版本.如果只输入django默认安装最新版本django-admin startproject practice # 创建一个名为practice的项目 进行Django项目的基本设置 项目创建完成后,使用pycharm打开该文件 打开项目,准备导入创建好的虚拟环境,步骤为File—&gt;settings—&gt;Project:practice—&gt;Project interpreter—&gt;选择showall—&gt;选择右边的加号—&gt;选择Existing environment 导入我们创建的虚拟环境即可 接下来在pycharm中的Terminal终端中创建我们的项目,当然也可以在cmd中创建(必须在虚拟环境下创建),方法是一样的: 1python manage.py startapp work 接下来就可以在项目目录下的settings.py文件中进行配置了 添加安装好的APP 添加我们的模板路径,模板文件需要我们自己创建,名字为templates,该文件夹用于存放我们创建的网页 添加我们的数据库信息 进行语言和时区的配置以后添加静态文件路径,静态文件用于存放在我们需要使用的CSS,JS,IMG等信息 添加媒体文件路径,媒体文件夹需要我们自己创建,该文件用于存放项目需要的媒体文件 在项目文件夹下init.py文件中导入我们的pymysql 这些设置完成后,django基本配置就已经完成,我们在终端中启动服务器: 1python manage.py runserver 如果出现以下画面则说明我们配置成功了 总结这是在django1.11中进行服务的基本配置,django2.x版本中和django1.x版本的配置基本上是大同小异,在语法方面和模块方面,除了个别模块名字不同以外,其他的都是一样的,最大的区别就是在urls.py中1.11版本是使用正则表达式进行匹配路径,而在2.x版本中是可以直接使用相对路径的.]]></content>
+      <categories>
+        <category>Django</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[pyCharm中Django项目的基本配置]]></title>
     <url>%2F2018%2F05%2F28%2FpyCharm%E4%B8%ADDjango%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[1.创建虚拟环境 2.如果没有出现报错,就说明环境创建成功,我们所创建的文件名就是项目名称 3.在项目目录下的init.py中导入数据库模块 4.打开终端模式,输入python manage.py startapp my_app创建一个名为my_app的应用 5.应用创建后,我们需要在项目目录下的settings.py中进行关于应用,连接数据库等的设置 进行应用的添加 进行数据库的配置 进行语言和时区的设置 进行静态文件路径的设置 6.项目的基本配置完成后,我们就可以使用在终端模式下使用python manage.py runserver启动我们的服务器啦,出现以下画面就代表配置成功 7.输出localhost查看我们的服务器,出现以下画面,说明我们配置的没有问题 总结:以上就是我们一个项目的基本配置,当然我们创建应用后进行功能的实现,还需要对url.py进行路径的设置,以及在应用目录下对models.py,views.py的编写.]]></content>

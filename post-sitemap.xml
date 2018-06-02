@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/06/02/%E5%88%9B%E5%BB%BA1-11%E7%89%88%E6%9C%AC%E7%9A%84Django%E9%A1%B9%E7%9B%AE/</loc>
+        <lastmod>2018-06-02T02:37:39.862Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/05/28/pyCharm%E4%B8%ADDjango%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</loc>
         <lastmod>2018-05-27T18:24:19.239Z</lastmod>
         <changefreq>weekly</changefreq>
