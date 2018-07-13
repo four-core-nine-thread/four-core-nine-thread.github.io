@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://123/2018/05/27/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+        <lastmod>2018-07-13T15:36:11.617Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://123/2018/05/28/pyCharm%E4%B8%ADDjango%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</loc>
         <lastmod>2018-06-02T06:04:12.237Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -41,14 +49,6 @@
     <url>
         <loc>http://123/2018/05/27/Linux%E4%B8%8Bgit%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
         <lastmod>2018-05-27T05:34:29.137Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://123/2018/05/27/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-        <lastmod>2018-05-27T04:21:25.215Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
