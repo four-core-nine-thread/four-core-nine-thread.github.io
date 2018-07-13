@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="uname:查看操作系统 cat /ect/centos-release:查看操作系统版本 ps -ef (| grep &amp;lt;进程名&amp;gt;):查看进程,使用管道可以查询某个进程 top :查看进程,是进程的当前状态一次性快照属于动态查看,ps -ef 是进程过去状态的一次性快照,属于静态查看 netstat -nap:查看进程状态,例如listening ,connected等 ifcon">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux常用命令">
+<meta property="og:url" content="http://yoursite.com/2018/05/27/Linux常用命令/index.html">
+<meta property="og:site_name" content="ninethread&#39;blog">
+<meta property="og:description" content="uname:查看操作系统 cat /ect/centos-release:查看操作系统版本 ps -ef (| grep &amp;lt;进程名&amp;gt;):查看进程,使用管道可以查询某个进程 top :查看进程,是进程的当前状态一次性快照属于动态查看,ps -ef 是进程过去状态的一次性快照,属于静态查看 netstat -nap:查看进程状态,例如listening ,connected等 ifcon">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-27T04:21:25.215Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux常用命令">
+<meta name="twitter:description" content="uname:查看操作系统 cat /ect/centos-release:查看操作系统版本 ps -ef (| grep &amp;lt;进程名&amp;gt;):查看进程,使用管道可以查询某个进程 top :查看进程,是进程的当前状态一次性快照属于动态查看,ps -ef 是进程过去状态的一次性快照,属于静态查看 netstat -nap:查看进程状态,例如listening ,connected等 ifcon">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '3Y55AY8OGU',
+      apiKey: 'd7e20eb17b666af140f1a2aa1ea0ca87',
+      indexName: 'four-core-nine-thread',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/27/Linux常用命令/"/>
+
+
+
+
+
+  <title>Linux常用命令 | ninethread'blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ninethread'blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/27/Linux常用命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fourcore">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ninethread'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux常用命令</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-27T12:04:27+08:00">
+                2018-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li>uname:查看操作系统</li>
+<li>cat /ect/centos-release:查看操作系统版本</li>
+<li>ps -ef (| grep &lt;进程名&gt;):查看进程,使用管道可以查询某个进程</li>
+<li>top :查看进程,是进程的当前状态一次性快照属于动态查看,ps -ef 是进程过去状态的一次性快照,属于静态查看</li>
+<li>netstat -nap:查看进程状态,例如listening ,connected等</li>
+<li>ifconfig -a:查看ip地址</li>
+<li>kill (-9)  PID:关闭一个进程,-9显示最高级别的删除,强制终止,可能会导致数据丢失</li>
+<li>adduser 用户名:创建一个非root的用户,权限较低</li>
+<li>userdel 用户名:删除指定用户</li>
+<li>passwd 用户名:为指定用户添加密码,若用户已有密码,则修改密码,如果不添加用户名,则默认修改当前用户密码</li>
+<li>logout(exit):退出当前用户</li>
+<li>su 用户名:切换用户</li>
+<li>shutdown(init 0):关机</li>
+<li>reboot(init 6):重启</li>
+<li>man 指令:查看指令手册</li>
+<li>info 指令:更为详细的解释指令</li>
+<li>指令 –help:查看指令帮助</li>
+<li>whatis 指令: 简短解释指令</li>
+<li>whereis 指令(文件):从Linux的数据库中查询指定指令或者文件</li>
+<li>find 文件:用于查询文件</li>
+<li>pwd:查看当前所处目录</li>
+<li>sudo 指令:使用管理员身份运行指令,普通用户使用该命令</li>
+<li>mkdir 文件夹:创建一个空的文件夹</li>
+<li>rmdie 文件夹:删除一个空的文件夹</li>
+<li>touch 文件:创建一个文件</li>
+<li>rm -rf 文件(文件夹):递归删除一个文件夹,也可以用户删除文件</li>
+<li>ls -al:查看当前目录所有文件的长格式,包括隐藏文件</li>
+<li>cd :改变目录 </li>
+<li>cat -n 文件:查看文件内容并显示行数</li>
+<li>cat -n | more(less):一页一页的查看文件内容</li>
+<li>head -num 文件:查看文件的开头几行</li>
+<li>tail -num 文件:查看文件的末尾几行</li>
+<li>cp 文件 文件路径/(文件名):将文件拷贝到文件夹中,同时可以对其重命名</li>
+<li>mv 文件 文件:对文件进行重命名</li>
+<li>mv 文件 文件路径/(文件名):将文件剪切到文件夹中,同时可以对其重命名</li>
+<li>grep 搜索内容 文件 :在文件中搜索指定内容</li>
+<li>cat 文件 | grep 内容:在文件中搜索指定内容并查看</li>
+<li>ctrl c:终止正在前台运行的程序</li>
+<li>ctrl z:将前台正在运行的程序拿到后台并停止运行</li>
+<li>jobs:查看后台有无程序在执行</li>
+<li>fg %num:将后台正在执行的任务拿到前台</li>
+<li>bg %num:将后台停止运行的程序继续执行,一般配合ctrl z使用</li>
+<li>wc 文件 (-l -w -c):计算文件中有多少行,多少字符,多少字节</li>
+<li>diff 文件 文件:比较两个文件的差别</li>
+<li>file 文件:查看文件性质</li>
+<li>history:查看历史命令</li>
+<li>last:查看登陆历史</li>
+<li>echo:回声命令,其实功能很强大,暂时还没怎么研究</li>
+<li>ssh + 用户名@IP地址:登陆到其他用户</li>
+<li>ln 文件名 文件夹路径:在某个文件夹中为文件创建一个硬链接</li>
+<li>ln -s 文件路径 /user/bin:为一个程序创建一个软链接</li>
+<li>gunzip 压缩文件(后缀为gz):对一个文件进行解压缩</li>
+<li>gzip 文件:将一个文件压缩成.gz后缀文件</li>
+<li>xz -d 压缩文件(后缀为xz):对一个文件进行解压缩</li>
+<li>xz -z 文件:将一个文件压缩成xz后缀文件</li>
+<li>tar -xvf 归档文件:解归档</li>
+<li>tar -cvf  文件名 文件,文件,…(*):将文件进行归档并对归档后的文件进行命名</li>
+<li>tar -tf 归档文件:读取归档文件中的内容</li>
+<li>wget url:下载指定网址内容</li>
+<li>alias 新命令 ‘旧命令’:为一个命令重新进行命名</li>
+<li>unalias 命令:取消重命名</li>
+<li>chmod 755 文件:将文件的执行模式更改为当前用户可读可写可执行,其他用户或者组成员只能读和执行</li>
+<li>vim的命令模式</li>
+<li>vim的默行模式</li>
+<li>yum install 软件:安装开源软件</li>
+<li>yum list installed:查看安装的所有软件</li>
+<li>yum search 软件:搜索软件</li>
+<li>yum update 软件:更新软件</li>
+<li>rpm -ivh 软件:安装软件,可以查看安装过程</li>
+<li>rpm -e 软件:删除软件</li>
+<li>rpm -qa:查看所有安装的软件</li>
+<li>rpm -qa | grep 软件:搜索安装的某个文件</li>
+<li>rpm -qa |grep 软件 | xargs rpm -r :搜索软件并将其删除</li>
+<li>nginx:启动nginx</li>
+<li>nginx -s stop:停止nginx,也可以使用kill 进程号来结束进程</li>
+<li>systemctl start mariadb:启动MySQL,systemctl命令用于执行系统服务</li>
+<li>systemctl stop mariadb:停止MySQL</li>
+<li>systemctl status mariadb:查看服务的运行状态</li>
+<li>systemctl enable mariadb:开机自启MySQL</li>
+<li>systemctl disable mariadb:取消自启MySQL</li>
+<li>make &amp;&amp; make install:进行源代码安装</li>
+<li>redis-server redis.conf :启动redis服务器</li>
+<li>redis-cli -h ip:连接redis服务器</li>
+<li>auth password:连接服务器后输入密码</li>
+<li>pip3 install ipython:安装ipython</li>
+<li>ln -s /user/local/python3.6/bin/ipython3 /user/bin/ipython3:创建软链接</li>
+<li>firewall-cmd –zone=public –list-ports:查看防火墙所有的打开端口</li>
+<li>firewall-cmd –zone=public –add-port=80/tcp –permanent:永久打开防火墙80端口</li>
+<li>firewall-cmd –zone=public –remove-port=80/tcp –permanent:永久删除防火墙80端口 </li>
+</ul>
+<p>注:括号中的操作代表可选操作</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/26/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/27/redis服务器的基本配置/" rel="prev" title="redis服务器的基本配置">
+                redis服务器的基本配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/head.jpg"
+                alt="fourcore" />
+            
+              <p class="site-author-name" itemprop="name">fourcore</p>
+              <p class="site-description motion-element" itemprop="description">Learn and live.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fourcore</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Learn and live.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta name="description" content="启动redis服务器 配置redis.conf文件 bind &amp;lt;内网地址&amp;gt; port &amp;lt;端口号&amp;gt; requirepass &amp;lt;服务器密码&amp;gt;   启动redis服务器 redis-server redis.conf &amp;amp;   启动redis客户端 redis-cli -h &amp;lt;服务器地址&amp;gt; -p &amp;lt;服务器端口&amp;gt; -a &amp;lt;服务器密码&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="redis服务器的基本配置">
+<meta property="og:url" content="http://yoursite.com/2018/05/27/redis服务器的基本配置/index.html">
 <meta property="og:site_name" content="ninethread&#39;blog">
-<meta property="og:description" content="Learn and live.">
+<meta property="og:description" content="启动redis服务器 配置redis.conf文件 bind &amp;lt;内网地址&amp;gt; port &amp;lt;端口号&amp;gt; requirepass &amp;lt;服务器密码&amp;gt;   启动redis服务器 redis-server redis.conf &amp;amp;   启动redis客户端 redis-cli -h &amp;lt;服务器地址&amp;gt; -p &amp;lt;服务器端口&amp;gt; -a &amp;lt;服务器密码&amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-27T04:20:13.315Z">
+<meta property="og:updated_time" content="2018-05-27T05:38:28.620Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="Learn and live.">
+<meta name="twitter:title" content="redis服务器的基本配置">
+<meta name="twitter:description" content="启动redis服务器 配置redis.conf文件 bind &amp;lt;内网地址&amp;gt; port &amp;lt;端口号&amp;gt; requirepass &amp;lt;服务器密码&amp;gt;   启动redis服务器 redis-server redis.conf &amp;amp;   启动redis客户端 redis-cli -h &amp;lt;服务器地址&amp;gt; -p &amp;lt;服务器端口&amp;gt; -a &amp;lt;服务器密码&amp;">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/27/redis服务器的基本配置/"/>
 
 
 
 
 
-  <title>categories | ninethread'blog</title>
+  <title>redis服务器的基本配置 | ninethread'blog</title>
   
 
 
@@ -288,33 +288,198 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/27/redis服务器的基本配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fourcore">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ninethread'blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">categories</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">redis服务器的基本配置</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-27T12:23:17+08:00">
+                2018-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-      </div>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h3 id="启动redis服务器"><a href="#启动redis服务器" class="headerlink" title="启动redis服务器"></a>启动redis服务器</h3><ul>
+<li>配置redis.conf文件<ul>
+<li>bind &lt;内网地址&gt;</li>
+<li>port &lt;端口号&gt;</li>
+<li>requirepass &lt;服务器密码&gt;</li>
+</ul>
+</li>
+<li>启动redis服务器<ul>
+<li>redis-server redis.conf &amp;</li>
+</ul>
+</li>
+<li>启动redis客户端<ul>
+<li>redis-cli -h &lt;服务器地址&gt; -p &lt;服务器端口&gt; -a &lt;服务器密码&gt;</li>
+<li>进去之后输入Info replication查看master,slaver信息</li>
+</ul>
+</li>
+</ul>
+<h2 id="redis中主从切换"><a href="#redis中主从切换" class="headerlink" title="redis中主从切换"></a>redis中主从切换</h2><p>在作为master的服务器中:</p>
+<ul>
+<li>在redis.conf文件中写入masterauth &lt;master服务器密码&gt;  注:这里需要输入将来可能成为master的服务器密码,哨兵在投票时可以设定优先级使得指定的slave服务器上位.</li>
+<li>在sentinel.conf文件中进行哨兵的配置<ul>
+<li>bind &lt;本服务器内网地址&gt;</li>
+<li>port &lt;哨兵端口号&gt;</li>
+<li>sentinel monitor mymaster &lt;master服务器地址&gt;  &lt;master服务器端口号&gt; &lt; 投票数&gt;至少小于哨兵个数的一半)</li>
+<li>sentinel auth-pass mymaster &lt;master服务器密码&gt;</li>
+<li>sentinel down-after-milliseconds mymaster <5000> 5000:指定服务器已经断线所需的毫秒数,超时则主观下线</5000></li>
+<li>sentinel failover-timeout mymaster <18000> 18000:表示master上线超时期限,超时则客观下线</18000></li>
+</ul>
+</li>
+</ul>
+<p>在作为salve的服务器中:</p>
+<ul>
+<li>在redis.conf文件中写入slaveof &lt;master服务器外网地址&gt; &lt;master服务器端口号 &gt;</li>
+<li>在redis.conf文件中写入 masterauth &lt;master服务器密码&gt;</li>
+</ul>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/27/Linux常用命令/" rel="next" title="Linux常用命令">
+                <i class="fa fa-chevron-left"></i> Linux常用命令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/27/Linux下git的使用/" rel="prev" title="Linux下git的使用">
+                Linux下git的使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -347,8 +512,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -403,6 +577,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动redis服务器"><span class="nav-number">1.</span> <span class="nav-text">启动redis服务器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#redis中主从切换"><span class="nav-number"></span> <span class="nav-text">redis中主从切换</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

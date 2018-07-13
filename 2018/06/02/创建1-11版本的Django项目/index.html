@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="创建虚拟环境和项目 在一个经常使用的目录下创建一个专门用于存放虚拟环境的文件夹和专门用于存放项目的文件夹,这里我创建的环境文件夹为env,项目文件夹为workspace,做到项目与环境的分离,方便以后管理  打开cmd: 12345cd env[python -m virtualenv practice] # 创建一个名为practice的虚拟环境,自带有第三方包virtualenv --no-s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="创建1.11版本的Django项目">
+<meta property="og:url" content="http://yoursite.com/2018/06/02/创建1-11版本的Django项目/index.html">
+<meta property="og:site_name" content="ninethread&#39;blog">
+<meta property="og:description" content="创建虚拟环境和项目 在一个经常使用的目录下创建一个专门用于存放虚拟环境的文件夹和专门用于存放项目的文件夹,这里我创建的环境文件夹为env,项目文件夹为workspace,做到项目与环境的分离,方便以后管理  打开cmd: 12345cd env[python -m virtualenv practice] # 创建一个名为practice的虚拟环境,自带有第三方包virtualenv --no-s">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/06/02/创建1-11版本的Django项目/创建1-11版本的Django项目/TIM截图20180530193657.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/02/创建1-11版本的Django项目/创建1-11版本的Django项目/TIM截图20180530195035.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/02/创建1-11版本的Django项目/创建1-11版本的Django项目/TIM截图20180530195313.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/02/创建1-11版本的Django项目/创建1-11版本的Django项目/TIM截图20180530195732.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/02/创建1-11版本的Django项目/创建1-11版本的Django项目/TIM截图20180530195836.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/02/创建1-11版本的Django项目/创建1-11版本的Django项目/TIM截图20180602102738.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/02/创建1-11版本的Django项目/创建1-11版本的Django项目/TIM截图20180530201121.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/02/创建1-11版本的Django项目/创建1-11版本的Django项目/TIM截图20180530201257.png">
+<meta property="og:updated_time" content="2018-06-02T03:00:34.698Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="创建1.11版本的Django项目">
+<meta name="twitter:description" content="创建虚拟环境和项目 在一个经常使用的目录下创建一个专门用于存放虚拟环境的文件夹和专门用于存放项目的文件夹,这里我创建的环境文件夹为env,项目文件夹为workspace,做到项目与环境的分离,方便以后管理  打开cmd: 12345cd env[python -m virtualenv practice] # 创建一个名为practice的虚拟环境,自带有第三方包virtualenv --no-s">
+<meta name="twitter:image" content="http://yoursite.com/2018/06/02/创建1-11版本的Django项目/创建1-11版本的Django项目/TIM截图20180530193657.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '3Y55AY8OGU',
+      apiKey: 'd7e20eb17b666af140f1a2aa1ea0ca87',
+      indexName: 'four-core-nine-thread',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/02/创建1-11版本的Django项目/"/>
+
+
+
+
+
+  <title>创建1.11版本的Django项目 | ninethread'blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ninethread'blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/02/创建1-11版本的Django项目/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fourcore">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ninethread'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">创建1.11版本的Django项目</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-02T10:36:14+08:00">
+                2018-06-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Django/" itemprop="url" rel="index">
+                    <span itemprop="name">Django</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="创建虚拟环境和项目"><a href="#创建虚拟环境和项目" class="headerlink" title="创建虚拟环境和项目"></a>创建虚拟环境和项目</h4><ul>
+<li><p>在一个经常使用的目录下创建一个专门用于存放虚拟环境的文件夹和专门用于存放项目的文件夹,这里我创建的环境文件夹为env,项目文件夹为workspace,做到项目与环境的分离,方便以后管理</p>
+</li>
+<li><p>打开cmd:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd env</span><br><span class="line">[python -m virtualenv practice] # 创建一个名为practice的虚拟环境,自带有第三方包</span><br><span class="line">virtualenv --no-site-packages practice #创建一个名字practice的虚拟环境,不带第三方包</span><br><span class="line">cd Scripts</span><br><span class="line">activate # 进入虚拟环境</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后在虚拟环境下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd ../../.. # 回到用户目录下</span><br><span class="line">cd workspace # 进入到项目文件中</span><br><span class="line">pip install django==1.11 # 这里可以指定django的版本.如果只输入django默认安装最新版本</span><br><span class="line">django-admin startproject practice # 创建一个名为practice的项目</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="进行Django项目的基本设置"><a href="#进行Django项目的基本设置" class="headerlink" title="进行Django项目的基本设置"></a>进行Django项目的基本设置</h4><ul>
+<li><p>项目创建完成后,使用pycharm打开该文件</p>
+<p><img src="创建1-11版本的Django项目\TIM截图20180530193657.png" alt=""></p>
+</li>
+</ul>
+<ul>
+<li><p>打开项目,准备导入创建好的虚拟环境,步骤为File—&gt;settings—&gt;Project:practice—&gt;Project interpreter—&gt;选择showall—&gt;选择右边的加号—&gt;选择Existing environment</p>
+<p>导入我们创建的虚拟环境即可</p>
+</li>
+<li><p>接下来在pycharm中的Terminal终端中创建我们的项目,当然也可以在cmd中创建(必须在虚拟环境下创建),方法是一样的:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py startapp work</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接下来就可以在项目目录下的settings.py文件中进行配置了</p>
+<ul>
+<li><p>添加安装好的APP</p>
+<p><img src="创建1-11版本的Django项目\TIM截图20180530195035.png" alt=""></p>
+</li>
+<li><p>添加我们的模板路径,模板文件需要我们自己创建,名字为templates,该文件夹用于存放我们创建的网页</p>
+<p><img src="创建1-11版本的Django项目\TIM截图20180530195313.png" alt=""></p>
+</li>
+<li><p>添加我们的数据库信息</p>
+<p><img src="创建1-11版本的Django项目\TIM截图20180530195732.png" alt=""></p>
+</li>
+<li><p>进行语言和时区的配置以后添加静态文件路径,静态文件用于存放在我们需要使用的CSS,JS,IMG等信息</p>
+<p><img src="创建1-11版本的Django项目\TIM截图20180530195836.png" alt=""></p>
+</li>
+<li><p>添加媒体文件路径,媒体文件夹需要我们自己创建,该文件用于存放项目需要的媒体文件</p>
+<p><img src="创建1-11版本的Django项目\TIM截图20180602102738.png" alt=""></p>
+</li>
+<li><p>在项目文件夹下init.py文件中导入我们的pymysql</p>
+<p><img src="创建1-11版本的Django项目\TIM截图20180530201121.png" alt=""></p>
+</li>
+<li><p>这些设置完成后,django基本配置就已经完成,我们在终端中启动服务器:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果出现以下画面则说明我们配置成功了</p>
+<p><img src="创建1-11版本的Django项目\TIM截图20180530201257.png" alt=""></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>这是在django1.11中进行服务的基本配置,django2.x版本中和django1.x版本的配置基本上是大同小异,在语法方面和模块方面,除了个别模块名字不同以外,其他的都是一样的,最大的区别就是在urls.py中1.11版本是使用正则表达式进行匹配路径,而在2.x版本中是可以直接使用相对路径的.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/28/pyCharm中Django项目的基本配置/" rel="next" title="pyCharm中Django项目的基本配置">
+                <i class="fa fa-chevron-left"></i> pyCharm中Django项目的基本配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/head.jpg"
+                alt="fourcore" />
+            
+              <p class="site-author-name" itemprop="name">fourcore</p>
+              <p class="site-description motion-element" itemprop="description">Learn and live.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建虚拟环境和项目"><span class="nav-number">1.</span> <span class="nav-text">创建虚拟环境和项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进行Django项目的基本设置"><span class="nav-number">2.</span> <span class="nav-text">进行Django项目的基本设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fourcore</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
