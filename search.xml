@@ -9,16 +9,16 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[pyCharm中Django项目的基本配置]]></title>
-    <url>%2F2018%2F05%2F28%2FpyCharm%E4%B8%ADDjango%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%2F</url>
+    <title><![CDATA[pyCharm中创建2.0Django项目]]></title>
+    <url>%2F2018%2F05%2F28%2FpyCharm%E4%B8%AD%E5%88%9B%E5%BB%BA2.0Django%E9%A1%B9%E7%9B%AE%2F</url>
     <content type="text"><![CDATA[1.创建虚拟环境 2.如果没有出现报错,就说明环境创建成功,我们所创建的文件名就是项目名称 3.在项目目录下的init.py中导入数据库模块 4.打开终端模式,输入python manage.py startapp my_app创建一个名为my_app的应用 5.应用创建后,我们需要在项目目录下的settings.py中进行关于应用,连接数据库等的设置 进行应用的添加 进行数据库的配置 进行语言和时区的设置 进行静态文件路径的设置 6.项目的基本配置完成后,我们就可以使用在终端模式下使用python manage.py runserver启动我们的服务器啦,出现以下画面就代表配置成功 7.输出localhost查看我们的服务器,出现以下画面,说明我们配置的没有问题 总结:以上就是我们一个项目的基本配置,当然我们创建应用后进行功能的实现,还需要对url.py进行路径的设置,以及在应用目录下对models.py,views.py的编写.]]></content>
       <categories>
         <category>Django</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[pyCharm中创建2.0Django项目]]></title>
-    <url>%2F2018%2F05%2F28%2FpyCharm%E4%B8%AD%E5%88%9B%E5%BB%BA2.0Django%E9%A1%B9%E7%9B%AE%2F</url>
+    <title><![CDATA[pyCharm中Django项目的基本配置]]></title>
+    <url>%2F2018%2F05%2F28%2FpyCharm%E4%B8%ADDjango%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[1.创建虚拟环境 2.如果没有出现报错,就说明环境创建成功,我们所创建的文件名就是项目名称 3.在项目目录下的init.py中导入数据库模块 4.打开终端模式,输入python manage.py startapp my_app创建一个名为my_app的应用 5.应用创建后,我们需要在项目目录下的settings.py中进行关于应用,连接数据库等的设置 进行应用的添加 进行数据库的配置 进行语言和时区的设置 进行静态文件路径的设置 6.项目的基本配置完成后,我们就可以使用在终端模式下使用python manage.py runserver启动我们的服务器啦,出现以下画面就代表配置成功 7.输出localhost查看我们的服务器,出现以下画面,说明我们配置的没有问题 总结:以上就是我们一个项目的基本配置,当然我们创建应用后进行功能的实现,还需要对url.py进行路径的设置,以及在应用目录下对models.py,views.py的编写.]]></content>
       <categories>
         <category>Django</category>
