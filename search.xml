@@ -1,59 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[创建1.11版本的Django项目]]></title>
-    <url>%2F2018%2F06%2F02%2F%E5%88%9B%E5%BB%BA1-11%E7%89%88%E6%9C%AC%E7%9A%84Django%E9%A1%B9%E7%9B%AE%2F</url>
-    <content type="text"><![CDATA[创建虚拟环境和项目 在一个经常使用的目录下创建一个专门用于存放虚拟环境的文件夹和专门用于存放项目的文件夹,这里我创建的环境文件夹为env,项目文件夹为workspace,做到项目与环境的分离,方便以后管理 打开cmd: 12345cd env[python -m virtualenv practice] # 创建一个名为practice的虚拟环境,自带有第三方包virtualenv --no-site-packages practice #创建一个名字practice的虚拟环境,不带第三方包cd Scriptsactivate # 进入虚拟环境 然后在虚拟环境下: 1234cd ../../.. # 回到用户目录下cd workspace # 进入到项目文件中pip install django==1.11 # 这里可以指定django的版本.如果只输入django默认安装最新版本django-admin startproject practice # 创建一个名为practice的项目 进行Django项目的基本设置 项目创建完成后,使用pycharm打开该文件 打开项目,准备导入创建好的虚拟环境,步骤为File—&gt;settings—&gt;Project:practice—&gt;Project interpreter—&gt;选择showall—&gt;选择右边的加号—&gt;选择Existing environment 导入我们创建的虚拟环境即可 接下来在pycharm中的Terminal终端中创建我们的项目,当然也可以在cmd中创建(必须在虚拟环境下创建),方法是一样的: 1python manage.py startapp work 接下来就可以在项目目录下的settings.py文件中进行配置了 添加安装好的APP 添加我们的模板路径,模板文件需要我们自己创建,名字为templates,该文件夹用于存放我们创建的网页 添加我们的数据库信息 进行语言和时区的配置以后添加静态文件路径,静态文件用于存放在我们需要使用的CSS,JS,IMG等信息 添加媒体文件路径,媒体文件夹需要我们自己创建,该文件用于存放项目需要的媒体文件 在项目文件夹下init.py文件中导入我们的pymysql 这些设置完成后,django基本配置就已经完成,我们在终端中启动服务器: 1python manage.py runserver 如果出现以下画面则说明我们配置成功了 总结这是在django1.11中进行服务的基本配置,django2.x版本中和django1.x版本的配置基本上是大同小异,在语法方面和模块方面,除了个别模块名字不同以外,其他的都是一样的,最大的区别就是在urls.py中1.11版本是使用正则表达式进行匹配路径,而在2.x版本中是可以直接使用相对路径的.]]></content>
+<search> 
+  
+    
+    <entry>
+      <title>创建1.11版本的Django项目</title>
+      <link href="/2018/06/02/%E5%88%9B%E5%BB%BA1-11%E7%89%88%E6%9C%AC%E7%9A%84Django%E9%A1%B9%E7%9B%AE/"/>
+      <url>/2018/06/02/%E5%88%9B%E5%BB%BA1-11%E7%89%88%E6%9C%AC%E7%9A%84Django%E9%A1%B9%E7%9B%AE/</url>
+      <content type="html"><![CDATA[<h4 id="创建虚拟环境和项目"><a href="#创建虚拟环境和项目" class="headerlink" title="创建虚拟环境和项目"></a>创建虚拟环境和项目</h4><ul><li><p>在一个经常使用的目录下创建一个专门用于存放虚拟环境的文件夹和专门用于存放项目的文件夹,这里我创建的环境文件夹为env,项目文件夹为workspace,做到项目与环境的分离,方便以后管理</p></li><li><p>打开cmd:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd env</span><br><span class="line">[python -m virtualenv practice] # 创建一个名为practice的虚拟环境,自带有第三方包</span><br><span class="line">virtualenv --no-site-packages practice #创建一个名字practice的虚拟环境,不带第三方包</span><br><span class="line">cd Scripts</span><br><span class="line">activate # 进入虚拟环境</span><br></pre></td></tr></table></figure></li><li><p>然后在虚拟环境下:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd ../../.. # 回到用户目录下</span><br><span class="line">cd workspace # 进入到项目文件中</span><br><span class="line">pip install django==1.11 # 这里可以指定django的版本.如果只输入django默认安装最新版本</span><br><span class="line">django-admin startproject practice # 创建一个名为practice的项目</span><br></pre></td></tr></table></figure></li></ul><h4 id="进行Django项目的基本设置"><a href="#进行Django项目的基本设置" class="headerlink" title="进行Django项目的基本设置"></a>进行Django项目的基本设置</h4><ul><li><p>项目创建完成后,使用pycharm打开该文件</p><p><img src="创建1-11版本的Django项目\TIM截图20180530193657.png" alt=""></p></li></ul><ul><li><p>打开项目,准备导入创建好的虚拟环境,步骤为File—&gt;settings—&gt;Project:practice—&gt;Project interpreter—&gt;选择showall—&gt;选择右边的加号—&gt;选择Existing environment</p><p>导入我们创建的虚拟环境即可</p></li><li><p>接下来在pycharm中的Terminal终端中创建我们的项目,当然也可以在cmd中创建(必须在虚拟环境下创建),方法是一样的:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py startapp work</span><br></pre></td></tr></table></figure></li><li><p>接下来就可以在项目目录下的settings.py文件中进行配置了</p><ul><li><p>添加安装好的APP</p><p><img src="创建1-11版本的Django项目\TIM截图20180530195035.png" alt=""></p></li><li><p>添加我们的模板路径,模板文件需要我们自己创建,名字为templates,该文件夹用于存放我们创建的网页</p><p><img src="创建1-11版本的Django项目\TIM截图20180530195313.png" alt=""></p></li><li><p>添加我们的数据库信息</p><p><img src="创建1-11版本的Django项目\TIM截图20180530195732.png" alt=""></p></li><li><p>进行语言和时区的配置以后添加静态文件路径,静态文件用于存放在我们需要使用的CSS,JS,IMG等信息</p><p><img src="创建1-11版本的Django项目\TIM截图20180530195836.png" alt=""></p></li><li><p>添加媒体文件路径,媒体文件夹需要我们自己创建,该文件用于存放项目需要的媒体文件</p><p><img src="创建1-11版本的Django项目\TIM截图20180602102738.png" alt=""></p></li><li><p>在项目文件夹下init.py文件中导入我们的pymysql</p><p><img src="创建1-11版本的Django项目\TIM截图20180530201121.png" alt=""></p></li><li><p>这些设置完成后,django基本配置就已经完成,我们在终端中启动服务器:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure></li><li><p>如果出现以下画面则说明我们配置成功了</p><p><img src="创建1-11版本的Django项目\TIM截图20180530201257.png" alt=""></p></li></ul></li></ul><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>这是在django1.11中进行服务的基本配置,django2.x版本中和django1.x版本的配置基本上是大同小异,在语法方面和模块方面,除了个别模块名字不同以外,其他的都是一样的,最大的区别就是在urls.py中1.11版本是使用正则表达式进行匹配路径,而在2.x版本中是可以直接使用相对路径的.</p>]]></content>
+      
       <categories>
-        <category>Django</category>
+          
+          <category> Django </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[pyCharm中创建2.0Django项目]]></title>
-    <url>%2F2018%2F05%2F28%2FpyCharm%E4%B8%AD%E5%88%9B%E5%BB%BA2.0Django%E9%A1%B9%E7%9B%AE%2F</url>
-    <content type="text"><![CDATA[1.创建虚拟环境 2.如果没有出现报错,就说明环境创建成功,我们所创建的文件名就是项目名称 3.在项目目录下的init.py中导入数据库模块 4.打开终端模式,输入python manage.py startapp my_app创建一个名为my_app的应用 5.应用创建后,我们需要在项目目录下的settings.py中进行关于应用,连接数据库等的设置 进行应用的添加 进行数据库的配置 进行语言和时区的设置 进行静态文件路径的设置 6.项目的基本配置完成后,我们就可以使用在终端模式下使用python manage.py runserver启动我们的服务器啦,出现以下画面就代表配置成功 7.输出localhost查看我们的服务器,出现以下画面,说明我们配置的没有问题 总结:以上就是我们一个项目的基本配置,当然我们创建应用后进行功能的实现,还需要对url.py进行路径的设置,以及在应用目录下对models.py,views.py的编写.]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>pyCharm中Django项目的基本配置</title>
+      <link href="/2018/05/28/pyCharm%E4%B8%ADDjango%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/"/>
+      <url>/2018/05/28/pyCharm%E4%B8%ADDjango%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<p>1.创建虚拟环境</p><p><img src="pyCharm中Django项目的基本配置\TIM截图20180528010341.png" alt=""></p><p>2.如果没有出现报错,就说明环境创建成功,我们所创建的文件名就是项目名称</p><p>3.在项目目录下的init.py中导入数据库模块</p><p><img src="pyCharm中Django项目的基本配置\TIM截图20180528012528.png" alt=""></p><p>4.打开终端模式,输入python manage.py startapp my_app创建一个名为my_app的应用</p><p><img src="pyCharm中Django项目的基本配置\TIM截图20180528012852.png" alt=""></p><p>5.应用创建后,我们需要在项目目录下的settings.py中进行关于应用,连接数据库等的设置</p><p>进行应用的添加</p><p><img src="pyCharm中Django项目的基本配置\TIM截图20180528013546.png" alt=""></p><p>进行数据库的配置</p><p><img src="pyCharm中Django项目的基本配置\TIM截图20180528013742.png" alt=""></p><p>进行语言和时区的设置</p><p><img src="pyCharm中Django项目的基本配置\TIM截图20180528014449.png" alt=""><br>进行静态文件路径的设置</p><p>6.项目的基本配置完成后,我们就可以使用在终端模式下使用python manage.py runserver启动我们的服务器啦,出现以下画面就代表配置成功</p><p><img src="pyCharm中Django项目的基本配置\TIM截图20180528015717.png" alt=""></p><p>7.输出localhost查看我们的服务器,出现以下画面,说明我们配置的没有问题</p><p><img src="pyCharm中Django项目的基本配置\TIM截图20180528015904.png" alt=""></p><p>总结:以上就是我们一个项目的基本配置,当然我们创建应用后进行功能的实现,还需要对url.py进行路径的设置,以及在应用目录下对models.py,views.py的编写.</p>]]></content>
+      
       <categories>
-        <category>Django</category>
+          
+          <category> Django </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[pyCharm中Django项目的基本配置]]></title>
-    <url>%2F2018%2F05%2F28%2FpyCharm%E4%B8%ADDjango%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[1.创建虚拟环境 2.如果没有出现报错,就说明环境创建成功,我们所创建的文件名就是项目名称 3.在项目目录下的init.py中导入数据库模块 4.打开终端模式,输入python manage.py startapp my_app创建一个名为my_app的应用 5.应用创建后,我们需要在项目目录下的settings.py中进行关于应用,连接数据库等的设置 进行应用的添加 进行数据库的配置 进行语言和时区的设置 进行静态文件路径的设置 6.项目的基本配置完成后,我们就可以使用在终端模式下使用python manage.py runserver启动我们的服务器啦,出现以下画面就代表配置成功 7.输出localhost查看我们的服务器,出现以下画面,说明我们配置的没有问题 总结:以上就是我们一个项目的基本配置,当然我们创建应用后进行功能的实现,还需要对url.py进行路径的设置,以及在应用目录下对models.py,views.py的编写.]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>pyCharm中创建2.0Django项目</title>
+      <link href="/2018/05/28/pyCharm%E4%B8%AD%E5%88%9B%E5%BB%BA2.0Django%E9%A1%B9%E7%9B%AE/"/>
+      <url>/2018/05/28/pyCharm%E4%B8%AD%E5%88%9B%E5%BB%BA2.0Django%E9%A1%B9%E7%9B%AE/</url>
+      <content type="html"><![CDATA[<p>1.创建虚拟环境</p><p><img src="pyCharm中创建2.0Django项目\TIM截图20180528010341.png" alt=""></p><p>2.如果没有出现报错,就说明环境创建成功,我们所创建的文件名就是项目名称</p><p>3.在项目目录下的init.py中导入数据库模块</p><p><img src="pyCharm中创建2.0Django项目\TIM截图20180528012528.png" alt=""></p><p>4.打开终端模式,输入python manage.py startapp my_app创建一个名为my_app的应用</p><p><img src="pyCharm中创建2.0Django项目\TIM截图20180528012852.png" alt=""></p><p>5.应用创建后,我们需要在项目目录下的settings.py中进行关于应用,连接数据库等的设置</p><p>进行应用的添加</p><p><img src="pyCharm中创建2.0Django项目\TIM截图20180528013546.png" alt=""></p><p>进行数据库的配置</p><p><img src="pyCharm中创建2.0Django项目\TIM截图20180528013742.png" alt=""></p><p>进行语言和时区的设置</p><p><img src="pyCharm中创建2.0Django项目\TIM截图20180528014449.png" alt=""><br>进行静态文件路径的设置</p><p>6.项目的基本配置完成后,我们就可以使用在终端模式下使用python manage.py runserver启动我们的服务器啦,出现以下画面就代表配置成功</p><p><img src="pyCharm中创建2.0Django项目\TIM截图20180528015717.png" alt=""></p><p>7.输出localhost查看我们的服务器,出现以下画面,说明我们配置的没有问题</p><p><img src="pyCharm中创建2.0Django项目\TIM截图20180528015904.png" alt=""></p><p>总结:以上就是我们一个项目的基本配置,当然我们创建应用后进行功能的实现,还需要对url.py进行路径的设置,以及在应用目录下对models.py,views.py的编写.</p>]]></content>
+      
       <categories>
-        <category>Django</category>
+          
+          <category> Django </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[Linux下git的使用]]></title>
-    <url>%2F2018%2F05%2F27%2FLinux%E4%B8%8Bgit%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[yum install git : 安装git git init:初始化创建本地仓库 git –version :查看git版本 git add :项目放入本地的缓存区 git commit -m ‘描述’:将项目放入本地的仓库中,并附带描述 git status:查看文件状态 git log:查看日志 git relog:当使用reset回到之前的版本时,可以使用该命令查看该版本之后的版本 git reset –hard 标识码:可以回到标识码所标记的版本 git checkout – (文件名) :撤销缓冲区中的项目,需要修改之后重新提交到缓冲区 git clone url:从服务器将项目拷贝到本地 git push origin master:将本地仓库中的文件提交到服务器的master的分支上 git pull:将服务器中的项目拉下来 git remote add origin url:将本地仓库与远程仓库对接 git push -u origin master:对接之后将项目提交到远程仓库 git branch 分支名:在本地创建分支 git branch:查看当前所处分支 git checkout 分支名:切换分支 git merge 分支名:将分支合并入master分支 git push origin master:将项目提交到master分支 git rm 文件名:删除文件 git branch -D 分支名:删除本地某个分支 git push origin :分支名:删除远程分支 Git日常工作流程 从远端拉取项目(前提是本地无该项目): git clone {url} #从远端克隆项目 cd {dir} #克隆到本地后,进入项目 git branch {name} # 创建分支,一般修改项目不要在master主分支中修改 git branch #查看有哪些分支 git checkout {name} #切换到指定的分支,默认所处分支是master主分支 git add . # 切换成功后,在非主分支中,将修改的项目提交到缓冲区,&lt;.&gt;代表提交所有文件,也可以输入文件名提交指定的文件,文件不能为空,否则无法提交 git rm {filename} # 删除文件, 如果是文件夹需要输入git rm -r 文件夹进行遍历删除 git commit -m ‘描述’ # 将缓冲区的文件提交到本地仓库中并附带描述 git push origin {branch} # 将本地仓库的文件提交到远程仓库的分支,哪个分支由自己指定 将本地文件上传到远端(前提是本地有文件): cd 文件夹 # 进入文件夹 git init : # 初始化本地仓库,必须保证该文件夹中没有.git文件 git add . # 将文件中的内容提交到缓冲区 git commit -m ‘11’ # 将缓冲区的文件提交到本地仓库 git remote add origin {url} # 将本地仓库与远程仓库对接 git push -f origin master # 本地强制上传到远程，把远程的覆盖 注:第6部可以使用git pull –rebase origin master ——-&gt; git push -u origin master代替,但是最好使用第6部的方法,因为–rebase是拉取远端仓库覆盖本地,然后我们再上传,涉及到了两步操作.]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Linux下git的使用</title>
+      <link href="/2018/05/27/Linux%E4%B8%8Bgit%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+      <url>/2018/05/27/Linux%E4%B8%8Bgit%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+      <content type="html"><![CDATA[<ul><li>yum install git : 安装git</li><li>git init:初始化创建本地仓库</li><li>git –version :查看git版本</li><li>git add :项目放入本地的缓存区</li><li>git commit -m ‘描述’:将项目放入本地的仓库中,并附带描述</li><li>git status:查看文件状态</li><li>git log:查看日志</li><li>git relog:当使用reset回到之前的版本时,可以使用该命令查看该版本之后的版本</li><li>git reset –hard 标识码:可以回到标识码所标记的版本</li><li>git checkout – (文件名) :撤销缓冲区中的项目,需要修改之后重新提交到缓冲区</li><li>git clone url:从服务器将项目拷贝到本地</li><li>git push origin master:将本地仓库中的文件提交到服务器的master的分支上</li><li>git pull:将服务器中的项目拉下来</li><li>git remote add origin url:将本地仓库与远程仓库对接</li><li>git push -u origin master:对接之后将项目提交到远程仓库</li><li>git branch 分支名:在本地创建分支</li><li>git branch:查看当前所处分支</li><li>git checkout 分支名:切换分支</li><li>git merge 分支名:将分支合并入master分支</li><li>git push origin master:将项目提交到master分支</li><li>git rm 文件名:删除文件</li><li>git branch -D 分支名:删除本地某个分支</li><li>git push origin :分支名:删除远程分支</li></ul><h2 id="Git日常工作流程"><a href="#Git日常工作流程" class="headerlink" title="Git日常工作流程"></a>Git日常工作流程</h2><ul><li>从远端拉取项目(前提是本地无该项目):</li></ul><ol><li>git clone {url}    #从远端克隆项目</li><li>cd {dir}    #克隆到本地后,进入项目</li><li>git branch {name}   # 创建分支,一般修改项目不要在master主分支中修改</li><li>git branch #查看有哪些分支</li><li>git checkout {name} #切换到指定的分支,默认所处分支是master主分支</li><li>git add . # 切换成功后,在非主分支中,将修改的项目提交到缓冲区,&lt;.&gt;代表提交所有文件,也可以输入文件名提交指定的文件,文件不能为空,否则无法提交</li><li>git rm {filename} # 删除文件, 如果是文件夹需要输入git rm -r 文件夹进行遍历删除</li><li>git commit -m ‘描述’ # 将缓冲区的文件提交到本地仓库中并附带描述</li><li>git push origin {branch} # 将本地仓库的文件提交到远程仓库的分支,哪个分支由自己指定</li></ol><ul><li>将本地文件上传到远端(前提是本地有文件):</li></ul><ol><li>cd 文件夹 # 进入文件夹</li><li>git init : # 初始化本地仓库,必须保证该文件夹中没有.git文件</li><li>git add . # 将文件中的内容提交到缓冲区</li><li>git commit -m ‘11’ # 将缓冲区的文件提交到本地仓库</li><li>git remote add origin {url} # 将本地仓库与远程仓库对接</li><li><p>git push -f origin master # 本地强制上传到远程，把远程的覆盖</p><p>注:第6部可以使用git pull –rebase origin master ——-&gt; git push -u origin master代替,但是最好使用第6部的方法,因为–rebase是拉取远端仓库覆盖本地,然后我们再上传,涉及到了两步操作.</p></li></ol>]]></content>
+      
       <categories>
-        <category>Linux</category>
+          
+          <category> Linux </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[redis服务器的基本配置]]></title>
-    <url>%2F2018%2F05%2F27%2Fredis%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[启动redis服务器 配置redis.conf文件 bind &lt;内网地址&gt; port &lt;端口号&gt; requirepass &lt;服务器密码&gt; 启动redis服务器 redis-server redis.conf &amp; 启动redis客户端 redis-cli -h &lt;服务器地址&gt; -p &lt;服务器端口&gt; -a &lt;服务器密码&gt; 进去之后输入Info replication查看master,slaver信息 redis中主从切换在作为master的服务器中: 在redis.conf文件中写入masterauth &lt;master服务器密码&gt; 注:这里需要输入将来可能成为master的服务器密码,哨兵在投票时可以设定优先级使得指定的slave服务器上位. 在sentinel.conf文件中进行哨兵的配置 bind &lt;本服务器内网地址&gt; port &lt;哨兵端口号&gt; sentinel monitor mymaster &lt;master服务器地址&gt; &lt;master服务器端口号&gt; &lt; 投票数&gt;至少小于哨兵个数的一半) sentinel auth-pass mymaster &lt;master服务器密码&gt; sentinel down-after-milliseconds mymaster 5000:指定服务器已经断线所需的毫秒数,超时则主观下线 sentinel failover-timeout mymaster 18000:表示master上线超时期限,超时则客观下线 在作为salve的服务器中: 在redis.conf文件中写入slaveof &lt;master服务器外网地址&gt; &lt;master服务器端口号 &gt; 在redis.conf文件中写入 masterauth &lt;master服务器密码&gt;]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>redis服务器的基本配置</title>
+      <link href="/2018/05/27/redis%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/"/>
+      <url>/2018/05/27/redis%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<h3 id="启动redis服务器"><a href="#启动redis服务器" class="headerlink" title="启动redis服务器"></a>启动redis服务器</h3><ul><li>配置redis.conf文件<ul><li>bind &lt;内网地址&gt;</li><li>port &lt;端口号&gt;</li><li>requirepass &lt;服务器密码&gt;</li></ul></li><li>启动redis服务器<ul><li>redis-server redis.conf &amp;</li></ul></li><li>启动redis客户端<ul><li>redis-cli -h &lt;服务器地址&gt; -p &lt;服务器端口&gt; -a &lt;服务器密码&gt;</li><li>进去之后输入Info replication查看master,slaver信息</li></ul></li></ul><h2 id="redis中主从切换"><a href="#redis中主从切换" class="headerlink" title="redis中主从切换"></a>redis中主从切换</h2><p>在作为master的服务器中:</p><ul><li>在redis.conf文件中写入masterauth &lt;master服务器密码&gt;  注:这里需要输入将来可能成为master的服务器密码,哨兵在投票时可以设定优先级使得指定的slave服务器上位.</li><li>在sentinel.conf文件中进行哨兵的配置<ul><li>bind &lt;本服务器内网地址&gt;</li><li>port &lt;哨兵端口号&gt;</li><li>sentinel monitor mymaster &lt;master服务器地址&gt;  &lt;master服务器端口号&gt; &lt; 投票数&gt;至少小于哨兵个数的一半)</li><li>sentinel auth-pass mymaster &lt;master服务器密码&gt;</li><li>sentinel down-after-milliseconds mymaster <5000> 5000:指定服务器已经断线所需的毫秒数,超时则主观下线</5000></li><li>sentinel failover-timeout mymaster <18000> 18000:表示master上线超时期限,超时则客观下线</18000></li></ul></li></ul><p>在作为salve的服务器中:</p><ul><li>在redis.conf文件中写入slaveof &lt;master服务器外网地址&gt; &lt;master服务器端口号 &gt;</li><li>在redis.conf文件中写入 masterauth &lt;master服务器密码&gt;</li></ul>]]></content>
+      
       <categories>
-        <category>Linux</category>
+          
+          <category> Linux </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[Linux常用命令]]></title>
-    <url>%2F2018%2F05%2F27%2FLinux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
-    <content type="text"><![CDATA[uname:查看操作系统 cat /ect/centos-release:查看操作系统版本 ps -ef (| grep &lt;进程名&gt;):查看进程,使用管道可以查询某个进程 top :查看进程,是进程的当前状态一次性快照属于动态查看,ps -ef 是进程过去状态的一次性快照,属于静态查看 netstat -nap:查看进程状态,例如listening ,connected等 ifconfig -a:查看ip地址 kill (-9) PID:关闭一个进程,-9显示最高级别的删除,强制终止,可能会导致数据丢失 adduser 用户名:创建一个非root的用户,权限较低 userdel 用户名:删除指定用户 passwd 用户名:为指定用户添加密码,若用户已有密码,则修改密码,如果不添加用户名,则默认修改当前用户密码 logout(exit):退出当前用户 su 用户名:切换用户 shutdown(init 0):关机 reboot(init 6):重启 man 指令:查看指令手册 info 指令:更为详细的解释指令 指令 –help:查看指令帮助 whatis 指令: 简短解释指令 whereis 指令(文件):从Linux的数据库中查询指定指令或者文件 find 文件:用于查询文件 pwd:查看当前所处目录 sudo 指令:使用管理员身份运行指令,普通用户使用该命令 mkdir 文件夹:创建一个空的文件夹 rmdie 文件夹:删除一个空的文件夹 touch 文件:创建一个文件 rm -rf 文件(文件夹):递归删除一个文件夹,也可以用户删除文件 ls -al:查看当前目录所有文件的长格式,包括隐藏文件 cd :改变目录 cat -n 文件:查看文件内容并显示行数 cat -n | more(less):一页一页的查看文件内容 head -num 文件:查看文件的开头几行 tail -num 文件:查看文件的末尾几行 cp 文件 文件路径/(文件名):将文件拷贝到文件夹中,同时可以对其重命名 mv 文件 文件:对文件进行重命名 mv 文件 文件路径/(文件名):将文件剪切到文件夹中,同时可以对其重命名 grep 搜索内容 文件 :在文件中搜索指定内容 cat 文件 | grep 内容:在文件中搜索指定内容并查看 ctrl c:终止正在前台运行的程序 ctrl z:将前台正在运行的程序拿到后台并停止运行 jobs:查看后台有无程序在执行 fg %num:将后台正在执行的任务拿到前台 bg %num:将后台停止运行的程序继续执行,一般配合ctrl z使用 wc 文件 (-l -w -c):计算文件中有多少行,多少字符,多少字节 diff 文件 文件:比较两个文件的差别 file 文件:查看文件性质 history:查看历史命令 last:查看登陆历史 echo:回声命令,其实功能很强大,暂时还没怎么研究 ssh + 用户名@IP地址:登陆到其他用户 ln 文件名 文件夹路径:在某个文件夹中为文件创建一个硬链接 ln -s 文件路径 /user/bin:为一个程序创建一个软链接 gunzip 压缩文件(后缀为gz):对一个文件进行解压缩 gzip 文件:将一个文件压缩成.gz后缀文件 xz -d 压缩文件(后缀为xz):对一个文件进行解压缩 xz -z 文件:将一个文件压缩成xz后缀文件 tar -xvf 归档文件:解归档 tar -cvf 文件名 文件,文件,…(*):将文件进行归档并对归档后的文件进行命名 tar -tf 归档文件:读取归档文件中的内容 wget url:下载指定网址内容 alias 新命令 ‘旧命令’:为一个命令重新进行命名 unalias 命令:取消重命名 chmod 755 文件:将文件的执行模式更改为当前用户可读可写可执行,其他用户或者组成员只能读和执行 vim的命令模式 vim的默行模式 yum install 软件:安装开源软件 yum list installed:查看安装的所有软件 yum search 软件:搜索软件 yum update 软件:更新软件 rpm -ivh 软件:安装软件,可以查看安装过程 rpm -e 软件:删除软件 rpm -qa:查看所有安装的软件 rpm -qa | grep 软件:搜索安装的某个文件 rpm -qa |grep 软件 | xargs rpm -r :搜索软件并将其删除 nginx:启动nginx nginx -s stop:停止nginx,也可以使用kill 进程号来结束进程 systemctl start mariadb:启动MySQL,systemctl命令用于执行系统服务 systemctl stop mariadb:停止MySQL systemctl status mariadb:查看服务的运行状态 systemctl enable mariadb:开机自启MySQL systemctl disable mariadb:取消自启MySQL make &amp;&amp; make install:进行源代码安装 redis-server redis.conf :启动redis服务器 redis-cli -h ip:连接redis服务器 auth password:连接服务器后输入密码 pip3 install ipython:安装ipython ln -s /user/local/python3.6/bin/ipython3 /user/bin/ipython3:创建软链接 firewall-cmd –zone=public –list-ports:查看防火墙所有的打开端口 firewall-cmd –zone=public –add-port=80/tcp –permanent:永久打开防火墙80端口 firewall-cmd –zone=public –remove-port=80/tcp –permanent:永久删除防火墙80端口 注:括号中的操作代表可选操作]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Linux常用命令</title>
+      <link href="/2018/05/27/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+      <url>/2018/05/27/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<ul><li>uname:查看操作系统</li><li>cat /ect/centos-release:查看操作系统版本</li><li>ps -ef (| grep &lt;进程名&gt;):查看进程,使用管道可以查询某个进程</li><li>top :查看进程,是进程的当前状态一次性快照属于动态查看,ps -ef 是进程过去状态的一次性快照,属于静态查看</li><li>netstat -nap:查看进程状态,例如listening ,connected等</li><li>ifconfig -a:查看ip地址</li><li>kill (-9)  PID:关闭一个进程,-9显示最高级别的删除,强制终止,可能会导致数据丢失</li><li>adduser 用户名:创建一个非root的用户,权限较低</li><li>userdel 用户名:删除指定用户</li><li>passwd 用户名:为指定用户添加密码,若用户已有密码,则修改密码,如果不添加用户名,则默认修改当前用户密码</li><li>logout(exit):退出当前用户</li><li>su 用户名:切换用户</li><li>shutdown(init 0):关机</li><li>reboot(init 6):重启</li><li>man 指令:查看指令手册</li><li>info 指令:更为详细的解释指令</li><li>指令 –help:查看指令帮助</li><li>whatis 指令: 简短解释指令</li><li>whereis 指令(文件):从Linux的数据库中查询指定指令或者文件</li><li>find 文件:用于查询文件</li><li>pwd:查看当前所处目录</li><li>sudo 指令:使用管理员身份运行指令,普通用户使用该命令</li><li>mkdir 文件夹:创建一个空的文件夹</li><li>rmdie 文件夹:删除一个空的文件夹</li><li>touch 文件:创建一个文件</li><li>rm -rf 文件(文件夹):递归删除一个文件夹,也可以用户删除文件</li><li>ls -al:查看当前目录所有文件的长格式,包括隐藏文件</li><li>cd :改变目录 </li><li>cat -n 文件:查看文件内容并显示行数</li><li>cat -n | more(less):一页一页的查看文件内容</li><li>head -num 文件:查看文件的开头几行</li><li>tail -num 文件:查看文件的末尾几行</li><li>cp 文件 文件路径/(文件名):将文件拷贝到文件夹中,同时可以对其重命名</li><li>mv 文件 文件:对文件进行重命名</li><li>mv 文件 文件路径/(文件名):将文件剪切到文件夹中,同时可以对其重命名</li><li>grep 搜索内容 文件 :在文件中搜索指定内容</li><li>cat 文件 | grep 内容:在文件中搜索指定内容并查看</li><li>ctrl c:终止正在前台运行的程序</li><li>ctrl z:将前台正在运行的程序拿到后台并停止运行</li><li>jobs:查看后台有无程序在执行</li><li>fg %num:将后台正在执行的任务拿到前台</li><li>bg %num:将后台停止运行的程序继续执行,一般配合ctrl z使用</li><li>wc 文件 (-l -w -c):计算文件中有多少行,多少字符,多少字节</li><li>diff 文件 文件:比较两个文件的差别</li><li>file 文件:查看文件性质</li><li>history:查看历史命令</li><li>last:查看登陆历史</li><li>echo:回声命令,其实功能很强大,暂时还没怎么研究</li><li>ssh + 用户名@IP地址:登陆到其他用户</li><li>ln 文件名 文件夹路径:在某个文件夹中为文件创建一个硬链接</li><li>ln -s 文件路径 /user/bin:为一个程序创建一个软链接</li><li>gunzip 压缩文件(后缀为gz):对一个文件进行解压缩</li><li>gzip 文件:将一个文件压缩成.gz后缀文件</li><li>xz -d 压缩文件(后缀为xz):对一个文件进行解压缩</li><li>xz -z 文件:将一个文件压缩成xz后缀文件</li><li>tar -xvf 归档文件:解归档</li><li>tar -cvf  文件名 文件,文件,…(*):将文件进行归档并对归档后的文件进行命名</li><li>tar -tf 归档文件:读取归档文件中的内容</li><li>wget url:下载指定网址内容</li><li>alias 新命令 ‘旧命令’:为一个命令重新进行命名</li><li>unalias 命令:取消重命名</li><li>chmod 755 文件:将文件的执行模式更改为当前用户可读可写可执行,其他用户或者组成员只能读和执行</li><li>vim的命令模式</li><li>vim的默行模式</li><li>yum install 软件:安装开源软件</li><li>yum list installed:查看安装的所有软件</li><li>yum search 软件:搜索软件</li><li>yum update 软件:更新软件</li><li>rpm -ivh 软件:安装软件,可以查看安装过程</li><li>rpm -e 软件:删除软件</li><li>rpm -qa:查看所有安装的软件</li><li>rpm -qa | grep 软件:搜索安装的某个文件</li><li>rpm -qa |grep 软件 | xargs rpm -r :搜索软件并将其删除</li><li>nginx:启动nginx</li><li>nginx -s stop:停止nginx,也可以使用kill 进程号来结束进程</li><li>systemctl start mariadb:启动MySQL,systemctl命令用于执行系统服务</li><li>systemctl stop mariadb:停止MySQL</li><li>systemctl status mariadb:查看服务的运行状态</li><li>systemctl enable mariadb:开机自启MySQL</li><li>systemctl disable mariadb:取消自启MySQL</li><li>make &amp;&amp; make install:进行源代码安装</li><li>redis-server redis.conf :启动redis服务器</li><li>redis-cli -h ip:连接redis服务器</li><li>auth password:连接服务器后输入密码</li><li>pip3 install ipython:安装ipython</li><li>ln -s /user/local/python3.6/bin/ipython3 /user/bin/ipython3:创建软链接</li><li>firewall-cmd –zone=public –list-ports:查看防火墙所有的打开端口</li><li>firewall-cmd –zone=public –add-port=80/tcp –permanent:永久打开防火墙80端口</li><li>firewall-cmd –zone=public –remove-port=80/tcp –permanent:永久删除防火墙80端口 </li></ul><p>注:括号中的操作代表可选操作</p>]]></content>
+      
       <categories>
-        <category>Linux</category>
+          
+          <category> Linux </category>
+          
       </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2018%2F05%2F26%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2018/05/26/hello-world/"/>
+      <url>/2018/05/26/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+    </entry>
+    
+  
+  
 </search>
