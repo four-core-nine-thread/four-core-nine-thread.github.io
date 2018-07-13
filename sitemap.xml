@@ -2,17 +2,17 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <sitemap>
-        <loc>http://four-core-nine-thread.github.io/post-sitemap.xml</loc>
+        <loc>http://yoursite.com/post-sitemap.xml</loc>
         <lastmod>2018-06-02T06:04:12.237Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://four-core-nine-thread.github.io/page-sitemap.xml</loc>
+        <loc>http://yoursite.com/page-sitemap.xml</loc>
         <lastmod>2018-05-27T04:20:13.315Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://four-core-nine-thread.github.io/category-sitemap.xml</loc>
+        <loc>http://yoursite.com/category-sitemap.xml</loc>
         <lastmod>2018-05-27T05:38:28.620Z</lastmod>
     </sitemap>
 
