@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Django," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="Learn and live.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ninethread&#39;blog">
-<meta property="og:url" content="http://123/index.html">
+<meta name="description" content="我先建立了一个学生与学生信息的一对一关系模型 123456789101112131415161718class Stu(models.Model):    stu_name = models.CharField(max_length=6, unique=True)    stu_sex = models.BooleanField(default=0)    stu_birth = models.D">
+<meta name="keywords" content="Django">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django通过Model查找数据遇到的问题">
+<meta property="og:url" content="http://123/2017/07/16/Django通过Model查找数据遇到的问题/index.html">
 <meta property="og:site_name" content="ninethread&#39;blog">
-<meta property="og:description" content="Learn and live.">
+<meta property="og:description" content="我先建立了一个学生与学生信息的一对一关系模型 123456789101112131415161718class Stu(models.Model):    stu_name = models.CharField(max_length=6, unique=True)    stu_sex = models.BooleanField(default=0)    stu_birth = models.D">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-14T07:58:09.851Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ninethread&#39;blog">
-<meta name="twitter:description" content="Learn and live.">
+<meta name="twitter:title" content="Django通过Model查找数据遇到的问题">
+<meta name="twitter:description" content="我先建立了一个学生与学生信息的一对一关系模型 123456789101112131415161718class Stu(models.Model):    stu_name = models.CharField(max_length=6, unique=True)    stu_sex = models.BooleanField(default=0)    stu_birth = models.D">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://123/"/>
+  <link rel="canonical" href="http://123/2017/07/16/Django通过Model查找数据遇到的问题/"/>
 
 
 
 
 
-  <title>ninethread'blog</title>
+  <title>Django通过Model查找数据遇到的问题 | ninethread'blog</title>
   
 
 
@@ -143,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -281,9 +282,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -313,9 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/16/Django通过Model查找数据遇到的问题/" itemprop="url">Django通过Model查找数据遇到的问题</a></h1>
+          <h1 class="post-title" itemprop="name headline">Django通过Model查找数据遇到的问题</h1>
         
 
         <div class="post-meta">
@@ -387,19 +386,17 @@
       
 
       
-        
-          
-          我先建立了一个学生与学生信息的一对一关系模型
-123456789101112131415161718class Stu(models.Model):    stu_name = models.CharField(max_length=6, unique=True)    stu_sex = mode
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/16/Django通过Model查找数据遇到的问题/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p>我先建立了一个学生与学生信息的一对一关系模型</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stu</span><span class="params">(models.Model)</span>:</span></span><br><span class="line"></span><br><span class="line">    stu_name = models.CharField(max_length=<span class="number">6</span>, unique=<span class="keyword">True</span>)</span><br><span class="line">    stu_sex = models.BooleanField(default=<span class="number">0</span>)</span><br><span class="line">    stu_birth = models.DateField()</span><br><span class="line">   </span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        db_table= <span class="string">'stu'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StuInfo</span><span class="params">(models.Model)</span>:</span></span><br><span class="line"></span><br><span class="line">    stu_addr = models.CharField(max_length=<span class="number">30</span>)</span><br><span class="line">    stu_age = models.IntegerField()</span><br><span class="line">    stu = models.OneToOneField(Stu)</span><br><span class="line">    </span><br><span class="line">        <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        db_table = <span class="string">'stu_info'</span></span><br></pre></td></tr></table></figure>
+<p>我根据学生去查找学生信息</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">stu = Stu.objects.all().first()</span><br><span class="line">stu_info = stu.StuInfo</span><br><span class="line">print(stu_info.stu_addr)</span><br><span class="line"><span class="keyword">return</span> render(request, <span class="string">'show_stu.html'</span>)</span><br></pre></td></tr></table></figure>
+<p>我想在调用url时,在控制台打印出我查询的数据,然后就出现报错</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Exception Value:	</span><br><span class="line"><span class="string">'Stu'</span> object has no attribute <span class="string">'StuInfo'</span></span><br></pre></td></tr></table></figure>
+<p>我通过对象去点上模型名,这样没问题啊,为什么会显示没有这个属性呢?</p>
+<p>折腾了一下,发现把表名改为小写就可以查询了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stu_info = stu.stuinfo</span><br></pre></td></tr></table></figure>
+<p>所以说在数据库查询的时候,不管是一对一还是多对多,点上表名的时候都得用小写.</p>
+
       
     </div>
     
@@ -414,289 +411,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://123/2017/07/15/Djanogo简介/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fourcore">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ninethread'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/15/Djanogo简介/" itemprop="url">Django简介</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-15T13:08:06+08:00">
-                2017-07-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Django/" itemprop="url" rel="index">
-                    <span itemprop="name">Django</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Django/" rel="tag"># Django</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          
-          Django介绍:Django是一个开放源代码的Web应用框架，由Python写成。采用了MVC的框架模式，即模型M，视图V和控制器C。它最初是被开发来用于管理劳伦斯出版集团旗下的一些以新闻内容为主的网站的，即是CMS（内容管理系统）软件。并于2005年7月在BSD许可证下发布。这套框架是以比利时的
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/15/Djanogo简介/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/15/Djanogo简介/" rel="next" title="Django简介">
+                <i class="fa fa-chevron-left"></i> Django简介
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://123/2017/07/14/这不仅仅是一个开始/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fourcore">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ninethread'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/14/这不仅仅是一个开始/" itemprop="url">这不仅仅是一个开始</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-14T11:13:06+08:00">
-                2017-07-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          我想所有的编程语言都是以善意的问候世界开始它们独特魅力的吧,我也记不清楚我用了几种语言在控制台输出Hello,World,我只知道在我学习单片机的时候抱怨C语言指针太难看不懂,也记得学习立志学习Java却在中途发现Python的输出打印如此简洁转而跑去学习Python.
-在学习Python后我没有太
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/14/这不仅仅是一个开始/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -706,136 +450,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://123/2017/06/01/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fourcore">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ninethread'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/01/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T11:13:06+08:00">
-                2017-06-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/01/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -843,6 +462,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -1046,6 +669,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
