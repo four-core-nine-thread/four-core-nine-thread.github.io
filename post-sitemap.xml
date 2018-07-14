@@ -7,54 +7,6 @@
     </url>
 
     <url>
-        <loc>http://123/2018/05/27/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-        <lastmod>2018-07-13T15:45:51.777Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://123/2018/05/28/pyCharm%E4%B8%ADDjango%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</loc>
-        <lastmod>2018-06-02T06:04:12.237Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://123/2018/05/28/pyCharm%E4%B8%AD%E5%88%9B%E5%BB%BA2.0Django%E9%A1%B9%E7%9B%AE/</loc>
-        <lastmod>2018-06-02T03:01:02.173Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://123/2018/06/02/%E5%88%9B%E5%BB%BA1-11%E7%89%88%E6%9C%AC%E7%9A%84Django%E9%A1%B9%E7%9B%AE/</loc>
-        <lastmod>2018-06-02T03:00:34.698Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://123/2018/05/27/redis%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</loc>
-        <lastmod>2018-05-27T05:38:28.620Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://123/2018/05/27/Linux%E4%B8%8Bgit%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
-        <lastmod>2018-05-27T05:34:29.137Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://123/2018/05/26/hello-world/</loc>
         <lastmod>2018-05-26T07:52:08.511Z</lastmod>
         <changefreq>weekly</changefreq>
