@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="ninethread&#39;blog">
 <meta property="og:description" content="我先建立了一个学生与学生信息的一对一关系模型 123456789101112131415161718class Stu(models.Model):    stu_name = models.CharField(max_length=6, unique=True)    stu_sex = models.BooleanField(default=0)    stu_birth = models.D">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-14T07:58:09.851Z">
+<meta property="og:updated_time" content="2018-07-14T08:15:52.924Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django通过Model查找数据遇到的问题">
 <meta name="twitter:description" content="我先建立了一个学生与学生信息的一对一关系模型 123456789101112131415161718class Stu(models.Model):    stu_name = models.CharField(max_length=6, unique=True)    stu_sex = models.BooleanField(default=0)    stu_birth = models.D">
@@ -396,6 +396,8 @@
 <p>折腾了一下,发现把表名改为小写就可以查询了</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stu_info = stu.stuinfo</span><br></pre></td></tr></table></figure>
 <p>所以说在数据库查询的时候,不管是一对一还是多对多,点上表名的时候都得用小写.</p>
+<p>如果对于某些有强迫症的人,就必须要用表名去查询数据的话,可以使用这个来指定查询的相对名字</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">    default_related_name = <span class="string">'StuInfo'</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
