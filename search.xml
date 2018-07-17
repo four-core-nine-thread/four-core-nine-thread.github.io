@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[全局设置中路径的配置]]></title>
+    <url>%2F2017%2F08%2F01%2F%E5%85%A8%E5%B1%80%E8%AE%BE%E7%BD%AE%E4%B8%AD%E8%B7%AF%E5%BE%84%E7%9A%84%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[在settings.py文件中进行模板,静态文件等的路径配置刚开始把我给绕晕了,以前没有接触到路径这一块时总感觉绝对路径多么多么好,简洁明了一眼就能看出是哪个盘哪个文件,最后发现只有windos系统才有盘符,其他系统都没有这个玩意,还有反斜杠,瞬间觉得微软才是异类. 在settings.py中BASE_DIR代表当前根目录文件的路径 1BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) 刚开始的连续的三个os.path真的把我吓住了,一眼看上去真的很复杂,然后我从里层从外层打印,分清了os.path.abspath和os.path.dirname的区别 12 12345C:\Users\29427\Desktop\sub_pyC:\Users\29427\Desktop\sub_py\test_path.pyC:\Users\29427\DesktopC:\Users\29427C:\Users\29427\Desktop 所以abspath是获得该文件的绝对路径包括文件名,dirname是获得该文件的绝对路径不包括文件名. 由上可以得出,BASE_DIR可以用下述代码进行替换 1BASE_DIR = os.path.dirname(os.path.dirname(__file__)) 在全局配置中的BASE_DIR最后得到的路径就是项目根目录的路径,将这个路径与template,media,static文件夹相拼接,就得到了相应所需的路径,比如 12STATIC_URL = '/static/'STATICFILES_DIRS = os.path.join(BASE_DIR, STATIC_URL)]]></content>
+      <categories>
+        <category>Django</category>
+      </categories>
+      <tags>
+        <tag>Django</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[F对象和Q对象]]></title>
     <url>%2F2017%2F07%2F26%2FF%E5%AF%B9%E8%B1%A1%E5%92%8CQ%E5%AF%B9%E8%B1%A1%2F</url>
     <content type="text"><![CDATA[要从数据库中查找满足某种对比条件的样本时,会使用到Django中自带的F对象,但是需要手动导入这个模块. 12gra = Grade.objects.filter(g_name='python').first()stu = gra.stu_set.filter(stu_yuwen__gte=F('stu_shuxue')) 查询一个班级中语文成绩大于等于数学成绩的学生,需要知道的是如果是直接比较而不通过F对象的话,会直接出现小红线报错. 如果我要去查询同时满足多个条件的样本时,有两种方法,一种是直接用逗号分割条件, 123gra = Grade.objects.filter(g_name='python').first()stu = gra.stu_set.filter(stu_yuwen__gte=80, stu_sex=0) 另外一种是使用Q查询对象,该对象不仅提供了’与’的运算,同时还支持’或’,’非’运算, 123gra = Grade.objects.filter(g_name='python').first()stu = gra.stu_set.filter(Q(stu_yuwen__gte=80) &amp; Q(stu_sex=0)) 查询一个班级中语文成绩大于等于80并且性别为女生的样本,Q对象提供了&amp;,|,~三种逻辑运算,所以可以很方便进行筛选查找,同样也需要手动导入. 也可以同时在一条查询语句中同时使用这两种对象, 12gra = Grade.objects.filter(g_name='python').first()stu = gra.stu_set.filter(Q(stu_yuwen__gte=F('stu_shuxue') + 10) &amp; Q(stu_sex=1)) 查询一个语文成绩大于等于数学成绩加10分并且性别是男生的样本.]]></content>
