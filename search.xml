@@ -1,130 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-    
-    <entry>
-      <title>F对象和Q对象</title>
-      <link href="/2017/07/26/F%E5%AF%B9%E8%B1%A1%E5%92%8CQ%E5%AF%B9%E8%B1%A1/"/>
-      <url>/2017/07/26/F%E5%AF%B9%E8%B1%A1%E5%92%8CQ%E5%AF%B9%E8%B1%A1/</url>
-      <content type="html"><![CDATA[<p>要从数据库中查找满足某种对比条件的样本时,会使用到Django中自带的F对象,但是需要手动导入这个模块.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gra = Grade.objects.filter(g_name=<span class="string">'python'</span>).first()</span><br><span class="line">stu = gra.stu_set.filter(stu_yuwen__gte=F(<span class="string">'stu_shuxue'</span>))</span><br></pre></td></tr></table></figure><p>查询一个班级中语文成绩大于等于数学成绩的学生,需要知道的是如果是直接比较而不通过F对象的话,会直接出现小红线报错.</p><p>如果我要去查询同时满足多个条件的样本时,有两种方法,一种是直接用逗号分割条件,</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gra = Grade.objects.filter(g_name=<span class="string">'python'</span>).first()</span><br><span class="line">stu = </span><br><span class="line">gra.stu_set.filter(stu_yuwen__gte=<span class="number">80</span>, stu_sex=<span class="number">0</span>)</span><br></pre></td></tr></table></figure><p>另外一种是使用Q查询对象,该对象不仅提供了’与’的运算,同时还支持’或’,’非’运算,</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gra = Grade.objects.filter(g_name=<span class="string">'python'</span>).first()</span><br><span class="line">stu = </span><br><span class="line">gra.stu_set.filter(Q(stu_yuwen__gte=<span class="number">80</span>) &amp; Q(stu_sex=<span class="number">0</span>))</span><br></pre></td></tr></table></figure><p>查询一个班级中语文成绩大于等于80并且性别为女生的样本,Q对象提供了&amp;,|,~三种逻辑运算,所以可以很方便进行筛选查找,同样也需要手动导入.</p>]]></content>
-      
+<search>
+  <entry>
+    <title><![CDATA[F对象和Q对象]]></title>
+    <url>%2F2017%2F07%2F26%2FF%E5%AF%B9%E8%B1%A1%E5%92%8CQ%E5%AF%B9%E8%B1%A1%2F</url>
+    <content type="text"><![CDATA[要从数据库中查找满足某种对比条件的样本时,会使用到Django中自带的F对象,但是需要手动导入这个模块. 12gra = Grade.objects.filter(g_name='python').first()stu = gra.stu_set.filter(stu_yuwen__gte=F('stu_shuxue')) 查询一个班级中语文成绩大于等于数学成绩的学生,需要知道的是如果是直接比较而不通过F对象的话,会直接出现小红线报错. 如果我要去查询同时满足多个条件的样本时,有两种方法,一种是直接用逗号分割条件, 123gra = Grade.objects.filter(g_name='python').first()stu = gra.stu_set.filter(stu_yuwen__gte=80, stu_sex=0) 另外一种是使用Q查询对象,该对象不仅提供了’与’的运算,同时还支持’或’,’非’运算, 123gra = Grade.objects.filter(g_name='python').first()stu = gra.stu_set.filter(Q(stu_yuwen__gte=80) &amp; Q(stu_sex=0)) 查询一个班级中语文成绩大于等于80并且性别为女生的样本,Q对象提供了&amp;,|,~三种逻辑运算,所以可以很方便进行筛选查找,同样也需要手动导入. 也可以同时在一条查询语句中同时使用这两种对象, 12gra = Grade.objects.filter(g_name='python').first()stu = gra.stu_set.filter(Q(stu_yuwen__gte=F('stu_shuxue') + 10) &amp; Q(stu_sex=1)) 查询一个语文成绩大于等于数学成绩加10分并且性别是男生的样本.]]></content>
       <categories>
-          
-          <category> Django </category>
-          
+        <category>Django</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Django </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>时间与空间的矛盾</title>
-      <link href="/2017/07/21/%E6%97%B6%E9%97%B4%E4%B8%8E%E7%A9%BA%E9%97%B4%E7%9A%84%E7%9F%9B%E7%9B%BE/"/>
-      <url>/2017/07/21/%E6%97%B6%E9%97%B4%E4%B8%8E%E7%A9%BA%E9%97%B4%E7%9A%84%E7%9F%9B%E7%9B%BE/</url>
-      <content type="html"><![CDATA[<p>记得以前上软件技术导论的时候,听的最多的话就是时间和空间是两个不可调和的矛盾,要么去拥有时间,要么去拥有空间,当然如果一个算法中即不节省空间,也不节约空间,那这就是个失败的算法.</p><p>这两者是不可同时兼得的,就拿Python中的数据类型来说</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">list_ = []</span><br><span class="line">tupel_ = ()</span><br><span class="line">dic_ = &#123;&#125;</span><br><span class="line">set_ = set([])</span><br><span class="line">print(<span class="string">'%s,%s'</span> % (type(list_), sys.getsizeof(list_)))</span><br><span class="line">print(<span class="string">'%s,%s'</span> % (type(tupel_), sys.getsizeof(tupel_)))</span><br><span class="line">print(<span class="string">'%s,%s'</span> % (type(dic_), sys.getsizeof(dic_)))</span><br><span class="line">print(<span class="string">'%s,%s'</span> % (type(set_), sys.getsizeof(set_)))</span><br></pre></td></tr></table></figure><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;class 'list'&gt;,64</span><br><span class="line">&lt;class 'tuple'&gt;,48</span><br><span class="line">&lt;class 'tuple'&gt;,240</span><br><span class="line">&lt;class 'set'&gt;,224</span><br></pre></td></tr></table></figure><p>可以看到,列表和元组所占内存较小,而字典和集合占的内存较大,所以可以这样理解,当我们去查询某一个元素是否在列表或者字典中时,列表查找的时间复杂度是O(n),而字典查找的时间复杂度是O(1),字典牺牲了空间换取了时间.</p><p>我只是很肤浅的从这里看到了一点关于时间与空间的矛盾,我相信通过不断的深入学习,应该会遇到更多的这种情况.</p>]]></content>
-      
+      <tags>
+        <tag>Django</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[时间与空间的矛盾]]></title>
+    <url>%2F2017%2F07%2F21%2F%E6%97%B6%E9%97%B4%E4%B8%8E%E7%A9%BA%E9%97%B4%E7%9A%84%E7%9F%9B%E7%9B%BE%2F</url>
+    <content type="text"><![CDATA[记得以前上软件技术导论的时候,听的最多的话就是时间和空间是两个不可调和的矛盾,要么去拥有时间,要么去拥有空间,当然如果一个算法中即不节省空间,也不节约空间,那这就是个失败的算法. 这两者是不可同时兼得的,就拿Python中的数据类型来说 123456789import syslist_ = []tupel_ = ()dic_ = &#123;&#125;set_ = set([])print('%s,%s' % (type(list_), sys.getsizeof(list_)))print('%s,%s' % (type(tupel_), sys.getsizeof(tupel_)))print('%s,%s' % (type(dic_), sys.getsizeof(dic_)))print('%s,%s' % (type(set_), sys.getsizeof(set_))) 1234&lt;class 'list'&gt;,64&lt;class 'tuple'&gt;,48&lt;class 'tuple'&gt;,240&lt;class 'set'&gt;,224 可以看到,列表和元组所占内存较小,而字典和集合占的内存较大,所以可以这样理解,当我们去查询某一个元素是否在列表或者字典中时,列表查找的时间复杂度是O(n),而字典查找的时间复杂度是O(1),字典牺牲了空间换取了时间. 我只是很肤浅的从这里看到了一点关于时间与空间的矛盾,我相信通过不断的深入学习,应该会遇到更多的这种情况.]]></content>
       <categories>
-          
-          <category> Python </category>
-          
+        <category>Python</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Python </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Python中基本的数据结构</title>
-      <link href="/2017/07/20/Python%E4%B8%AD%E5%9F%BA%E6%9C%AC%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-      <url>/2017/07/20/Python%E4%B8%AD%E5%9F%BA%E6%9C%AC%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
-      <content type="html"><![CDATA[<p>我并没有系统的学过数据结构,顶多也就是自己买了本严蔚敏的数据结构看了一下,所以在遇到一些这方面问题就是真的头大,今天看书时发现了Python中collentions.OrderedDict这个模块中有一种内部维持双向链路的有序字典对象,就忽然想去学习一下顺序表,链表的知识.</p><p>Python中有有序和无序的数据类型,像set,dict是无序的,而list,tuple是有序的.首先集合和字典是基于哈希表实现,对于这两个类型的理解,我认为集合就是只有键没有值的字典,因为翻阅了下资料,发现Python在最开始时是并没有set这个概念的,最早的set雏形就是{‘a’:None, ‘b’:None}这种字典.还有一个更为奇怪的是,字典本身是无序的,但是使用IDE去输出打印时总会按照我赋值的顺序输出字典,我只能归咎于IDE帮我处理了这个字典,在内存中,这个字典每一组键值对的排列都不是按照我赋值的顺序存储的.</p><p>对于有序的list和tuple来说,它们是由顺序表实现的,元组和列表最大的区别有两个,一是元组是不可变类型,即不变的顺序表,它不支持任何改变其内部状态的操作,而列表刚好相反,列表被定义为动态的顺序表,也就是说我可以对其进行appent,inset,pop等操作,另外一个区别是元组是可以去重的,而列表是可以允许有重复元素的.</p><p>由于在创建一个顺序表时,需要预先知道数据大小来申请连续的存储空间,而在进行扩充时又会使用copy来开辟一段新的内存空间,所有使用起来并不是很灵活,所以为了充分利用计算机内存空间,实现灵活的动态管理,就得使用到链表.</p><p>链表也是一种线性表,但是并不是连续的存储数据,而是每一个节点里存放下一个节点的位置信息,每个节点包含两个域.一个是信息域(用来存放数据),一个是链接域(用来查找下一个节点).</p><p><img src=".\lianbiao.jpg" alt=""></p><p>单向链路:</p><p><img src=".\Singlylinkedlist.jpg" alt=""></p><p>双向链路:</p><p><img src=".\doublelinkedlist.jpg" alt=""></p><p>单向链路只能通过前一个节点查找后一节点并且不可逆,双向链路是可逆的,除此之外还有单向循环链路和双向循环链路,也就是tail的地址不再指向None而是head的地址.</p><p>但是需要明确的是,链路只是灵活的使用了内存,但付出的代价是增加了地址字段,开销增大,所以说并没有什么完美的算法能够保证又节约时间,又节省空间.</p>]]></content>
-      
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python中基本的数据结构]]></title>
+    <url>%2F2017%2F07%2F20%2FPython%E4%B8%AD%E5%9F%BA%E6%9C%AC%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%2F</url>
+    <content type="text"><![CDATA[我并没有系统的学过数据结构,顶多也就是自己买了本严蔚敏的数据结构看了一下,所以在遇到一些这方面问题就是真的头大,今天看书时发现了Python中collentions.OrderedDict这个模块中有一种内部维持双向链路的有序字典对象,就忽然想去学习一下顺序表,链表的知识. Python中有有序和无序的数据类型,像set,dict是无序的,而list,tuple是有序的.首先集合和字典是基于哈希表实现,对于这两个类型的理解,我认为集合就是只有键没有值的字典,因为翻阅了下资料,发现Python在最开始时是并没有set这个概念的,最早的set雏形就是{‘a’:None, ‘b’:None}这种字典.还有一个更为奇怪的是,字典本身是无序的,但是使用IDE去输出打印时总会按照我赋值的顺序输出字典,我只能归咎于IDE帮我处理了这个字典,在内存中,这个字典每一组键值对的排列都不是按照我赋值的顺序存储的. 对于有序的list和tuple来说,它们是由顺序表实现的,元组和列表最大的区别有两个,一是元组是不可变类型,即不变的顺序表,它不支持任何改变其内部状态的操作,而列表刚好相反,列表被定义为动态的顺序表,也就是说我可以对其进行appent,inset,pop等操作,另外一个区别是元组是可以去重的,而列表是可以允许有重复元素的. 由于在创建一个顺序表时,需要预先知道数据大小来申请连续的存储空间,而在进行扩充时又会使用copy来开辟一段新的内存空间,所有使用起来并不是很灵活,所以为了充分利用计算机内存空间,实现灵活的动态管理,就得使用到链表. 链表也是一种线性表,但是并不是连续的存储数据,而是每一个节点里存放下一个节点的位置信息,每个节点包含两个域.一个是信息域(用来存放数据),一个是链接域(用来查找下一个节点). 单向链路: 双向链路: 单向链路只能通过前一个节点查找后一节点并且不可逆,双向链路是可逆的,除此之外还有单向循环链路和双向循环链路,也就是tail的地址不再指向None而是head的地址. 但是需要明确的是,链路只是灵活的使用了内存,但付出的代价是增加了地址字段,开销增大,所以说并没有什么完美的算法能够保证又节约时间,又节省空间.]]></content>
       <categories>
-          
-          <category> 数据结构 </category>
-          
+        <category>数据结构</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Python,数据结构 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Django通过Model查找数据遇到的问题</title>
-      <link href="/2017/07/16/Django%E9%80%9A%E8%BF%87Model%E6%9F%A5%E6%89%BE%E6%95%B0%E6%8D%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-      <url>/2017/07/16/Django%E9%80%9A%E8%BF%87Model%E6%9F%A5%E6%89%BE%E6%95%B0%E6%8D%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-      <content type="html"><![CDATA[<p>我先建立了一个学生与学生信息的一对一关系模型</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stu</span><span class="params">(models.Model)</span>:</span></span><br><span class="line"></span><br><span class="line">    stu_name = models.CharField(max_length=<span class="number">6</span>, unique=<span class="keyword">True</span>)</span><br><span class="line">    stu_sex = models.BooleanField(default=<span class="number">0</span>)</span><br><span class="line">    stu_birth = models.DateField()</span><br><span class="line">   </span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        db_table= <span class="string">'stu'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StuInfo</span><span class="params">(models.Model)</span>:</span></span><br><span class="line"></span><br><span class="line">    stu_addr = models.CharField(max_length=<span class="number">30</span>)</span><br><span class="line">    stu_age = models.IntegerField()</span><br><span class="line">    stu = models.OneToOneField(Stu)</span><br><span class="line">    </span><br><span class="line">        <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        db_table = <span class="string">'stu_info'</span></span><br></pre></td></tr></table></figure><p>我根据学生去查找学生信息</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">stu = Stu.objects.all().first()</span><br><span class="line">stu_info = stu.StuInfo</span><br><span class="line">print(stu_info.stu_addr)</span><br><span class="line"><span class="keyword">return</span> render(request, <span class="string">'show_stu.html'</span>)</span><br></pre></td></tr></table></figure><p>我想在调用url时,在控制台打印出我查询的数据,然后就出现报错</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Exception Value:</span><br><span class="line"><span class="string">'Stu'</span> object has no attribute <span class="string">'StuInfo'</span></span><br></pre></td></tr></table></figure><p>我通过对象去点上模型名,这样没问题啊,为什么会显示没有这个属性呢?</p><p>折腾了一下,发现把表名改为小写就可以查询了</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stu_info = stu.stuinfo</span><br></pre></td></tr></table></figure><p>所以说在数据库查询的时候,不管是一对一还是多对多,点上表名的时候都得用小写.</p><p>如果对于某些有强迫症的人,就必须要用表名去查询数据的话,可以使用这个来指定查询的相对名字</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">    default_related_name = <span class="string">'StuInfo'</span></span><br></pre></td></tr></table></figure>]]></content>
-      
+      <tags>
+        <tag>Python,数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Django通过Model查找数据遇到的问题]]></title>
+    <url>%2F2017%2F07%2F16%2FDjango%E9%80%9A%E8%BF%87Model%E6%9F%A5%E6%89%BE%E6%95%B0%E6%8D%AE%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[我先建立了一个学生与学生信息的一对一关系模型 123456789101112131415161718class Stu(models.Model): stu_name = models.CharField(max_length=6, unique=True) stu_sex = models.BooleanField(default=0) stu_birth = models.DateField() class Meta: db_table= 'stu'class StuInfo(models.Model): stu_addr = models.CharField(max_length=30) stu_age = models.IntegerField() stu = models.OneToOneField(Stu) class Meta: db_table = 'stu_info' 我根据学生去查找学生信息 1234stu = Stu.objects.all().first()stu_info = stu.StuInfoprint(stu_info.stu_addr)return render(request, 'show_stu.html') 我想在调用url时,在控制台打印出我查询的数据,然后就出现报错 12Exception Value: 'Stu' object has no attribute 'StuInfo' 我通过对象去点上模型名,这样没问题啊,为什么会显示没有这个属性呢? 折腾了一下,发现把表名改为小写就可以查询了 1stu_info = stu.stuinfo 所以说在数据库查询的时候,不管是一对一还是多对多,点上表名的时候都得用小写. 如果对于某些有强迫症的人,就必须要用表名去查询数据的话,可以使用这个来指定查询的相对名字 12class Meta: default_related_name = 'StuInfo']]></content>
       <categories>
-          
-          <category> Django </category>
-          
+        <category>Django</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Django </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Django简介</title>
-      <link href="/2017/07/15/Djanogo%E7%AE%80%E4%BB%8B/"/>
-      <url>/2017/07/15/Djanogo%E7%AE%80%E4%BB%8B/</url>
-      <content type="html"><![CDATA[<h3 id="Django介绍"><a href="#Django介绍" class="headerlink" title="Django介绍:"></a>Django介绍:</h3><p>Django是一个开放源代码的Web应用框架，由Python写成。采用了MVC的框架模式，即模型M，视图V和控制器C。它最初是被开发来用于管理劳伦斯出版集团旗下的一些以新闻内容为主的网站的，即是CMS（内容管理系统）软件。并于2005年7月在BSD许可证下发布。这套框架是以比利时的吉普赛爵士吉他手Django Reinhardt来命名的。</p><p>要是以后我能发明一种框架,我一定要用自己的名字来命名,以免我被淹没在历史的洪流里.</p><p>在学习Django的时候和一些搞Java开发的同学聊过几次,他们经常抱怨外包到华为天天写控制器,当时我挺羡慕的,控制器多高端啊,其实现在想起来我应该是忽略了天天这两个字,但是学了之后也没那么高端,至少没有Python的scipy那几个模块高端.</p><h3 id="师从MVC"><a href="#师从MVC" class="headerlink" title="师从MVC:"></a>师从MVC:</h3><p>Django的框架模式从本质来说依然是经典的MVC,就来看看MVC这个Web开发大佬是如果运作的.</p><p>我就按照自己的理解来说一下这个moderl-view-controller,即模型-视图-控制器</p><p>Model: 这一块是直接与数据库相关的,也就是模型对象负责在数据库中存取数据</p><p>View: 这一块负责数据的显示和呈现,数据呢,肯定是从model那里来的,数据展示在哪里?通过html页面来进行展示,不过现在应该不仅限于html.</p><p>Controller: 这一块负责人机交互,从用户端收集用户的输入,进行业务逻辑处理.</p><p>模式图奉上:</p><p><img src=".\mvc.jpg" alt=""></p><p>核心思想: 将输入,处理,输出分开,即解耦</p><h3 id="不逊色的MVT"><a href="#不逊色的MVT" class="headerlink" title="不逊色的MVT:"></a>不逊色的MVT:</h3><p>我喜欢称Django的框架模式为变异的MVC,但归根结底也是继承于MVC,我本来就对控制器不是太了解,要是我精通Java就好了,这下好了,Django直接就没有控制器这一说法.</p><p>Moder-View-Template,即模型-视图-模板,从字面上感觉像是用模板来替代了控制器,但并不是</p><p>Model: 作用与MVC的model一样,负责与数据库的连接,进行数据的存取</p><p>View: Django的View活动范围就有点广,他首先负责业务逻辑,然后还要调用Moder和Template,它并不像MVC的视图那样为用户呈现数据.</p><p>Template: 模板的功能与MVC的视图一样,负责进行页面的渲染展示给用户</p><p>Django还有个特别的url分发器,作用和路由器差不多,所有也称之为路由,作用是通过页面传回的url来调用合适的view.</p>]]></content>
-      
+      <tags>
+        <tag>Django</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Django简介]]></title>
+    <url>%2F2017%2F07%2F15%2FDjanogo%E7%AE%80%E4%BB%8B%2F</url>
+    <content type="text"><![CDATA[Django介绍:Django是一个开放源代码的Web应用框架，由Python写成。采用了MVC的框架模式，即模型M，视图V和控制器C。它最初是被开发来用于管理劳伦斯出版集团旗下的一些以新闻内容为主的网站的，即是CMS（内容管理系统）软件。并于2005年7月在BSD许可证下发布。这套框架是以比利时的吉普赛爵士吉他手Django Reinhardt来命名的。 要是以后我能发明一种框架,我一定要用自己的名字来命名,以免我被淹没在历史的洪流里. 在学习Django的时候和一些搞Java开发的同学聊过几次,他们经常抱怨外包到华为天天写控制器,当时我挺羡慕的,控制器多高端啊,其实现在想起来我应该是忽略了天天这两个字,但是学了之后也没那么高端,至少没有Python的scipy那几个模块高端. 师从MVC:Django的框架模式从本质来说依然是经典的MVC,就来看看MVC这个Web开发大佬是如果运作的. 我就按照自己的理解来说一下这个moderl-view-controller,即模型-视图-控制器 Model: 这一块是直接与数据库相关的,也就是模型对象负责在数据库中存取数据 View: 这一块负责数据的显示和呈现,数据呢,肯定是从model那里来的,数据展示在哪里?通过html页面来进行展示,不过现在应该不仅限于html. Controller: 这一块负责人机交互,从用户端收集用户的输入,进行业务逻辑处理. 模式图奉上: 核心思想: 将输入,处理,输出分开,即解耦 不逊色的MVT:我喜欢称Django的框架模式为变异的MVC,但归根结底也是继承于MVC,我本来就对控制器不是太了解,要是我精通Java就好了,这下好了,Django直接就没有控制器这一说法. Moder-View-Template,即模型-视图-模板,从字面上感觉像是用模板来替代了控制器,但并不是 Model: 作用与MVC的model一样,负责与数据库的连接,进行数据的存取 View: Django的View活动范围就有点广,他首先负责业务逻辑,然后还要调用Moder和Template,它并不像MVC的视图那样为用户呈现数据. Template: 模板的功能与MVC的视图一样,负责进行页面的渲染展示给用户 Django还有个特别的url分发器,作用和路由器差不多,所有也称之为路由,作用是通过页面传回的url来调用合适的view.]]></content>
       <categories>
-          
-          <category> Django </category>
-          
+        <category>Django</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Django </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>这不仅仅是一个开始</title>
-      <link href="/2017/07/14/%E8%BF%99%E4%B8%8D%E4%BB%85%E4%BB%85%E6%98%AF%E4%B8%80%E4%B8%AA%E5%BC%80%E5%A7%8B/"/>
-      <url>/2017/07/14/%E8%BF%99%E4%B8%8D%E4%BB%85%E4%BB%85%E6%98%AF%E4%B8%80%E4%B8%AA%E5%BC%80%E5%A7%8B/</url>
-      <content type="html"><![CDATA[<p>我想所有的编程语言都是以善意的问候世界开始它们独特魅力的吧,我也记不清楚我用了几种语言在控制台输出Hello,World,我只知道在我学习单片机的时候抱怨C语言指针太难看不懂,也记得学习立志学习Java却在中途发现Python的输出打印如此简洁转而跑去学习Python.</p><p>在学习Python后我没有太多接触其他语言,一方面是因为害怕遇到语法更美丽,书写更简洁的语言又放弃Python,另一方面想拜读的那位导师建议我去学Python,虽然最后没有机会成为他的学生.</p><p>我考研报考的是大数据方向,其实在本科大多数都是在和硬件打交道,对于大数据也只是经常看见新闻吹的玄乎玄乎的,所以我就想去考,当时院长也说川大的计算机学院还是很厉害的,还说我上了复试线可以帮我找个好导师,到最后我去参加复试,院长却退休了,真的悲伤.</p><p>无论是什么语言,我都觉得这仅仅是一种工具,一种用来表现人类行为的工具,最为重要的是如何使用这门语言来模拟我们的行为并且来实现它.</p><p>昨天我为我的Python之路好好规划了一下,首先肯定是最常见的Web开发,然后是爬虫,数据分析,大数据,虽然不清楚在到第几个阶段我会跑去读书,但肯定的是书是一定要读的,我总不能被女朋友文凭一直给压着吧.</p><p>那就从今天开始吧,我上有老但不需要我养,我爸那天还说以后工作了别让他们倒贴就万事大吉,无奈.我下又无小,何不轻装前行?</p>]]></content>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/2017/06/01/hello-world/"/>
-      <url>/2017/06/01/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-      
-      
-    </entry>
-    
-  
-  
+      <tags>
+        <tag>Django</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[这不仅仅是一个开始]]></title>
+    <url>%2F2017%2F07%2F14%2F%E8%BF%99%E4%B8%8D%E4%BB%85%E4%BB%85%E6%98%AF%E4%B8%80%E4%B8%AA%E5%BC%80%E5%A7%8B%2F</url>
+    <content type="text"><![CDATA[我想所有的编程语言都是以善意的问候世界开始它们独特魅力的吧,我也记不清楚我用了几种语言在控制台输出Hello,World,我只知道在我学习单片机的时候抱怨C语言指针太难看不懂,也记得学习立志学习Java却在中途发现Python的输出打印如此简洁转而跑去学习Python. 在学习Python后我没有太多接触其他语言,一方面是因为害怕遇到语法更美丽,书写更简洁的语言又放弃Python,另一方面想拜读的那位导师建议我去学Python,虽然最后没有机会成为他的学生. 我考研报考的是大数据方向,其实在本科大多数都是在和硬件打交道,对于大数据也只是经常看见新闻吹的玄乎玄乎的,所以我就想去考,当时院长也说川大的计算机学院还是很厉害的,还说我上了复试线可以帮我找个好导师,到最后我去参加复试,院长却退休了,真的悲伤. 无论是什么语言,我都觉得这仅仅是一种工具,一种用来表现人类行为的工具,最为重要的是如何使用这门语言来模拟我们的行为并且来实现它. 昨天我为我的Python之路好好规划了一下,首先肯定是最常见的Web开发,然后是爬虫,数据分析,大数据,虽然不清楚在到第几个阶段我会跑去读书,但肯定的是书是一定要读的,我总不能被女朋友文凭一直给压着吧. 那就从今天开始吧,我上有老但不需要我养,我爸那天还说以后工作了别让他们倒贴就万事大吉,无奈.我下又无小,何不轻装前行?]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2017%2F06%2F01%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
 </search>

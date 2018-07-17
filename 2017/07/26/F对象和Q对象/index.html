@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="ninethread&#39;blog">
 <meta property="og:description" content="要从数据库中查找满足某种对比条件的样本时,会使用到Django中自带的F对象,但是需要手动导入这个模块. 12gra = Grade.objects.filter(g_name=&apos;python&apos;).first()stu = gra.stu_set.filter(stu_yuwen__gte=F(&apos;stu_shuxue&apos;)) 查询一个班级中语文成绩大于等于数学成绩的学生,需要知道的是如果是直接比较而">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-17T11:36:39.468Z">
+<meta property="og:updated_time" content="2018-07-17T11:47:22.447Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="F对象和Q对象">
 <meta name="twitter:description" content="要从数据库中查找满足某种对比条件的样本时,会使用到Django中自带的F对象,但是需要手动导入这个模块. 12gra = Grade.objects.filter(g_name=&apos;python&apos;).first()stu = gra.stu_set.filter(stu_yuwen__gte=F(&apos;stu_shuxue&apos;)) 查询一个班级中语文成绩大于等于数学成绩的学生,需要知道的是如果是直接比较而">
@@ -394,6 +394,9 @@
 <p>另外一种是使用Q查询对象,该对象不仅提供了’与’的运算,同时还支持’或’,’非’运算,</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gra = Grade.objects.filter(g_name=<span class="string">'python'</span>).first()</span><br><span class="line">stu = </span><br><span class="line">gra.stu_set.filter(Q(stu_yuwen__gte=<span class="number">80</span>) &amp; Q(stu_sex=<span class="number">0</span>))</span><br></pre></td></tr></table></figure>
 <p>查询一个班级中语文成绩大于等于80并且性别为女生的样本,Q对象提供了&amp;,|,~三种逻辑运算,所以可以很方便进行筛选查找,同样也需要手动导入.</p>
+<p>也可以同时在一条查询语句中同时使用这两种对象,</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gra = Grade.objects.filter(g_name=<span class="string">'python'</span>).first()</span><br><span class="line">stu = gra.stu_set.filter(Q(stu_yuwen__gte=F(<span class="string">'stu_shuxue'</span>) + <span class="number">10</span>) &amp; Q(stu_sex=<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<p>查询一个语文成绩大于等于数学成绩加10分并且性别是男生的样本.</p>
 
       
     </div>
