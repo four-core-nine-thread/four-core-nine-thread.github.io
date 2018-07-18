@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Django," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="行走匆忙,诗为远方">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ninethread&#39;blog">
-<meta property="og:url" content="http://123/archives/2017/08/index.html">
+<meta name="description" content="QuerySet,本质上是一个给定的模型的对象列表,虽然名字中带有set,刚开始会让我觉得其性质应该和集合有些许联系,但是就像Java和javascript那样,就是彻彻底底两种不同的语言,为什么说他是对象列表而不是像其名字那样的集合呢,因为它是有序的,并且表现形式上也更像是一个列表 1&amp;lt;QuerySet [&amp;lt;Cus: Cus object&amp;gt;, &amp;lt;Cus: Cus obje">
+<meta name="keywords" content="Django">
+<meta property="og:type" content="article">
+<meta property="og:title" content="QuerySet与QueryDict">
+<meta property="og:url" content="http://123/2017/09/17/QuerySet与QueryDict/index.html">
 <meta property="og:site_name" content="ninethread&#39;blog">
-<meta property="og:description" content="行走匆忙,诗为远方">
+<meta property="og:description" content="QuerySet,本质上是一个给定的模型的对象列表,虽然名字中带有set,刚开始会让我觉得其性质应该和集合有些许联系,但是就像Java和javascript那样,就是彻彻底底两种不同的语言,为什么说他是对象列表而不是像其名字那样的集合呢,因为它是有序的,并且表现形式上也更像是一个列表 1&amp;lt;QuerySet [&amp;lt;Cus: Cus object&amp;gt;, &amp;lt;Cus: Cus obje">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-18T23:52:54.575Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ninethread&#39;blog">
-<meta name="twitter:description" content="行走匆忙,诗为远方">
+<meta name="twitter:title" content="QuerySet与QueryDict">
+<meta name="twitter:description" content="QuerySet,本质上是一个给定的模型的对象列表,虽然名字中带有set,刚开始会让我觉得其性质应该和集合有些许联系,但是就像Java和javascript那样,就是彻彻底底两种不同的语言,为什么说他是对象列表而不是像其名字那样的集合呢,因为它是有序的,并且表现形式上也更像是一个列表 1&amp;lt;QuerySet [&amp;lt;Cus: Cus object&amp;gt;, &amp;lt;Cus: Cus obje">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://123/archives/2017/08/"/>
+  <link rel="canonical" href="http://123/2017/09/17/QuerySet与QueryDict/"/>
 
 
 
 
 
-  <title>归档 | ninethread'blog</title>
+  <title>QuerySet与QueryDict | ninethread'blog</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -281,222 +283,177 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://123/2017/09/17/QuerySet与QueryDict/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fourcore">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ninethread'blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">QuerySet与QueryDict</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-17T07:14:21+08:00">
+                2017-09-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 14 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Django/" itemprop="url" rel="index">
+                    <span itemprop="name">Django</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/28/模板中的过滤器/" itemprop="url">
-              
-                <span itemprop="name">模板中的过滤器</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-28T18:40:45+08:00"
-              content="2017-08-28" >
-          08-28
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/24/模板中不同注释语句的用法/" itemprop="url">
-              
-                <span itemprop="name">模板中不同注释语句的用法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-24T19:38:27+08:00"
-              content="2017-08-24" >
-          08-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/20/模板的继承/" itemprop="url">
-              
-                <span itemprop="name">模板的继承</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-20T19:13:10+08:00"
-              content="2017-08-20" >
-          08-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>QuerySet,本质上是一个给定的模型的对象列表,虽然名字中带有set,刚开始会让我觉得其性质应该和集合有些许联系,但是就像Java和javascript那样,就是彻彻底底两种不同的语言,为什么说他是对象列表而不是像其名字那样的集合呢,因为它是有序的,并且表现形式上也更像是一个列表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;QuerySet [&lt;Cus: Cus object&gt;, &lt;Cus: Cus object&gt;]&gt;</span><br></pre></td></tr></table></figure>
+<p>对于QuerySet最为神奇的就是,可以将返回的QuerySet链起来形成一串连续的查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Book.objects.filter(year_published__gt=1990) \</span><br><span class="line">            .exclude(author=&apos;Richard Dawkins&apos;) \</span><br><span class="line">            .order_by(&apos;author&apos;, &apos;-year_published&apos;)</span><br></pre></td></tr></table></figure>
+<p>并且也可以像列表那样,通过index去获取所需的第几条信息,当然使用遍历去获取其中的每一条信息也是没问题的.</p>
+<p>QueryDict是HttpRequest获取的对象,GET和POST属性是django.http.QuertDict类的实例,数据结构类似于字典,以键值对的形式存在,但是和字典最大的区别就是,QueryDict允许存在相同的键.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&apos;info&apos;:[&apos;zsb&apos;, 111]&#125;</span><br></pre></td></tr></table></figure>
+<p>QueryDict中数据获取方式可以像字典那种使用dict[‘info’]或者dict.get(‘info’),不过需要注意的是,如果存在一键对于多值,使用get只会获得最后一个值,如果想要获取所有的值就需要使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/16/无题/" itemprop="url">
-              
-                <span itemprop="name">无题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-16T23:49:49+08:00"
-              content="2017-08-16" >
-          08-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/01/全局设置中路径的配置/" itemprop="url">
-              
-                <span itemprop="name">全局设置中路径的配置</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-01T18:47:48+08:00"
-              content="2017-08-01" >
-          08-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Django/" rel="tag"># Django</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/10/简单但有效的csrf-token/" rel="next" title="简单但有效的csrf_token">
+                <i class="fa fa-chevron-left"></i> 简单但有效的csrf_token
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -504,6 +461,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -707,6 +668,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://123/2017/09/17/QuerySet%E4%B8%8EQueryDict/</loc>
+        <lastmod>2018-07-18T23:52:54.575Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://123/2017/09/10/%E7%AE%80%E5%8D%95%E4%BD%86%E6%9C%89%E6%95%88%E7%9A%84csrf-token/</loc>
         <lastmod>2018-07-18T15:36:08.197Z</lastmod>
         <changefreq>weekly</changefreq>
