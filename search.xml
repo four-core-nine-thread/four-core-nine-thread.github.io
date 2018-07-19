@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[序列的去重]]></title>
+    <url>%2F2017%2F09%2F24%2F%E5%BA%8F%E5%88%97%E7%9A%84%E5%8E%BB%E9%87%8D%2F</url>
+    <content type="text"><![CDATA[对所获取的的数据进行去重显得尤为重要,爬虫获取的冗余数据在大多时候都是都是无效且占用空间的. 设想有两个场景,一个是去除序列中出现的重复元素,获得的新序列是无序的,另外一个是去重获得新序列之后,依然是按照处理之前的顺序进行排列的. 无论是哪两种情况,序列的去重都是围绕set集合展开的,当然这也是set比较重要的属性. 对于第一种情况,直接使用set来处理就尤为简单 123a = [1,3,2,1,4,3]a = set(a)a = list(a) 1[1, 2, 3, 4] 可以看到输出的结果并不是按照原始顺序排列的,但依然有个问题就是转换后序列是按照升序排列的,最后测试一下,发现数据量较大时是不会出现这种情况的,集合并没有自动排序的功能. 对于第二种情况,想要去重并且顺序不发生改变,这里又有两种情况,一种是序列元素是可哈希的,另外一种是序列元素不可哈希的. 可哈希对象表示的是,在它生存期内是不可变的,如整数,浮点数,字符串,元组等. 对于可哈希元素: 12345678a = [1,3,2,1,4,5]def judge(items): seen = set() for item in items: if item not in seen: yield item seen.add(item)b = list(judge(a)) 1[1, 3, 2, 4, 5] 使用这种方法,可以实现不打乱顺序产生序列. 对于不可哈希元素: 123456789a = [&#123;'x':1, 'y':2&#125;, &#123;'x':1, 'y':3&#125;, &#123;'x':1, 'y':2&#125;]def judge(items, key=None): seen = set() for item in items: val = item if key is None else key(item) if val not in seen: yield item seen.add(val)b = list(judge(a, key = lambda key:(key['x'], key['y']))) 1[&#123;'x': 1, 'y': 2&#125;] 如果容器中的元素为不可哈希元素时,需要使用这种方法来进行去重才能保证保持元素的顺序,这种方法同时也可以实现容器中元素为可哈希的情况.]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[QuerySet与QueryDict]]></title>
     <url>%2F2017%2F09%2F17%2FQuerySet%E4%B8%8EQueryDict%2F</url>
     <content type="text"><![CDATA[QuerySet,本质上是一个给定的模型的对象列表,虽然名字中带有set,刚开始会让我觉得其性质应该和集合有些许联系,但是就像Java和javascript那样,就是彻彻底底两种不同的语言,为什么说他是对象列表而不是像其名字那样的集合呢,因为它是有序的,并且表现形式上也更像是一个列表 1&lt;QuerySet [&lt;Cus: Cus object&gt;, &lt;Cus: Cus object&gt;]&gt; 对于QuerySet最为神奇的就是,可以将返回的QuerySet链起来形成一串连续的查询 123Book.objects.filter(year_published__gt=1990) \ .exclude(author=&apos;Richard Dawkins&apos;) \ .order_by(&apos;author&apos;, &apos;-year_published&apos;) 并且也可以像列表那样,通过index去获取所需的第几条信息,当然使用遍历去获取其中的每一条信息也是没问题的. QueryDict是HttpRequest获取的对象,GET和POST属性是django.http.QuertDict类的实例,数据结构类似于字典,以键值对的形式存在,但是和字典最大的区别就是,QueryDict允许存在相同的键. 1&#123;&apos;info&apos;:[&apos;zsb&apos;, 111]&#125; QueryDict中数据获取方式可以像字典那种使用dict[‘info’]或者dict.get(‘info’),不过需要注意的是,如果存在一键对于多值,使用get只会获得最后一个值,如果想要获取所有的值就需要使用 1dict.getlist(&apos;info&apos;)]]></content>

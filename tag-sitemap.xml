@@ -9,15 +9,15 @@
     </url>
 
     <url>
-        <loc>http://123/tags/Python/</loc>
-        <lastmod>2018-07-16T15:22:27.102Z</lastmod>
+        <loc>http://123/tags/Django/</loc>
+        <lastmod>2018-07-19T00:19:20.885Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://123/tags/Django/</loc>
-        <lastmod>2018-07-19T00:19:20.885Z</lastmod>
+        <loc>http://123/tags/Python/</loc>
+        <lastmod>2018-07-19T11:31:18.725Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="记得以前上软件技术导论的时候,听的最多的话就是时间和空间是两个不可调和的矛盾,要么去拥有时间,要么去拥有空间,当然如果一个算法中即不节省空间,也不节约空间,那这就是个失败的算法. 这两者是不可同时兼得的,就拿Python中的数据类型来说 123456789import syslist_ = []tupel_ = ()dic_ = &amp;#123;&amp;#125;set_ = set([])print(&apos;%">
+<meta name="description" content="对所获取的的数据进行去重显得尤为重要,爬虫获取的冗余数据在大多时候都是都是无效且占用空间的. 设想有两个场景,一个是去除序列中出现的重复元素,获得的新序列是无序的,另外一个是去重获得新序列之后,依然是按照处理之前的顺序进行排列的. 无论是哪两种情况,序列的去重都是围绕set集合展开的,当然这也是set比较重要的属性. 对于第一种情况,直接使用set来处理就尤为简单 123a = [1,3,2,1,">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="时间与空间的矛盾">
-<meta property="og:url" content="http://123/2017/07/21/时间与空间的矛盾/index.html">
+<meta property="og:title" content="序列的去重">
+<meta property="og:url" content="http://123/2017/09/24/序列的去重/index.html">
 <meta property="og:site_name" content="ninethread&#39;blog">
-<meta property="og:description" content="记得以前上软件技术导论的时候,听的最多的话就是时间和空间是两个不可调和的矛盾,要么去拥有时间,要么去拥有空间,当然如果一个算法中即不节省空间,也不节约空间,那这就是个失败的算法. 这两者是不可同时兼得的,就拿Python中的数据类型来说 123456789import syslist_ = []tupel_ = ()dic_ = &amp;#123;&amp;#125;set_ = set([])print(&apos;%">
+<meta property="og:description" content="对所获取的的数据进行去重显得尤为重要,爬虫获取的冗余数据在大多时候都是都是无效且占用空间的. 设想有两个场景,一个是去除序列中出现的重复元素,获得的新序列是无序的,另外一个是去重获得新序列之后,依然是按照处理之前的顺序进行排列的. 无论是哪两种情况,序列的去重都是围绕set集合展开的,当然这也是set比较重要的属性. 对于第一种情况,直接使用set来处理就尤为简单 123a = [1,3,2,1,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-16T15:22:27.102Z">
+<meta property="og:updated_time" content="2018-07-19T11:31:18.725Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="时间与空间的矛盾">
-<meta name="twitter:description" content="记得以前上软件技术导论的时候,听的最多的话就是时间和空间是两个不可调和的矛盾,要么去拥有时间,要么去拥有空间,当然如果一个算法中即不节省空间,也不节约空间,那这就是个失败的算法. 这两者是不可同时兼得的,就拿Python中的数据类型来说 123456789import syslist_ = []tupel_ = ()dic_ = &amp;#123;&amp;#125;set_ = set([])print(&apos;%">
+<meta name="twitter:title" content="序列的去重">
+<meta name="twitter:description" content="对所获取的的数据进行去重显得尤为重要,爬虫获取的冗余数据在大多时候都是都是无效且占用空间的. 设想有两个场景,一个是去除序列中出现的重复元素,获得的新序列是无序的,另外一个是去重获得新序列之后,依然是按照处理之前的顺序进行排列的. 无论是哪两种情况,序列的去重都是围绕set集合展开的,当然这也是set比较重要的属性. 对于第一种情况,直接使用set来处理就尤为简单 123a = [1,3,2,1,">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://123/2017/07/21/时间与空间的矛盾/"/>
+  <link rel="canonical" href="http://123/2017/09/24/序列的去重/"/>
 
 
 
 
 
-  <title>时间与空间的矛盾 | ninethread'blog</title>
+  <title>序列的去重 | ninethread'blog</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://123/2017/07/21/时间与空间的矛盾/">
+    <link itemprop="mainEntityOfPage" href="http://123/2017/09/24/序列的去重/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fourcore">
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">时间与空间的矛盾</h1>
+          <h1 class="post-title" itemprop="name headline">序列的去重</h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-21T21:42:49+08:00">
-                2017-07-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-24T21:22:10+08:00">
+                2017-09-24
               </time>
             
 
@@ -386,12 +386,23 @@
       
 
       
-        <p>记得以前上软件技术导论的时候,听的最多的话就是时间和空间是两个不可调和的矛盾,要么去拥有时间,要么去拥有空间,当然如果一个算法中即不节省空间,也不节约空间,那这就是个失败的算法.</p>
-<p>这两者是不可同时兼得的,就拿Python中的数据类型来说</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">list_ = []</span><br><span class="line">tupel_ = ()</span><br><span class="line">dic_ = &#123;&#125;</span><br><span class="line">set_ = set([])</span><br><span class="line">print(<span class="string">'%s,%s'</span> % (type(list_), sys.getsizeof(list_)))</span><br><span class="line">print(<span class="string">'%s,%s'</span> % (type(tupel_), sys.getsizeof(tupel_)))</span><br><span class="line">print(<span class="string">'%s,%s'</span> % (type(dic_), sys.getsizeof(dic_)))</span><br><span class="line">print(<span class="string">'%s,%s'</span> % (type(set_), sys.getsizeof(set_)))</span><br></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;class 'list'&gt;,64</span><br><span class="line">&lt;class 'tuple'&gt;,48</span><br><span class="line">&lt;class 'tuple'&gt;,240</span><br><span class="line">&lt;class 'set'&gt;,224</span><br></pre></td></tr></table></figure>
-<p>可以看到,列表和元组所占内存较小,而字典和集合占的内存较大,所以可以这样理解,当我们去查询某一个元素是否在列表或者字典中时,列表查找的时间复杂度是O(n),而字典查找的时间复杂度是O(1),字典牺牲了空间换取了时间.</p>
-<p>我只是很肤浅的从这里看到了一点关于时间与空间的矛盾,我相信通过不断的深入学习,应该会遇到更多的这种情况.</p>
+        <p>对所获取的的数据进行去重显得尤为重要,爬虫获取的冗余数据在大多时候都是都是无效且占用空间的.</p>
+<p>设想有两个场景,一个是去除序列中出现的重复元素,获得的新序列是无序的,另外一个是去重获得新序列之后,依然是按照处理之前的顺序进行排列的.</p>
+<p>无论是哪两种情况,序列的去重都是围绕set集合展开的,当然这也是set比较重要的属性.</p>
+<p>对于第一种情况,直接使用set来处理就尤为简单</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">3</span>]</span><br><span class="line">a = set(a)</span><br><span class="line">a = list(a)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 3, 4]</span><br></pre></td></tr></table></figure>
+<p>可以看到输出的结果并不是按照原始顺序排列的,但依然有个问题就是转换后序列是按照升序排列的,最后测试一下,发现数据量较大时是不会出现这种情况的,集合并没有自动排序的功能.</p>
+<p>对于第二种情况,想要去重并且顺序不发生改变,这里又有两种情况,一种是序列元素是可哈希的,另外一种是序列元素不可哈希的.</p>
+<p>可哈希对象表示的是,在它生存期内是不可变的,如整数,浮点数,字符串,元组等.</p>
+<p>对于可哈希元素:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">judge</span><span class="params">(items)</span>:</span></span><br><span class="line">    seen = set()</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">        <span class="keyword">if</span> item <span class="keyword">not</span> <span class="keyword">in</span> seen:</span><br><span class="line">            <span class="keyword">yield</span> item</span><br><span class="line">            seen.add(item)</span><br><span class="line">b = list(judge(a))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+<p>使用这种方法,可以实现不打乱顺序产生序列.</p>
+<p>对于不可哈希元素:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = [&#123;<span class="string">'x'</span>:<span class="number">1</span>, <span class="string">'y'</span>:<span class="number">2</span>&#125;, &#123;<span class="string">'x'</span>:<span class="number">1</span>, <span class="string">'y'</span>:<span class="number">3</span>&#125;, &#123;<span class="string">'x'</span>:<span class="number">1</span>, <span class="string">'y'</span>:<span class="number">2</span>&#125;]</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">judge</span><span class="params">(items, key=None)</span>:</span></span><br><span class="line">	seen = set()</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">        val = item <span class="keyword">if</span> key <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">else</span> key(item)</span><br><span class="line">        <span class="keyword">if</span> val <span class="keyword">not</span> <span class="keyword">in</span> seen:</span><br><span class="line">            <span class="keyword">yield</span> item</span><br><span class="line">            seen.add(val)</span><br><span class="line">b = list(judge(a, key = <span class="keyword">lambda</span> key:(key[<span class="string">'x'</span>], key[<span class="string">'y'</span>])))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#123;<span class="string">'x'</span>: <span class="number">1</span>, <span class="string">'y'</span>: <span class="number">2</span>&#125;]</span><br></pre></td></tr></table></figure>
+<p>如果容器中的元素为不可哈希元素时,需要使用这种方法来进行去重才能保证保持元素的顺序,这种方法同时也可以实现容器中元素为可哈希的情况.</p>
 
       
     </div>
@@ -422,8 +433,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/20/Python中基本的数据结构/" rel="next" title="Python中基本的数据结构">
-                <i class="fa fa-chevron-left"></i> Python中基本的数据结构
+              <a href="/2017/09/17/QuerySet与QueryDict/" rel="next" title="QuerySet与QueryDict">
+                <i class="fa fa-chevron-left"></i> QuerySet与QueryDict
               </a>
             
           </div>
@@ -431,10 +442,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/26/F对象和Q对象/" rel="prev" title="F对象和Q对象">
-                F对象和Q对象 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
