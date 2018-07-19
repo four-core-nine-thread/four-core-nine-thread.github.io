@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="ninethread&#39;blog">
 <meta property="og:description" content="QuerySet,本质上是一个给定的模型的对象列表,虽然名字中带有set,刚开始会让我觉得其性质应该和集合有些许联系,但是就像Java和javascript那样,就是彻彻底底两种不同的语言,为什么说他是对象列表而不是像其名字那样的集合呢,因为它是有序的,并且表现形式上也更像是一个列表 1&amp;lt;QuerySet [&amp;lt;Cus: Cus object&amp;gt;, &amp;lt;Cus: Cus obje">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-18T23:52:54.575Z">
+<meta property="og:updated_time" content="2018-07-19T00:19:20.885Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="QuerySet与QueryDict">
 <meta name="twitter:description" content="QuerySet,本质上是一个给定的模型的对象列表,虽然名字中带有set,刚开始会让我觉得其性质应该和集合有些许联系,但是就像Java和javascript那样,就是彻彻底底两种不同的语言,为什么说他是对象列表而不是像其名字那样的集合呢,因为它是有序的,并且表现形式上也更像是一个列表 1&amp;lt;QuerySet [&amp;lt;Cus: Cus object&amp;gt;, &amp;lt;Cus: Cus obje">
@@ -394,7 +394,7 @@
 <p>QueryDict是HttpRequest获取的对象,GET和POST属性是django.http.QuertDict类的实例,数据结构类似于字典,以键值对的形式存在,但是和字典最大的区别就是,QueryDict允许存在相同的键.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&apos;info&apos;:[&apos;zsb&apos;, 111]&#125;</span><br></pre></td></tr></table></figure>
 <p>QueryDict中数据获取方式可以像字典那种使用dict[‘info’]或者dict.get(‘info’),不过需要注意的是,如果存在一键对于多值,使用get只会获得最后一个值,如果想要获取所有的值就需要使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dict.getlist(&apos;info&apos;)</span><br></pre></td></tr></table></figure>
 
       
     </div>
