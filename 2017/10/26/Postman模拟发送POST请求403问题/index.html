@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="在说起表单提交发起POST请求之前,我需要聊一聊CSRF(跨站请求伪造),当然百度上一大堆CSRF的概念,我就用找到的一张图来说明这个概念吧.  所以Django为我们提供了一种用来防御它的非常容易使用的系统,简而言之,就是每次使用POST请求时都应该使用{ % csrf_token % }来避免CSRF. 知道这个防护原理也是必要的: 在用户访问django的可信站点时，django反馈给用户的">
+<meta name="description" content="最近在写登陆注册时用到Postman来模拟提交表单,因为Django自带的CSRF保护机制,需要在所有的POST请求中附带上csrftoken,所以进行模拟发送POST请求时会一直显示403错误,并且在控制台中也会显示下面错误提示 1Forbidden (CSRF token missing or incorrect.) 经过测试,发现只有通过浏览器去访问Django服务器时才会获取到这个’csr">
 <meta name="keywords" content="Django">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简单但有效的csrf_token">
-<meta property="og:url" content="http://123/2017/09/10/简单但有效的csrf-token/index.html">
+<meta property="og:title" content="Postman模拟发送POST请求403问题">
+<meta property="og:url" content="http://123/2017/10/26/Postman模拟发送POST请求403问题/index.html">
 <meta property="og:site_name" content="ninethread&#39;blog">
-<meta property="og:description" content="在说起表单提交发起POST请求之前,我需要聊一聊CSRF(跨站请求伪造),当然百度上一大堆CSRF的概念,我就用找到的一张图来说明这个概念吧.  所以Django为我们提供了一种用来防御它的非常容易使用的系统,简而言之,就是每次使用POST请求时都应该使用{ % csrf_token % }来避免CSRF. 知道这个防护原理也是必要的: 在用户访问django的可信站点时，django反馈给用户的">
+<meta property="og:description" content="最近在写登陆注册时用到Postman来模拟提交表单,因为Django自带的CSRF保护机制,需要在所有的POST请求中附带上csrftoken,所以进行模拟发送POST请求时会一直显示403错误,并且在控制台中也会显示下面错误提示 1Forbidden (CSRF token missing or incorrect.) 经过测试,发现只有通过浏览器去访问Django服务器时才会获取到这个’csr">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://123/2017/09/10/简单但有效的csrf-token/csrf.jpg">
-<meta property="og:updated_time" content="2018-07-18T15:36:08.197Z">
+<meta property="og:updated_time" content="2018-07-21T02:27:53.960Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="简单但有效的csrf_token">
-<meta name="twitter:description" content="在说起表单提交发起POST请求之前,我需要聊一聊CSRF(跨站请求伪造),当然百度上一大堆CSRF的概念,我就用找到的一张图来说明这个概念吧.  所以Django为我们提供了一种用来防御它的非常容易使用的系统,简而言之,就是每次使用POST请求时都应该使用{ % csrf_token % }来避免CSRF. 知道这个防护原理也是必要的: 在用户访问django的可信站点时，django反馈给用户的">
-<meta name="twitter:image" content="http://123/2017/09/10/简单但有效的csrf-token/csrf.jpg">
+<meta name="twitter:title" content="Postman模拟发送POST请求403问题">
+<meta name="twitter:description" content="最近在写登陆注册时用到Postman来模拟提交表单,因为Django自带的CSRF保护机制,需要在所有的POST请求中附带上csrftoken,所以进行模拟发送POST请求时会一直显示403错误,并且在控制台中也会显示下面错误提示 1Forbidden (CSRF token missing or incorrect.) 经过测试,发现只有通过浏览器去访问Django服务器时才会获取到这个’csr">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://123/2017/09/10/简单但有效的csrf-token/"/>
+  <link rel="canonical" href="http://123/2017/10/26/Postman模拟发送POST请求403问题/"/>
 
 
 
 
 
-  <title>简单但有效的csrf_token | ninethread'blog</title>
+  <title>Postman模拟发送POST请求403问题 | ninethread'blog</title>
   
 
 
@@ -299,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://123/2017/09/10/简单但有效的csrf-token/">
+    <link itemprop="mainEntityOfPage" href="http://123/2017/10/26/Postman模拟发送POST请求403问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fourcore">
@@ -316,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">简单但有效的csrf_token</h1>
+          <h1 class="post-title" itemprop="name headline">Postman模拟发送POST请求403问题</h1>
         
 
         <div class="post-meta">
@@ -328,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-10T23:18:45+08:00">
-                2017-09-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-26T22:09:23+08:00">
+                2017-10-26
               </time>
             
 
@@ -388,11 +386,12 @@
       
 
       
-        <p>在说起表单提交发起POST请求之前,我需要聊一聊CSRF(跨站请求伪造),当然百度上一大堆CSRF的概念,我就用找到的一张图来说明这个概念吧.</p>
-<p><img src=".\csrf.jpg" alt=""></p>
-<p>所以Django为我们提供了一种用来防御它的非常容易使用的系统,简而言之,就是每次使用POST请求时都应该使用{ % csrf_token % }来避免CSRF.</p>
-<p>知道这个防护原理也是必要的:</p>
-<p>在用户访问django的可信站点时，django反馈给用户的表单中有一个隐含字段csrftoken，这个值是在服务器端随机生成的，每一次提交表单都会生成不同的值。当用户提交django的表单时，服务器校验这个表单的csrftoken是否和自己保存的一致，来判断用户的合法性。当用户被csrf攻击从其他站点发送精心编制的攻击请求时，由于其他站点不可能知道隐藏的csrftoken字段的信息这样在服务器端就会校验失败，攻击被成功防御，这样就能避免被 CSRF 攻击。</p>
+        <p>最近在写登陆注册时用到Postman来模拟提交表单,因为Django自带的CSRF保护机制,需要在所有的POST请求中附带上csrftoken,所以进行模拟发送POST请求时会一直显示403错误,并且在控制台中也会显示下面错误提示</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Forbidden (CSRF token missing <span class="keyword">or</span> incorrect.)</span><br></pre></td></tr></table></figure>
+<p>经过测试,发现只有通过浏览器去访问Django服务器时才会获取到这个’csrftoken’,如果Django站点只提供API而没有页面的话,就没有办法使用这个保护机制.</p>
+<p>只是为了前期的测试,可以注释掉settings.py中的中间键来取消这个验证</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 'django.middleware.csrf.CsrfViewMiddleware',</span></span><br></pre></td></tr></table></figure>
+<p>这样看来,开发一个纯提供API的服务器,使用Django是无法提供安全保护的,需要使用其他途径来实现保护.</p>
 
       
     </div>
@@ -423,8 +422,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/28/模板中的过滤器/" rel="next" title="模板中的过滤器">
-                <i class="fa fa-chevron-left"></i> 模板中的过滤器
+              <a href="/2017/10/17/基本数据类型的推导式/" rel="next" title="基本数据类型的推导式">
+                <i class="fa fa-chevron-left"></i> 基本数据类型的推导式
               </a>
             
           </div>
@@ -432,10 +431,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/17/QuerySet与QueryDict/" rel="prev" title="QuerySet与QueryDict">
-                QuerySet与QueryDict <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

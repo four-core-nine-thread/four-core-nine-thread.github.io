@@ -9,13 +9,6 @@
     </url>
 
     <url>
-        <loc>http://123/tags/Django/</loc>
-        <lastmod>2018-07-19T00:19:20.885Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://123/tags/life/</loc>
         <lastmod>2018-07-20T09:16:56.906Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -25,6 +18,13 @@
     <url>
         <loc>http://123/tags/Python/</loc>
         <lastmod>2018-07-20T09:43:50.779Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://123/tags/Django/</loc>
+        <lastmod>2018-07-21T02:27:53.960Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
