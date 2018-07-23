@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Web开发第一道难关]]></title>
+    <url>%2F2017%2F11%2F01%2FWeb%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%80%E9%81%93%E9%9A%BE%E5%85%B3%2F</url>
+    <content type="text"><![CDATA[cookie和session对我来说并不陌生,以前读书的时候开电脑的第一件事就是打开360清理垃圾,里面有一栏会提示是否清除cookie,当时我并不知道这玩意用来干嘛,随意基本都是每次都会清除. 最近在写登陆注册,遇到了cookie的session,并不是很理解,百度百科讲有太过于专业,看着很难理解,百度了很久结合了很多答案,再加上自己的理解,来记录一下以便好对比对错. Session的概念Session存放于服务器端用于存放用户信息,当用户第一次发送请求时,服务器会自动生成一个Session和Session ID用来记录这个用户,并在响应中附带这个Session ID返回到浏览器. 当用户第二次去请求服务器时.在请求中就会附带这个Session ID,服务器在获取这个ID后就会去数据库中对比Session,从而获取到用户的信息. 浏览器中保存这个Session ID有多种方式,但是我只遇到过使用cookie来保存所以就暂时说明这种方式: 服务器将Session ID发送到浏览器后.cookie将这个ID保存,如果不设置过期期限的话,当用户关闭浏览器后,就会自动清除这个ID,如果设置了过期期限,这个cookie就会保存到硬盘中,以便下次读取. Cookie的概念可以称之为’浏览器缓存’,它是在Web服务器保存在浏览器上的小文本文件,用于保存信息,但是保存的信息大小不能超过4K. Cookie与Session的区别cookie是存储在浏览器上,而session是保存在服务器上的,当我们访问服务器时,会将cookie中存储的session ID取出发往服务器,然后再根据这个ID查询相应的session从而获取用户信息.cookie一般用于判断用户是否登陆,以便下次能够直接登陆,还有就是能够保存我们浏览购物网站放入购物车的商品的信息还有一些搜索信息. session是存储于服务器上的,所以无法伪造,而cookie是存在于本地的,所以可以被伪造,从安全性的角度来说,sessio是安全的,而cookie是不安全的.session一般用于验证登陆信息,存储一些私人或者比较重要的信息. Cookie与Sesssion的联系Cookie属于Session对象的一种,Session ID的存储依赖于Cookie.]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Postman模拟发送POST请求403问题]]></title>
     <url>%2F2017%2F10%2F26%2FPostman%E6%A8%A1%E6%8B%9F%E5%8F%91%E9%80%81POST%E8%AF%B7%E6%B1%82403%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[最近在写登陆注册时用到Postman来模拟提交表单,因为Django自带的CSRF保护机制,需要在所有的POST请求中附带上csrftoken,所以进行模拟发送POST请求时会一直显示403错误,并且在控制台中也会显示下面错误提示 1Forbidden (CSRF token missing or incorrect.) 经过测试,发现只有通过浏览器去访问Django服务器时才会获取到这个’csrftoken’,如果Django站点只提供API而没有页面的话,就没有办法使用这个保护机制. 只是为了前期的测试,可以注释掉settings.py中的中间键来取消这个验证 1# 'django.middleware.csrf.CsrfViewMiddleware', 这样看来,开发一个纯提供API的服务器,使用Django是无法提供安全保护的,需要使用其他途径来实现保护.]]></content>
