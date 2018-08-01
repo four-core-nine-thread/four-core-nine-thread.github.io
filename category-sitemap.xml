@@ -35,15 +35,15 @@
     </url>
 
     <url>
-        <loc>http://123/categories/%E6%B5%8B%E8%AF%95/</loc>
-        <lastmod>2018-07-27T06:57:59.649Z</lastmod>
+        <loc>http://123/categories/Python/</loc>
+        <lastmod>2018-07-29T15:27:47.849Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://123/categories/Python/</loc>
-        <lastmod>2018-07-29T15:27:47.849Z</lastmod>
+        <loc>http://123/categories/%E6%B5%8B%E8%AF%95/</loc>
+        <lastmod>2018-08-01T00:56:20.954Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

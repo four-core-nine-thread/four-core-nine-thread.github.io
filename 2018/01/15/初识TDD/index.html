@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="life," />
+  <meta name="keywords" content="测试,Django," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="最近喜欢上了Python cookbook这本书,看到一些很科幻的模块感觉像打开了新世界的大门,虽然不太懂模块的底层是如何实现功能,但是能够顺手用起来也是一件不错的事情. 喜欢这本书的另外一个原因是,我再也不会因为看书看着看着就睡着了,我随时都要思考如何去使用其中介绍的语法,如何才能把这些东西用到我的工作中,就算有些方法暂时还用不到,但作为无聊时的消遣也是不错的选择. 它从基本的数据结构讲到面向对">
-<meta name="keywords" content="life">
+<meta name="description" content="Python的魅力不仅在于简洁的语法和作为胶水一样和其他语言进行粘合,我最崇拜的是其几乎是无所不能的三方库,至少在我看来,拥有良好生态的python前途是一片光明的. 在工作大半年之后,也学习了Django,Flask这样主流的python框架,我开始思考接下来的时间里我需要去发展的方向,我很明确我的最终目标肯定是在程序员顶端的大数据和AI,但是目前的我来说,他们距离我太遥远,我连numpy,pa">
+<meta name="keywords" content="测试,Django">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安利一本有趣的书">
-<meta property="og:url" content="http://123/2017/10/05/安利一本有趣的书/index.html">
+<meta property="og:title" content="初识TDD">
+<meta property="og:url" content="http://123/2018/01/15/初识TDD/index.html">
 <meta property="og:site_name" content="ninethread&#39;blog">
-<meta property="og:description" content="最近喜欢上了Python cookbook这本书,看到一些很科幻的模块感觉像打开了新世界的大门,虽然不太懂模块的底层是如何实现功能,但是能够顺手用起来也是一件不错的事情. 喜欢这本书的另外一个原因是,我再也不会因为看书看着看着就睡着了,我随时都要思考如何去使用其中介绍的语法,如何才能把这些东西用到我的工作中,就算有些方法暂时还用不到,但作为无聊时的消遣也是不错的选择. 它从基本的数据结构讲到面向对">
+<meta property="og:description" content="Python的魅力不仅在于简洁的语法和作为胶水一样和其他语言进行粘合,我最崇拜的是其几乎是无所不能的三方库,至少在我看来,拥有良好生态的python前途是一片光明的. 在工作大半年之后,也学习了Django,Flask这样主流的python框架,我开始思考接下来的时间里我需要去发展的方向,我很明确我的最终目标肯定是在程序员顶端的大数据和AI,但是目前的我来说,他们距离我太遥远,我连numpy,pa">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-20T09:16:56.906Z">
+<meta property="og:updated_time" content="2018-08-01T00:56:20.954Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安利一本有趣的书">
-<meta name="twitter:description" content="最近喜欢上了Python cookbook这本书,看到一些很科幻的模块感觉像打开了新世界的大门,虽然不太懂模块的底层是如何实现功能,但是能够顺手用起来也是一件不错的事情. 喜欢这本书的另外一个原因是,我再也不会因为看书看着看着就睡着了,我随时都要思考如何去使用其中介绍的语法,如何才能把这些东西用到我的工作中,就算有些方法暂时还用不到,但作为无聊时的消遣也是不错的选择. 它从基本的数据结构讲到面向对">
+<meta name="twitter:title" content="初识TDD">
+<meta name="twitter:description" content="Python的魅力不仅在于简洁的语法和作为胶水一样和其他语言进行粘合,我最崇拜的是其几乎是无所不能的三方库,至少在我看来,拥有良好生态的python前途是一片光明的. 在工作大半年之后,也学习了Django,Flask这样主流的python框架,我开始思考接下来的时间里我需要去发展的方向,我很明确我的最终目标肯定是在程序员顶端的大数据和AI,但是目前的我来说,他们距离我太遥远,我连numpy,pa">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://123/2017/10/05/安利一本有趣的书/"/>
+  <link rel="canonical" href="http://123/2018/01/15/初识TDD/"/>
 
 
 
 
 
-  <title>安利一本有趣的书 | ninethread'blog</title>
+  <title>初识TDD | ninethread'blog</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://123/2017/10/05/安利一本有趣的书/">
+    <link itemprop="mainEntityOfPage" href="http://123/2018/01/15/初识TDD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fourcore">
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">安利一本有趣的书</h1>
+          <h1 class="post-title" itemprop="name headline">初识TDD</h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-05T21:06:45+08:00">
-                2017-10-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-15T19:54:59+08:00">
+                2018-01-15
               </time>
             
 
@@ -349,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">life</span>
+                  <a href="/categories/测试/" itemprop="url" rel="index">
+                    <span itemprop="name">测试</span>
                   </a>
                 </span>
 
@@ -386,11 +386,13 @@
       
 
       
-        <p>最近喜欢上了Python cookbook这本书,看到一些很科幻的模块感觉像打开了新世界的大门,虽然不太懂模块的底层是如何实现功能,但是能够顺手用起来也是一件不错的事情.</p>
-<p>喜欢这本书的另外一个原因是,我再也不会因为看书看着看着就睡着了,我随时都要思考如何去使用其中介绍的语法,如何才能把这些东西用到我的工作中,就算有些方法暂时还用不到,但作为无聊时的消遣也是不错的选择.</p>
-<p>它从基本的数据结构讲到面向对象再到高并发到最后的C扩展,基本囊括了初级工程师到中级工程师所需的所有技能,如果熟读这本书,调戏一下面试官也不是不可能的.</p>
-<p>因为时间被挤的太多了,但是抽空去看看这本书收获还是很大的,我觉得把其中一些觉得有用的方法记录下来是必要的,将别人的知识变成自己的知识本身就是初级编程者必须的技能.</p>
-<p>另外,吐槽一下kindel用起来真的不怎么样,电子书再怎么方便,我还是想回归最本质的读书方式,电子书也挺贵的,我不如买书.</p>
+        <p>Python的魅力不仅在于简洁的语法和作为胶水一样和其他语言进行粘合,我最崇拜的是其几乎是无所不能的三方库,至少在我看来,拥有良好生态的python前途是一片光明的.</p>
+<p>在工作大半年之后,也学习了Django,Flask这样主流的python框架,我开始思考接下来的时间里我需要去发展的方向,我很明确我的最终目标肯定是在程序员顶端的大数据和AI,但是目前的我来说,他们距离我太遥远,我连numpy,pandas都还一头雾水,更不说去完成数据的处理了.</p>
+<p>最近和同事聊天说到测试这一块,我对于测试的理解仅仅限于手动去测试某些功能,就像工人测试一块遥控器会一个按钮一个按钮的按.我承认我负责的模块不是很难,很多问题都可以通过debug去解决为什么还需要测试这玩意呢?</p>
+<p>同事给我看了曾经项目的一个业务,我看的不是很懂,所以应该是很复杂的,复杂到他说想要去修改一部分代码都很困难,开始巴拉巴拉说了一些使用TDD的好处.</p>
+<p>他给我介绍到了TDD,也觉得往这方面发展也是对于写框架的一种提升,虽然当时我并不是很理解TDD的概念,但是明白最简单的一点,使用测试驱动开发就是需要’’测试,小幅改动,测试’直到代码完全正常,使用功能测试去模拟用户,使用单元测试来模拟程序员,使用是自动化测试来测试整个项目而不是在这儿点点链接,在输入框中输入点信息.</p>
+<p>说到TDD肯定就会说到敏捷开发,因为他们是密不可分的,有时候我并不需要将产品的所有功能都实现才上线,就现在的环境,谁先推出项目谁先占领市场谁才会笑到最后.</p>
+<p>这是我第一次认识到TDD,虽然肤浅,但是对于测试我有了重新的认识.</p>
 
       
     </div>
@@ -408,7 +410,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/life/" rel="tag"># life</a>
+            <a href="/tags/测试-Django/" rel="tag"># 测试,Django</a>
           
         </div>
       
@@ -421,8 +423,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/30/序列中元素个数的计算/" rel="next" title="序列中元素个数的计算">
-                <i class="fa fa-chevron-left"></i> 序列中元素个数的计算
+              <a href="/2017/11/25/替换回调函数/" rel="next" title="替换回调函数">
+                <i class="fa fa-chevron-left"></i> 替换回调函数
               </a>
             
           </div>
@@ -431,8 +433,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/17/基本数据类型的推导式/" rel="prev" title="基本数据类型的推导式">
-                基本数据类型的推导式 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/20/编程就像从井里打水/" rel="prev" title="编程就像从井里打水">
+                编程就像从井里打水 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
