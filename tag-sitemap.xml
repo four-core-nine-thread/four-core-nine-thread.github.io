@@ -44,13 +44,6 @@
     </url>
 
     <url>
-        <loc>http://123/tags/life-Python/</loc>
-        <lastmod>2018-08-04T05:02:24.914Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://123/tags/Django/</loc>
         <lastmod>2018-08-04T05:04:24.352Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -60,6 +53,13 @@
     <url>
         <loc>http://123/tags/Python/</loc>
         <lastmod>2018-08-04T05:04:45.851Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://123/tags/life-Python/</loc>
+        <lastmod>2018-08-04T06:16:24.957Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
