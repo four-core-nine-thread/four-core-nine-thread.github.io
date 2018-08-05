@@ -58,13 +58,6 @@
     </url>
 
     <url>
-        <loc>http://123/tags/Python/</loc>
-        <lastmod>2018-08-05T16:24:29.325Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://123/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
         <lastmod>2018-08-05T16:57:31.348Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -74,6 +67,13 @@
     <url>
         <loc>http://123/tags/Flask-Django/</loc>
         <lastmod>2018-08-05T17:29:11.949Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://123/tags/Python/</loc>
+        <lastmod>2018-08-05T17:33:32.265Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
