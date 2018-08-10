@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Ubuntu远程连接MySQL(connection refused)解决方法]]></title>
+    <url>%2F2018%2F01%2F27%2FUbuntu%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5MySQL-connection-refused-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[连接阿里云数据库的时候.端口,正常配置都完成的情况下,依然显示connection refused. 解决这个问题需要进入vim /etc/mysql/mysql.conf.d/mysqld.conf中将 1# bind-address = 127.0.0.1 这句话注释掉就可以解决这个问题]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[TDD流程]]></title>
     <url>%2F2018%2F01%2F25%2FTDD%E6%B5%81%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[在一个项目中使用到TDD来完成测试首先需要知道该干什么,如何去干,查询资料归纳了一下TDD工作的整个流程,因为没有找到XMind中的流程图,所以只好手动画了. TDD的总体流程: 包含功能测试和单元测试的TDD流程: 功能测试是应用是否能正常运行的最终评判,而单元测试只是整个开发过程中的一个辅助工具,不难看出,面对用户的FT是衡量一个应用是否被用户正常使用的判断标准.]]></content>
@@ -9,6 +20,17 @@
       </categories>
       <tags>
         <tag>测试,Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ubuntu更新pip后无法导入main解决方法]]></title>
+    <url>%2F2018%2F01%2F22%2FUbuntu%E6%9B%B4%E6%96%B0pip%E5%90%8E%E6%97%A0%E6%B3%95%E5%AF%BC%E5%85%A5main%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[使用阿里云的Ubuntu镜像之后,进行pip的更新,更新完成之后进行pip安装模块会出现 1ImportError: cannot import name main 这个问题需要修改/usr/bin/pip文件中,修改成 123456from pip import mainif __name__ == '__main__': sys.exit(main()) 安装pip3的时候好像也是这个问题,修改相应的配置文件就可以使用了]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -374,5 +396,27 @@
     <title><![CDATA[Hello World]]></title>
     <url>%2F2017%2F06%2F01%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL主从配置]]></title>
+    <url>%2F2017%2F01%2F14%2FMySQL%E4%B8%BB%E4%BB%8E%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[MySQL的主从配置比redis的主从相比要轻松的多,可能我参与的比较少吧,但是基本的主从配置还是没有问题的. 主配置主从主要实现的是读写分离,这样做法的优势有很多,我所理解的一个是缓解服务器的读写压力. 在Ubuntu下,配置文件为my.cnf,位置为/etc/mysql/my.cnf 在windows下,配置文件为my.ini vim my.cnf # 进入配置文件进行设定 server-id=200 # 设置主服务器的ID,主和从的id号不能相同 innodb_flush_log_at_trx_commit=2 # 防止断电数据丢失 sync_binlog=1 # 开启binlog日志同步功能 log-bin=mysql-bin-200 # binlog日志文件名 binlog-do-db=xxx # 这个表示同步哪个库,不写的话表示同步所有的库 主配置完成后,重启主库service mysql restart mysql -uroot -p # 登陆 grant replication slave on . to ‘‘mark‘@’192.168.1.201’ identified by ‘123456’; # 授权给从数据库服务器192.168.1.201, 用户名mark, 密码123456 show master status; # 查看主库的状态 从配置vim my.cnf server-id = 201 # 不能和主ID一样 innodb_fiush_log_at_trx_commit=2 sync_binlog=1 log-bin=mysql-bin-201 从配置完成后,重启重库service mysql restart mysql -uroot -p change master to master_host=’192.168.1.200’, master_user=’mark’,master_password=’123456’,master_log_file = ‘mysql-bin-200.000002’,master_log_pos=1167; # 这里是建立与主服务器的连接,master_log_pos需要查看主数据库中position的数值 start slave; # 开启从库 show slave status; # 查看从数据库状态 验证主从主从中的数据库需要相同,主数据库在进行改动时,从数据库是可以查看的,主数据库负责写,从数据库负责读,分摊数据库压力.]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL性能优化]]></title>
+    <url>%2F2017%2F01%2F11%2FMySQL%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%2F</url>
+    <content type="text"><![CDATA[修改back_logback_log值表示MySQL的连接数据达到max_connections时,有多少请求能够被放在堆栈之中以等待其他连接释放.如果等待连接的数量超过back_log时,就不被授予连接资源. show variables like ‘back_log’:查看当前数量 网上说默认值是50, 但是我查出来是80,反正如果要根据当前需求来改变数量,可以在my.ini中将back_log的值修改为500,理论上可以无限增大的,但是会收到系统网卡等的限制. 修改wait_timeoutwait_timeout值表示服务器关闭非交互连接之前等待活动的秒数,而interactive_timeout表示的交互式连接等待的秒数,当网站有大量的MySQL连接请求时,设置这个wait_timeout值就非常重要,可以将超时的连接关闭,避免资源的损失. 将wait_timeout从8小时修改为30分钟,wait_timeout=1800 修改max_connectionsmax_connections指MySQL的最大连接数,在并发连接较大时可以适当增大这个连接数,但是增大连接就意味着更多的内存开销,只能在适当的范围内调节. MySQL服务器允许的最大连接数16384 show variables like ‘max_connections’查看当前连接数 可以将默认的max_connections值151,修改为3000 修改max_user_connectionsmax_user_connections指同一个账号能够同时连接MySQL服务的最大连接数. 默认值为0表示不受限制,根据实际需求进行调节. 要与Max_used_connections的区分开来,后者是表示过去的某段时间最大的连接数. show variables like ‘max_user_connections’查看当前值 修改thread_concurrencythread_concurrency指表示开启的线程数,一般根据服务器的CPU核数进行设定,线程数等于CPU x 2 show variables like ‘thread_concurrency’查看默认值]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+      </tags>
   </entry>
 </search>
