@@ -49,13 +49,6 @@
     </url>
 
     <url>
-        <loc>http://123/categories/Python/</loc>
-        <lastmod>2018-08-05T17:35:01.374Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://123/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
         <lastmod>2018-08-10T09:00:55.386Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -65,6 +58,13 @@
     <url>
         <loc>http://123/categories/Linux/</loc>
         <lastmod>2018-08-10T09:31:34.599Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://123/categories/Python/</loc>
+        <lastmod>2020-02-17T16:18:47.674Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
