@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Linux," />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="连接阿里云数据库的时候.端口,正常配置都完成的情况下,依然显示connection refused. 解决这个问题需要进入vim /etc/mysql/mysql.conf.d/mysqld.conf中将 1# bind-address = 127.0.0.1 这句话注释掉就可以解决这个问题">
-<meta name="keywords" content="Linux">
+<meta name="description" content="xml的解析方式 解析方式为两种:  DOM(Document Object Model)解析：将整个xml文件加载到内存，形成一个DOM树  优点：能获取到整个DOM树的完整信息，通过document对象来对DOM树进行CRUD操作 缺点：于是直接加载整个xml文件，当形成的DOM树太大，会占用较多的内存资源   SAX(Simple API For Xml)解析：对xml进行逐行解析，逐行加载">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu远程连接MySQL(connection refused)解决方法">
-<meta property="og:url" content="http://123/2018/01/27/Ubuntu远程连接MySQL-connection-refused-解决方法/index.html">
+<meta property="og:title" content="Java中xml解析---dom4j">
+<meta property="og:url" content="http://123/2018/01/29/Java中xml解析-dom4j/index.html">
 <meta property="og:site_name" content="ninethread&#39;blog">
-<meta property="og:description" content="连接阿里云数据库的时候.端口,正常配置都完成的情况下,依然显示connection refused. 解决这个问题需要进入vim /etc/mysql/mysql.conf.d/mysqld.conf中将 1# bind-address = 127.0.0.1 这句话注释掉就可以解决这个问题">
+<meta property="og:description" content="xml的解析方式 解析方式为两种:  DOM(Document Object Model)解析：将整个xml文件加载到内存，形成一个DOM树  优点：能获取到整个DOM树的完整信息，通过document对象来对DOM树进行CRUD操作 缺点：于是直接加载整个xml文件，当形成的DOM树太大，会占用较多的内存资源   SAX(Simple API For Xml)解析：对xml进行逐行解析，逐行加载">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-10T09:31:34.599Z">
+<meta property="og:updated_time" content="2021-05-10T06:06:14.228Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu远程连接MySQL(connection refused)解决方法">
-<meta name="twitter:description" content="连接阿里云数据库的时候.端口,正常配置都完成的情况下,依然显示connection refused. 解决这个问题需要进入vim /etc/mysql/mysql.conf.d/mysqld.conf中将 1# bind-address = 127.0.0.1 这句话注释掉就可以解决这个问题">
+<meta name="twitter:title" content="Java中xml解析---dom4j">
+<meta name="twitter:description" content="xml的解析方式 解析方式为两种:  DOM(Document Object Model)解析：将整个xml文件加载到内存，形成一个DOM树  优点：能获取到整个DOM树的完整信息，通过document对象来对DOM树进行CRUD操作 缺点：于是直接加载整个xml文件，当形成的DOM树太大，会占用较多的内存资源   SAX(Simple API For Xml)解析：对xml进行逐行解析，逐行加载">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://123/2018/01/27/Ubuntu远程连接MySQL-connection-refused-解决方法/"/>
+  <link rel="canonical" href="http://123/2018/01/29/Java中xml解析-dom4j/"/>
 
 
 
 
 
-  <title>Ubuntu远程连接MySQL(connection refused)解决方法 | ninethread'blog</title>
+  <title>Java中xml解析---dom4j | ninethread'blog</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://123/2018/01/27/Ubuntu远程连接MySQL-connection-refused-解决方法/">
+    <link itemprop="mainEntityOfPage" href="http://123/2018/01/29/Java中xml解析-dom4j/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fourcore">
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ubuntu远程连接MySQL(connection refused)解决方法</h1>
+          <h1 class="post-title" itemprop="name headline">Java中xml解析---dom4j</h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-27T19:02:52+08:00">
-                2018-01-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-29T09:11:43+08:00">
+                2018-01-29
               </time>
             
 
@@ -349,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -386,11 +386,25 @@
       
 
       
-        <p>连接阿里云数据库的时候.端口,正常配置都完成的情况下,依然显示connection refused.</p>
-<p>解决这个问题需要进入vim /etc/mysql/mysql.conf.d/mysqld.conf中将</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bind-address = 127.0.0.1</span></span><br></pre></td></tr></table></figure>
-<p>这句话注释掉就可以解决这个问题</p>
-
+        <h3 id="xml的解析方式"><a href="#xml的解析方式" class="headerlink" title="xml的解析方式"></a>xml的解析方式</h3><p> 解析方式为两种:</p>
+<ul>
+<li><p>DOM(Document Object Model)解析：将整个xml文件加载到内存，形成一个DOM树</p>
+<ul>
+<li>优点：能获取到整个DOM树的完整信息，通过document对象来对DOM树进行CRUD操作</li>
+<li>缺点：于是直接加载整个xml文件，当形成的DOM树太大，会占用较多的内存资源</li>
+</ul>
+</li>
+<li><p>SAX(Simple API For Xml)解析：对xml进行逐行解析，逐行加载，需要哪行就加载哪行</p>
+<ul>
+<li>优点：逐行加载，不太占用内存资源</li>
+<li>缺点：无法获取整个DOM树对象，只能对xml数据进行查询，不能增删</li>
+</ul>
+</li>
+</ul>
+<h3 id="xml常用的解析器"><a href="#xml常用的解析器" class="headerlink" title="xml常用的解析器"></a>xml常用的解析器</h3><p>jaxp：是SUN公司提供的xml解析器，支持dom和sax这两种方式的解析</p>
+<p>dom4j：是开源组织提供的xml解析器，性能是优于SUN公司提供的解析器的, 基于dom和sax这两种方式的综合解析方式</p>
+<p>jsoup：主要是用来解析html的，但是由于html和xml的结构是一样的，所以也可以用来解析xml</p>
+<h3 id="使用demo4j对xml文件进行CRUD"><a href="#使用demo4j对xml文件进行CRUD" class="headerlink" title="使用demo4j对xml文件进行CRUD"></a>使用demo4j对xml文件进行CRUD</h3>
       
     </div>
     
@@ -407,7 +421,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag"># Linux</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -420,8 +434,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/25/TDD流程/" rel="next" title="TDD流程">
-                <i class="fa fa-chevron-left"></i> TDD流程
+              <a href="/2018/01/27/Ubuntu远程连接MySQL-connection-refused-解决方法/" rel="next" title="Ubuntu远程连接MySQL(connection refused)解决方法">
+                <i class="fa fa-chevron-left"></i> Ubuntu远程连接MySQL(connection refused)解决方法
               </a>
             
           </div>
@@ -430,8 +444,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/29/Java中xml解析-dom4j/" rel="prev" title="Java中xml解析---dom4j">
-                Java中xml解析---dom4j <i class="fa fa-chevron-right"></i>
+              <a href="/2020/02/17/str-与-repr-区别/" rel="prev" title="__str__与__repr__区别">
+                __str__与__repr__区别 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -484,8 +498,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -549,6 +572,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#xml的解析方式"><span class="nav-number">1.</span> <span class="nav-text">xml的解析方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xml常用的解析器"><span class="nav-number">2.</span> <span class="nav-text">xml常用的解析器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用demo4j对xml文件进行CRUD"><span class="nav-number">3.</span> <span class="nav-text">使用demo4j对xml文件进行CRUD</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

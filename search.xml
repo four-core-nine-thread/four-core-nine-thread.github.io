@@ -25,9 +25,9 @@
     
     <entry>
       <title>Java中xml解析---dom4j</title>
-      <link href="/2018/01/28/Java%E4%B8%ADxml%E8%A7%A3%E6%9E%90-dom4j/"/>
-      <url>/2018/01/28/Java%E4%B8%ADxml%E8%A7%A3%E6%9E%90-dom4j/</url>
-      <content type="html"><![CDATA[<h3 id="xml的解析方式"><a href="#xml的解析方式" class="headerlink" title="xml的解析方式"></a>xml的解析方式</h3><p> 解析方式为两种:</p><ul><li><p>DOM(Document Object Model)解析：将整个xml文件加载到内存，形成一个DOM树</p><ul><li>优点：能获取到整个DOM树的完整信息，通过document对象来对DOM树进行CRUD操作</li><li>缺点：于是直接加载整个xml文件，当形成的DOM树太大，会占用较多的内存资源</li></ul></li><li><p>SAX(Simple API For Xml)解析：对xml进行逐行解析，逐行加载，需要哪行就加载哪行</p><ul><li>优点：逐行加载，不太占用内存资源</li><li>缺点：无法获取整个DOM树对象，只能对xml数据进行查询，不能增删</li></ul></li></ul><h3 id="xml常用的解析器"><a href="#xml常用的解析器" class="headerlink" title="xml常用的解析器"></a>xml常用的解析器</h3><p>jaxp：是SUN公司提供的xml解析器，支持dom和sax这两种方式的解析</p><p>dom4j：是开源组织提供的xml解析器，性能是优于SUN公司提供的解析器的, 基于dom和sax这两种方式的综合解析方式</p><p>jsoup：主要是用来解析html的，但是由于html和xml的结构是一样的，所以也可以用来解析xml</p><h3 id="使用demo4对xml文件进行CRUD"><a href="#使用demo4对xml文件进行CRUD" class="headerlink" title="使用demo4对xml文件进行CRUD"></a>使用demo4对xml文件进行CRUD</h3>]]></content>
+      <link href="/2018/01/29/Java%E4%B8%ADxml%E8%A7%A3%E6%9E%90-dom4j/"/>
+      <url>/2018/01/29/Java%E4%B8%ADxml%E8%A7%A3%E6%9E%90-dom4j/</url>
+      <content type="html"><![CDATA[<h3 id="xml的解析方式"><a href="#xml的解析方式" class="headerlink" title="xml的解析方式"></a>xml的解析方式</h3><p> 解析方式为两种:</p><ul><li><p>DOM(Document Object Model)解析：将整个xml文件加载到内存，形成一个DOM树</p><ul><li>优点：能获取到整个DOM树的完整信息，通过document对象来对DOM树进行CRUD操作</li><li>缺点：于是直接加载整个xml文件，当形成的DOM树太大，会占用较多的内存资源</li></ul></li><li><p>SAX(Simple API For Xml)解析：对xml进行逐行解析，逐行加载，需要哪行就加载哪行</p><ul><li>优点：逐行加载，不太占用内存资源</li><li>缺点：无法获取整个DOM树对象，只能对xml数据进行查询，不能增删</li></ul></li></ul><h3 id="xml常用的解析器"><a href="#xml常用的解析器" class="headerlink" title="xml常用的解析器"></a>xml常用的解析器</h3><p>jaxp：是SUN公司提供的xml解析器，支持dom和sax这两种方式的解析</p><p>dom4j：是开源组织提供的xml解析器，性能是优于SUN公司提供的解析器的, 基于dom和sax这两种方式的综合解析方式</p><p>jsoup：主要是用来解析html的，但是由于html和xml的结构是一样的，所以也可以用来解析xml</p><h3 id="使用demo4j对xml文件进行CRUD"><a href="#使用demo4j对xml文件进行CRUD" class="headerlink" title="使用demo4j对xml文件进行CRUD"></a>使用demo4j对xml文件进行CRUD</h3>]]></content>
       
       <categories>
           
