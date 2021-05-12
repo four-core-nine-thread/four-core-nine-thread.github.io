@@ -28,20 +28,6 @@
     </url>
 
     <url>
-        <loc>http://123/categories/Java/</loc>
-        <lastmod>2021-05-12T06:44:22.878Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://123/categories/Java/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-        <lastmod>2021-05-12T06:44:22.878Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://123/categories/Python/%E6%B5%8B%E8%AF%95/</loc>
         <lastmod>2021-05-12T06:48:40.347Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -86,6 +72,20 @@
     <url>
         <loc>http://123/categories/Python/Django/</loc>
         <lastmod>2021-05-12T07:36:17.120Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://123/categories/Java/</loc>
+        <lastmod>2021-05-12T12:52:04.993Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://123/categories/Java/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+        <lastmod>2021-05-12T12:52:04.993Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

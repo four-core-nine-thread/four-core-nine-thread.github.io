@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://123/2018/02/06/Java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/</loc>
+        <lastmod>2021-05-12T12:52:04.993Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://123/2018/02/03/Java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93-JDBC/</loc>
+        <lastmod>2021-05-12T08:54:51.735Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://123/2018/01/25/TDD%E6%B5%81%E7%A8%8B/</loc>
         <lastmod>2021-05-12T07:36:17.120Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -185,14 +201,6 @@
     <url>
         <loc>http://123/2018/01/20/%E7%BC%96%E7%A8%8B%E5%B0%B1%E5%83%8F%E4%BB%8E%E4%BA%95%E9%87%8C%E6%89%93%E6%B0%B4/</loc>
         <lastmod>2021-05-12T06:48:40.347Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://123/2018/02/03/Java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93-JDBC/</loc>
-        <lastmod>2021-05-12T06:44:22.878Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
