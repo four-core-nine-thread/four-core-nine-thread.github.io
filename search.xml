@@ -20,8 +20,8 @@
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
         <tag>Java</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
@@ -103,7 +103,6 @@
       <categories>
         <category>Python</category>
         <category>Django</category>
-        <category>测试</category>
       </categories>
       <tags>
         <tag>Django</tag>
@@ -116,8 +115,8 @@
     <url>%2F2018%2F01%2F07%2FFlask%E4%B8%8EDjango%E5%AF%B9%E6%AF%94%2F</url>
     <content type="text"><![CDATA[Django:我个人更喜欢使用Django,因为我能想到的,它基本都帮我完成了,它会告诉我需要在哪个文件中写什么,也会明确的告诉我在哪里出现了错误. Django体系庞大,自带功能完善的ORM和模板引擎,在灵活上和自由度上不够高,把我们的行动范围限制在了它准备好的框架中 使用Django开发小应用有一种使用Scapy去爬取小网站的感觉,大材小用. Django与SQL耦合度过高,与NoSQL的搭配并不好. Django适合企业级的网站开发:快速,安全,稳定 Django比Flask更成熟,完善,但是生态相对封闭 Django的官网比Flask好看太多. 这些只是Django优点的一部分,百度上还有很多. Flask第一次使用Flask时,我真的不知所措,我不知道在哪里需要干什么,文件到底放在哪里,代码应该放在哪个py文件中,我觉得大牛应该更喜欢Flask,因为它提供了一个自由发挥的场地,大牛们可以随意发挥不受拘束. Flask没有Django那么重,更为自由,灵活 很适合小型应用,开发大型应用时,需要开发者有较强的能力和经验 在性能方面都会比Django要好 与关系型数据库的匹配不弱于Django,但在NoSQL方面的匹配要强于Django]]></content>
       <tags>
-        <tag>Flask</tag>
         <tag>Django</tag>
+        <tag>Flask</tag>
       </tags>
   </entry>
   <entry>
