@@ -7,13 +7,6 @@
     </url>
 
     <url>
-        <loc>http://123/categories/Django/</loc>
-        <lastmod>2018-08-04T05:04:24.352Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://123/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
         <lastmod>2018-08-05T16:57:31.348Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -70,20 +63,6 @@
     </url>
 
     <url>
-        <loc>http://123/categories/Python/</loc>
-        <lastmod>2021-05-12T06:56:11.701Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://123/categories/Python/Django/</loc>
-        <lastmod>2021-05-12T06:56:11.701Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://123/categories/Python/Django/%E6%B5%8B%E8%AF%95/</loc>
         <lastmod>2021-05-12T06:56:11.701Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -93,6 +72,27 @@
     <url>
         <loc>http://123/categories/%E5%89%8D%E7%AB%AF/</loc>
         <lastmod>2021-05-12T06:56:17.699Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://123/categories/Python/Django/</loc>
+        <lastmod>2021-05-12T07:04:30.906Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://123/categories/Python/%E7%88%AC%E8%99%AB/</loc>
+        <lastmod>2021-05-12T07:05:09.171Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://123/categories/Python/</loc>
+        <lastmod>2021-05-12T07:05:40.148Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
