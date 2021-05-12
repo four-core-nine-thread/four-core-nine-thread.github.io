@@ -63,13 +63,6 @@
     </url>
 
     <url>
-        <loc>http://123/categories/Python/Django/%E6%B5%8B%E8%AF%95/</loc>
-        <lastmod>2021-05-12T06:56:11.701Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://123/categories/%E5%89%8D%E7%AB%AF/</loc>
         <lastmod>2021-05-12T06:56:17.699Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -85,14 +78,14 @@
 
     <url>
         <loc>http://123/categories/Python/</loc>
-        <lastmod>2021-05-12T07:24:33.149Z</lastmod>
+        <lastmod>2021-05-12T07:36:17.120Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://123/categories/Python/Django/</loc>
-        <lastmod>2021-05-12T07:24:33.149Z</lastmod>
+        <lastmod>2021-05-12T07:36:17.120Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
