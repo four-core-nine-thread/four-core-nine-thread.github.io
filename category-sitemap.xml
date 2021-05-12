@@ -71,7 +71,14 @@
 
     <url>
         <loc>http://123/categories/Java/</loc>
-        <lastmod>2021-05-11T13:35:36.807Z</lastmod>
+        <lastmod>2021-05-11T17:08:15.131Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://123/categories/Java-%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+        <lastmod>2021-05-12T02:09:04.455Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
