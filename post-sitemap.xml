@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://123/2018/02/25/mysql%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E5%92%8C%E5%AF%BC%E5%87%BA/</loc>
+        <lastmod>2021-06-24T15:46:56.852Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://123/2018/02/10/Java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93-jdbcTemplate%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</loc>
         <lastmod>2021-05-17T15:53:19.286Z</lastmod>
         <changefreq>weekly</changefreq>
