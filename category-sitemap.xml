@@ -14,13 +14,6 @@
     </url>
 
     <url>
-        <loc>http://123/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-        <lastmod>2018-08-10T09:00:55.386Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://123/categories/Linux/</loc>
         <lastmod>2018-08-10T09:31:34.599Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -91,8 +84,8 @@
     </url>
 
     <url>
-        <loc>http://123/categories/%E6%95%B0%E6%95%B0%E6%8D%AE/</loc>
-        <lastmod>2021-06-24T15:46:56.852Z</lastmod>
+        <loc>http://123/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+        <lastmod>2021-06-24T15:53:45.841Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
