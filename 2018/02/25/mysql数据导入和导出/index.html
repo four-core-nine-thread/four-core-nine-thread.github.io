@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="ninethread&#39;blog">
 <meta property="og:description" content="secure_file_priv对读写文件的影响在对mysql数据进行导入和导出之前需要查看secure_file_priv(文件安全权限)参数的设置是否允许我们进行数据导入导出处理，可以通过 1234567mysql&amp;gt; show global variables like &amp;apos;%secure_file_priv%&amp;apos;;+------------------+-------+">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-06-24T15:53:45.841Z">
+<meta property="og:updated_time" content="2021-06-24T16:03:18.564Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql数据导入和导出">
 <meta name="twitter:description" content="secure_file_priv对读写文件的影响在对mysql数据进行导入和导出之前需要查看secure_file_priv(文件安全权限)参数的设置是否允许我们进行数据导入导出处理，可以通过 1234567mysql&amp;gt; show global variables like &amp;apos;%secure_file_priv%&amp;apos;;+------------------+-------+">
@@ -401,7 +401,7 @@
 <li>linux下：修改my.cnf 在[mysqld]内加入secure_file_priv，赋值方式和在windows相同</li>
 </ul>
 <p>由于我本地环境为windows且没有找到my.ini文件，所以就重新创建了一个，从网上找到默认配置后再进行修改的，也是可行的。修改完成后重启mysql服务就生效了。</p>
-<h3 id="进行数据的导入"><a href="#进行数据的导入" class="headerlink" title="进行数据的导入"></a>进行数据的导入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql &gt; LOAD DATA LOCAL INFILE &apos;D:/mysqlUpload/pet.txt&apos; INTO TABLE pet FIELDS TERMINATED BY &apos;,&apos;</span><br><span class="line">	  &gt; LINES TERMINATED BY &apos;\r\n&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="进行数据的导入"><a href="#进行数据的导入" class="headerlink" title="进行数据的导入"></a>进行数据的导入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql &gt; LOAD DATA LOCAL INFILE &apos;D:/mysqlUpload/pet.txt&apos; INTO TABLE pet FIELDS TERMINATED BY &apos;,&apos;</span><br><span class="line">      &gt; LINES TERMINATED BY &apos;\r\n&apos;;</span><br></pre></td></tr></table></figure>
 <p>参数说明：</p>
 <ul>
 <li>LOAD DATA LOCAL INFILE [filepath] INTO TABLE [table]：将某个路径下的数据导入到某张表中</li>
@@ -455,8 +455,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/02/17/str-与-repr-区别/" rel="prev" title="__str__与__repr__区别">
-                __str__与__repr__区别 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/15/Mybatis的使用(一)/" rel="prev" title="Mybatis的使用(一)">
+                Mybatis的使用(一) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -538,7 +538,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -549,7 +549,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -560,7 +560,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
