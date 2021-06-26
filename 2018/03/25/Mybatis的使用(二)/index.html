@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Python," />
+  <meta name="keywords" content="Java,Mybatis," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="处理序列中的数据时,比如提取其中的值或者根据某种标准来对序列做删减或替换使用推导式就非常方便. 列表推导式: 123456# 获取列表中大于0和小于0的数,返回的结果也要是列表info = [1,2,3,-1,-2,-3]need_info = [i for i in info if i &amp;gt; 0]need_info2 = [i for i in info if i &amp;lt; 0]print(">
-<meta name="keywords" content="Python">
+<meta name="description" content="简单的CRUD注解方式这里就不再记录，我开发中使用的是XML方式，两种方式其实语法都差不多。这里我只使用到了dao层，然后通过junit进行单元测试 对Husband表进行简单的增删改查： 123456789101112131415161718192021222324252627282930&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&amp;gt;&amp;lt;!DOCT">
+<meta name="keywords" content="Java,Mybatis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基本数据类型的推导式">
-<meta property="og:url" content="http://123/2017/10/17/基本数据类型的推导式/index.html">
+<meta property="og:title" content="Mybatis的使用(二)">
+<meta property="og:url" content="http://123/2018/03/25/Mybatis的使用(二)/index.html">
 <meta property="og:site_name" content="ninethread&#39;blog">
-<meta property="og:description" content="处理序列中的数据时,比如提取其中的值或者根据某种标准来对序列做删减或替换使用推导式就非常方便. 列表推导式: 123456# 获取列表中大于0和小于0的数,返回的结果也要是列表info = [1,2,3,-1,-2,-3]need_info = [i for i in info if i &amp;gt; 0]need_info2 = [i for i in info if i &amp;lt; 0]print(">
+<meta property="og:description" content="简单的CRUD注解方式这里就不再记录，我开发中使用的是XML方式，两种方式其实语法都差不多。这里我只使用到了dao层，然后通过junit进行单元测试 对Husband表进行简单的增删改查： 123456789101112131415161718192021222324252627282930&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&amp;gt;&amp;lt;!DOCT">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-20T09:43:50.779Z">
+<meta property="og:updated_time" content="2021-06-26T09:49:14.487Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基本数据类型的推导式">
-<meta name="twitter:description" content="处理序列中的数据时,比如提取其中的值或者根据某种标准来对序列做删减或替换使用推导式就非常方便. 列表推导式: 123456# 获取列表中大于0和小于0的数,返回的结果也要是列表info = [1,2,3,-1,-2,-3]need_info = [i for i in info if i &amp;gt; 0]need_info2 = [i for i in info if i &amp;lt; 0]print(">
+<meta name="twitter:title" content="Mybatis的使用(二)">
+<meta name="twitter:description" content="简单的CRUD注解方式这里就不再记录，我开发中使用的是XML方式，两种方式其实语法都差不多。这里我只使用到了dao层，然后通过junit进行单元测试 对Husband表进行简单的增删改查： 123456789101112131415161718192021222324252627282930&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&amp;gt;&amp;lt;!DOCT">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://123/2017/10/17/基本数据类型的推导式/"/>
+  <link rel="canonical" href="http://123/2018/03/25/Mybatis的使用(二)/"/>
 
 
 
 
 
-  <title>基本数据类型的推导式 | ninethread'blog</title>
+  <title>Mybatis的使用(二) | ninethread'blog</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://123/2017/10/17/基本数据类型的推导式/">
+    <link itemprop="mainEntityOfPage" href="http://123/2018/03/25/Mybatis的使用(二)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fourcore">
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">基本数据类型的推导式</h1>
+          <h1 class="post-title" itemprop="name headline">Mybatis的使用(二)</h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-17T19:56:49+08:00">
-                2017-10-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-25T14:29:25+08:00">
+                2018-03-25
               </time>
             
 
@@ -349,8 +349,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Mybatis/" itemprop="url" rel="index">
+                    <span itemprop="name">Mybatis</span>
                   </a>
                 </span>
 
@@ -386,18 +397,22 @@
       
 
       
-        <p>处理序列中的数据时,比如提取其中的值或者根据某种标准来对序列做删减或替换使用推导式就非常方便.</p>
-<p>列表推导式:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取列表中大于0和小于0的数,返回的结果也要是列表</span></span><br><span class="line">info = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">-1</span>,<span class="number">-2</span>,<span class="number">-3</span>]</span><br><span class="line">need_info = [i <span class="keyword">for</span> i <span class="keyword">in</span> info <span class="keyword">if</span> i &gt; <span class="number">0</span>]</span><br><span class="line">need_info2 = [i <span class="keyword">for</span> i <span class="keyword">in</span> info <span class="keyword">if</span> i &lt; <span class="number">0</span>]</span><br><span class="line">print(need_info)</span><br><span class="line">print(need_info2)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">[<span class="number">-1</span>, <span class="number">-2</span>, <span class="number">-3</span>]</span><br></pre></td></tr></table></figure>
-<p>如果先去遍历然后再重组就把代码写的繁琐,使用列表推导式去完成筛选,就显得干净利落.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将不符合条件的元素替换,返回的结果也得是列表</span></span><br><span class="line">info = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">-1</span>,<span class="number">-2</span>,<span class="number">-3</span>]</span><br><span class="line"><span class="comment"># 将小于0的数替换成0</span></span><br><span class="line">need_info = [i <span class="keyword">if</span> i &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> info]</span><br><span class="line">print(need_info)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
-<p>我真的想不出还有比这更方便快速的方法了.</p>
-<p>字典推导式:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取股价大于200的公司</span></span><br><span class="line">price = &#123;</span><br><span class="line">    <span class="string">'ACME'</span>: <span class="number">45.23</span>,</span><br><span class="line">    <span class="string">'AAPL'</span>: <span class="number">612.78</span>,</span><br><span class="line">    <span class="string">'IBM'</span>: <span class="number">205.55</span>,</span><br><span class="line">    <span class="string">'HPQ'</span>: <span class="number">37.20</span>,</span><br><span class="line">    <span class="string">'FB'</span>: <span class="number">10.75</span></span><br><span class="line">&#125;</span><br><span class="line">com = &#123;key:value <span class="keyword">for</span> key, value <span class="keyword">in</span> price.items() <span class="keyword">if</span> value &gt; <span class="number">200</span>&#125;</span><br><span class="line">print(com)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">'AAPL'</span>: <span class="number">612.78</span>, <span class="string">'IBM'</span>: <span class="number">205.55</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>除了字典和列表推导式,还有元组推导式以及利用生成器来筛选数据,如果考虑到性能的话,还需要对其他指标进行计算,不管性能如何,至少从书写方式上,也不会去选择写法繁琐的方式去实现想要的功能,</p>
+        <h3 id="简单的CRUD"><a href="#简单的CRUD" class="headerlink" title="简单的CRUD"></a>简单的CRUD</h3><p>注解方式这里就不再记录，我开发中使用的是XML方式，两种方式其实语法都差不多。这里我只使用到了dao层，然后通过junit进行单元测试</p>
+<p>对Husband表进行简单的增删改查：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span><br><span class="line"><span class="meta">&lt;!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"</span></span><br><span class="line"><span class="meta">        "http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.example.dao.HusbandDao"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">        id:与dao接口中的方法同名</span></span><br><span class="line"><span class="comment">        resultType:返回值类型</span></span><br><span class="line"><span class="comment">	--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"findAllHusband"</span> <span class="attr">resultType</span>=<span class="string">"Husband"</span>&gt;</span></span><br><span class="line">        SELECT * FROM husband</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">    <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">		parameterType:参数类型，单个参数时可以省略</span></span><br><span class="line"><span class="comment">	--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"addAnHusband"</span> <span class="attr">parameterType</span>=<span class="string">"Husband"</span>&gt;</span></span><br><span class="line">        INSERT INTO husband VALUES (#&#123;hid&#125;, #&#123;hname&#125;)</span><br><span class="line">    <span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">    <span class="tag">&lt;<span class="name">delete</span> <span class="attr">id</span>=<span class="string">"deleteAHusband"</span>&gt;</span></span><br><span class="line">        DELETE FROM husband WHERE hid = #&#123;hid&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">delete</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">update</span> <span class="attr">id</span>=<span class="string">"updateAHusband"</span>&gt;</span></span><br><span class="line">        UPDATE husband SET hname = #&#123;hname&#125; WHERE hid = #&#123;hid&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">update</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其他的单表查询方式就不再记录了，根据业务需要再进行拓展就行</p>
+<h3 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h3><p>多表查询一般分为一对一，一对多，多对多，从实质上来说多对多可以算成两个一对多。</p>
+<p>我这里就记录一下使用Mybatis进行多表一对一和一对多的查询。</p>
+<p>一共有3张测试表，Husband表，Wife表，Son表。其中Husband表和Wife表是一对一的关系，Husband表和Son表是一对多关系。</p>
+<p>下列为实体类的具体代码,这里使用lombok来添加无参，全参构造，setter，getter，toString方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@Accessors</span>(chain = <span class="keyword">true</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Husband</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> hid;</span><br><span class="line">    <span class="keyword">private</span> String hname;</span><br><span class="line">    <span class="keyword">private</span> Wife wifes;</span><br><span class="line">    <span class="keyword">private</span> List&lt;Son&gt; sons;   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@Accessors</span>(chain = <span class="keyword">true</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Wife</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> wid;</span><br><span class="line">    <span class="keyword">private</span> String wname;</span><br><span class="line">    <span class="keyword">private</span> Husband husband;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="meta">@Accessors</span>(chain = <span class="keyword">true</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> sid;</span><br><span class="line">    <span class="keyword">private</span> String sname;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> hid;</span><br><span class="line">    <span class="keyword">private</span> Husband husband;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过Husband的hid查询相关信息以及所对应的Wife，方法一:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span><br><span class="line"><span class="meta">&lt;!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"</span></span><br><span class="line"><span class="meta">        "http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.example.dao.HusbandDao"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">   <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">		resultMap:结果映射，一般在关联表查询中使用，将查询结果映射到实体类的属性中</span></span><br><span class="line"><span class="comment">		type: 指定映射的对象类型</span></span><br><span class="line"><span class="comment">		column: 字段名(如果使用as取别名，那就是别名)</span></span><br><span class="line"><span class="comment">		property: 实体类中的属性名</span></span><br><span class="line"><span class="comment">		association: 一对一关联</span></span><br><span class="line"><span class="comment">		javaType: 指定映射的对象类型</span></span><br><span class="line"><span class="comment">		select: 根据id调用select标签</span></span><br><span class="line"><span class="comment">	--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"queryHusbandInfoAndWifeById"</span> <span class="attr">resultMap</span>=<span class="string">"queryHusbandInfoAndWifeByIdMap"</span>&gt;</span></span><br><span class="line">        select * FROM husband WHERE hid = #&#123;hid&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"queryHusbandInfoAndWifeByIdMap"</span> <span class="attr">type</span>=<span class="string">"Husband"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span> <span class="attr">column</span>=<span class="string">"hid"</span> <span class="attr">property</span>=<span class="string">"hid"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"hname"</span> <span class="attr">property</span>=<span class="string">"hname"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">association</span> <span class="attr">property</span>=<span class="string">"wife"</span> <span class="attr">column</span>=<span class="string">"hid"</span> <span class="attr">javaType</span>=<span class="string">"Wife"</span> <span class="attr">select</span>=<span class="string">"SelectWifeByHid"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span> <span class="attr">column</span>=<span class="string">"wid"</span> <span class="attr">property</span>=<span class="string">"wid"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"wname"</span> <span class="attr">property</span>=<span class="string">"wname"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">association</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"SelectWifeByHid"</span> <span class="attr">resultType</span>=<span class="string">"Wife"</span>&gt;</span></span><br><span class="line">        SELECT * FROM wife WHERE hid = #&#123;hid&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>通过Husband的hid查询相关信息以及所对应的Wife，方法二:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span><br><span class="line"><span class="meta">&lt;!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"</span></span><br><span class="line"><span class="meta">        "http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.example.dao.HusbandDao"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">   <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">		resultMap:结果映射，一般在关联表查询中使用，将查询结果映射到实体类的属性中</span></span><br><span class="line"><span class="comment">		type: 指定映射的对象类型</span></span><br><span class="line"><span class="comment">		column: 字段名(如果使用as取别名，那就是别名)</span></span><br><span class="line"><span class="comment">		property: 实体类中的属性名</span></span><br><span class="line"><span class="comment">		association: 一对一关联</span></span><br><span class="line"><span class="comment">		javaType: 指定映射的对象类型</span></span><br><span class="line"><span class="comment">	--&gt;</span></span><br><span class="line">  	</span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"queryHusbandInfoAndWifeById"</span> <span class="attr">resultMap</span>=<span class="string">"queryHusbandInfoAndWifeByIdMap"</span>&gt;</span></span><br><span class="line">        select * FROM husband h LEFT JOIN wife w ON h.hid = w.hid WHERE h.hid = #&#123;hid&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"queryHusbandInfoAndWifeByIdMap"</span> <span class="attr">type</span>=<span class="string">"Husband"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span> <span class="attr">column</span>=<span class="string">"hid"</span> <span class="attr">property</span>=<span class="string">"hid"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"hname"</span> <span class="attr">property</span>=<span class="string">"hname"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">association</span> <span class="attr">property</span>=<span class="string">"wife"</span> <span class="attr">javaType</span>=<span class="string">"Wife"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span> <span class="attr">column</span>=<span class="string">"wid"</span> <span class="attr">property</span>=<span class="string">"wid"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"wname"</span> <span class="attr">property</span>=<span class="string">"wname"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"hid"</span> <span class="attr">property</span>=<span class="string">"hid"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">association</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>方法一和方法二的区别是，方法一需要查询两次，第一次查询的当前表，然后再根据关联字段去查询关联表。方法二是查询一次，通过左外连接把所有需要的数据一次性查出。</p>
+<p>方法一是Mybatis提供的方式，这样做的主要是为了开启延迟加载后，当我们不需要使用关联对象时，是不会去运行第二个查询的。</p>
+<p>方法二就比较粗暴了，无论你用不用关联对象都会将关联对象查询出来，当然写原生SQL的话，我也会这样干。</p>
 
       
     </div>
@@ -415,7 +430,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"># Python</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/Mybatis/" rel="tag"># Mybatis</a>
           
         </div>
       
@@ -428,8 +445,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/05/安利一本有趣的书/" rel="next" title="安利一本有趣的书">
-                <i class="fa fa-chevron-left"></i> 安利一本有趣的书
+              <a href="/2018/03/15/Mybatis的使用(一)/" rel="next" title="Mybatis的使用(一)">
+                <i class="fa fa-chevron-left"></i> Mybatis的使用(一)
               </a>
             
           </div>
@@ -438,8 +455,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/26/Postman模拟发送POST请求403问题/" rel="prev" title="Postman模拟发送POST请求403问题">
-                Postman模拟发送POST请求403问题 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/02/17/str-与-repr-区别/" rel="prev" title="__str__与__repr__区别">
+                __str__与__repr__区别 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -492,8 +509,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -557,6 +583,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单的CRUD"><span class="nav-number">1.</span> <span class="nav-text">简单的CRUD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多表查询"><span class="nav-number">2.</span> <span class="nav-text">多表查询</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
