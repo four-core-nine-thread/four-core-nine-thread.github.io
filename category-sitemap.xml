@@ -85,14 +85,14 @@
 
     <url>
         <loc>http://123/categories/Java/</loc>
-        <lastmod>2021-06-26T09:54:55.039Z</lastmod>
+        <lastmod>2021-06-27T15:45:39.837Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://123/categories/Java/Mybatis/</loc>
-        <lastmod>2021-06-26T09:54:55.039Z</lastmod>
+        <lastmod>2021-06-27T15:45:39.837Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
