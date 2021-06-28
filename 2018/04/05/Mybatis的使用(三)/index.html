@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java,Mybatis," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="行走匆忙,诗为远方">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://123/categories/index.html">
+<meta name="description" content="Mybatis中三种ExecutorType方式ExecutorType是一个枚举类，提供了三种执行模式，分别为：  SIMPLE：字面意思为基本的，简单的，简易的 REUSE：字面意思为可重用的 BATCH：字面意思为批量处理的  其实从字面意思来看，多多少少还是能猜测到其各自的功能，其中默认值为SIMPLE。这三种模式分别对应三种执行器，分别为SimpleExecutor，ReuseExecu">
+<meta name="keywords" content="Java,Mybatis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mybatis的使用(三)">
+<meta property="og:url" content="http://123/2018/04/05/Mybatis的使用(三)/index.html">
 <meta property="og:site_name" content="ninethread&#39;blog">
-<meta property="og:description" content="行走匆忙,诗为远方">
+<meta property="og:description" content="Mybatis中三种ExecutorType方式ExecutorType是一个枚举类，提供了三种执行模式，分别为：  SIMPLE：字面意思为基本的，简单的，简易的 REUSE：字面意思为可重用的 BATCH：字面意思为批量处理的  其实从字面意思来看，多多少少还是能猜测到其各自的功能，其中默认值为SIMPLE。这三种模式分别对应三种执行器，分别为SimpleExecutor，ReuseExecu">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-13T16:00:22.989Z">
+<meta property="og:updated_time" content="2021-06-28T01:22:18.841Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="行走匆忙,诗为远方">
+<meta name="twitter:title" content="Mybatis的使用(三)">
+<meta name="twitter:description" content="Mybatis中三种ExecutorType方式ExecutorType是一个枚举类，提供了三种执行模式，分别为：  SIMPLE：字面意思为基本的，简单的，简易的 REUSE：字面意思为可重用的 BATCH：字面意思为批量处理的  其实从字面意思来看，多多少少还是能猜测到其各自的功能，其中默认值为SIMPLE。这三种模式分别对应三种执行器，分别为SimpleExecutor，ReuseExecu">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://123/categories/"/>
+  <link rel="canonical" href="http://123/2018/04/05/Mybatis的使用(三)/"/>
 
 
 
 
 
-  <title>categories | ninethread'blog</title>
+  <title>Mybatis的使用(三) | ninethread'blog</title>
   
 
 
@@ -284,40 +285,197 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://123/2018/04/05/Mybatis的使用(三)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fourcore">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ninethread'blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">categories</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                目前共计 13 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Mybatis/">Mybatis</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/数据库/">数据库</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">29</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Django/">Django</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/数据结构/">数据结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/测试/">测试</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/爬虫/">爬虫</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/life/">life</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a><span class="category-list-count">1</span></li></ul>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">Mybatis的使用(三)</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-05T00:15:03+08:00">
+                2018-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Mybatis/" itemprop="url" rel="index">
+                    <span itemprop="name">Mybatis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h3 id="Mybatis中三种ExecutorType方式"><a href="#Mybatis中三种ExecutorType方式" class="headerlink" title="Mybatis中三种ExecutorType方式"></a>Mybatis中三种ExecutorType方式</h3><p>ExecutorType是一个枚举类，提供了三种执行模式，分别为：</p>
+<ul>
+<li>SIMPLE：字面意思为基本的，简单的，简易的</li>
+<li>REUSE：字面意思为可重用的</li>
+<li>BATCH：字面意思为批量处理的</li>
+</ul>
+<p>其实从字面意思来看，多多少少还是能猜测到其各自的功能，其中默认值为SIMPLE。这三种模式分别对应三种执行器，分别为SimpleExecutor，ReuseExecutor，BatchExecutor。</p>
+<p><strong>SimpleExecutor中进行增删改的源码为：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">doUpdate</span><span class="params">(MappedStatement ms, Object parameter)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">    Statement stmt = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      Configuration configuration = ms.getConfiguration();</span><br><span class="line">      StatementHandler handler = configuration.newStatementHandler(<span class="keyword">this</span>, ms, parameter, RowBounds.DEFAULT, <span class="keyword">null</span>, <span class="keyword">null</span>); <span class="comment">// 创建一个statement</span></span><br><span class="line">      stmt = prepareStatement(handler, ms.getStatementLog());</span><br><span class="line">      <span class="keyword">return</span> handler.update(stmt); <span class="comment">// 执行更新操作</span></span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">      closeStatement(stmt); <span class="comment">// 最后会关闭这个statement</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>从源码可知，SimpleExecutor这种方式每次都会创建一个statement，执行完毕后就关闭。也就是说，我在代码中遍历执行更新操作，每循环一次都是一次statement创建 — 执行 — 关闭操作。</p>
+<p><strong>ReuseExecutor中进行增删改的源码为：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用于存储statement的map</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> Map&lt;String, Statement&gt; statementMap = <span class="keyword">new</span> HashMap&lt;String, Statement&gt;();</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">doUpdate</span><span class="params">(MappedStatement ms, Object parameter)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">    Configuration configuration = ms.getConfiguration();</span><br><span class="line">    StatementHandler handler = configuration.newStatementHandler(<span class="keyword">this</span>, ms, parameter, RowBounds.DEFAULT, <span class="keyword">null</span>, <span class="keyword">null</span>); <span class="comment">// 创建一个statement</span></span><br><span class="line">    Statement stmt = prepareStatement(handler, ms.getStatementLog());</span><br><span class="line">    <span class="keyword">return</span> handler.update(stmt); <span class="comment">// 执行了更新操作后并没有像上面进行closeStatement(stmt),说明并没有关闭statement</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>从源码可知，ReuseExecutor不会关闭statement，而是把statement放到map中，其中key为sql语句，value为对应的statemen。也就是说这种模式不会为每句sql创建一个statement，如果sql相同(其中的插入的数据可以不同)就会重复使用以前创建过的statement，节约了重复创建statement的时间，直接通过key去缓存中获取statemet.</p>
+<p><strong>BatchExecutor中进行增删改的源码为：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这里就解释了为什么使用这种模式返回值是-2147482646</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BATCH_UPDATE_RETURN_VALUE = Integer.MIN_VALUE + <span class="number">1002</span>; </span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> List&lt;Statement&gt; statementList = <span class="keyword">new</span> ArrayList&lt;Statement&gt;();</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> List&lt;BatchResult&gt; batchResultList = <span class="keyword">new</span> ArrayList&lt;BatchResult&gt;();</span><br><span class="line"><span class="keyword">private</span> String currentSql;</span><br><span class="line"><span class="keyword">private</span> MappedStatement currentStatement;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">doUpdate</span><span class="params">(MappedStatement ms, Object parameterObject)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> Configuration configuration = ms.getConfiguration();</span><br><span class="line">    <span class="keyword">final</span> StatementHandler handler = configuration.newStatementHandler(<span class="keyword">this</span>, ms, parameterObject, RowBounds.DEFAULT, <span class="keyword">null</span>, <span class="keyword">null</span>);</span><br><span class="line">    <span class="keyword">final</span> BoundSql boundSql = handler.getBoundSql();</span><br><span class="line">    <span class="keyword">final</span> String sql = boundSql.getSql();</span><br><span class="line">    <span class="keyword">final</span> Statement stmt;</span><br><span class="line">    <span class="keyword">if</span> (sql.equals(currentSql) &amp;&amp; ms.equals(currentStatement)) &#123;</span><br><span class="line">      <span class="keyword">int</span> last = statementList.size() - <span class="number">1</span>;</span><br><span class="line">      stmt = statementList.get(last);</span><br><span class="line">      applyTransactionTimeout(stmt);</span><br><span class="line">     handler.parameterize(stmt);<span class="comment">//fix Issues 322</span></span><br><span class="line">      BatchResult batchResult = batchResultList.get(last);</span><br><span class="line">      batchResult.addParameterObject(parameterObject);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      Connection connection = getConnection(ms.getStatementLog());</span><br><span class="line">      stmt = handler.prepare(connection, transaction.getTimeout());</span><br><span class="line">      handler.parameterize(stmt);    <span class="comment">//fix Issues 322</span></span><br><span class="line">      currentSql = sql;</span><br><span class="line">      currentStatement = ms;</span><br><span class="line">      statementList.add(stmt);</span><br><span class="line">      batchResultList.add(<span class="keyword">new</span> BatchResult(ms, sql, parameterObject));</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="comment">// handler.parameterize(stmt);</span></span><br><span class="line">    handler.batch(stmt);</span><br><span class="line">    <span class="keyword">return</span> BATCH_UPDATE_RETURN_VALUE; <span class="comment">// 直接返回-2147482646</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/Mybatis/" rel="tag"># Mybatis</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/25/Mybatis的使用(二)/" rel="next" title="Mybatis的使用(二)">
+                <i class="fa fa-chevron-left"></i> Mybatis的使用(二)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/02/17/str-与-repr-区别/" rel="prev" title="__str__与__repr__区别">
+                __str__与__repr__区别 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -350,8 +508,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -415,6 +582,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mybatis中三种ExecutorType方式"><span class="nav-number">1.</span> <span class="nav-text">Mybatis中三种ExecutorType方式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

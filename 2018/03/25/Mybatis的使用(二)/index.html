@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="ninethread&#39;blog">
 <meta property="og:description" content="简单的CRUD注解方式这里就不再记录，我开发中使用的是XML方式，两种方式其实语法都差不多。这里我只使用到了dao层，然后通过junit进行单元测试 对Husband表进行简单的增删改查： 123456789101112131415161718192021222324252627282930&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&amp;gt;&amp;lt;!DOCT">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-06-27T15:45:39.837Z">
+<meta property="og:updated_time" content="2021-06-27T15:50:20.385Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mybatis的使用(二)">
 <meta name="twitter:description" content="简单的CRUD注解方式这里就不再记录，我开发中使用的是XML方式，两种方式其实语法都差不多。这里我只使用到了dao层，然后通过junit进行单元测试 对Husband表进行简单的增删改查： 123456789101112131415161718192021222324252627282930&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&amp;gt;&amp;lt;!DOCT">
@@ -415,7 +415,7 @@
 <p>方法二就比较粗暴了，无论你用不用关联对象都会将关联对象查询出来，当然写原生SQL的话，我也会这样干。</p>
 <p>通过Husband的hid查询其所对应的Son,这是一个一对多查询：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span><br><span class="line"><span class="meta">&lt;!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"</span></span><br><span class="line"><span class="meta">        "http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.example.dao.HusbandDao"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">  <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">      collection: 表明映射结果为多个</span></span><br><span class="line"><span class="comment">      ofType: 返回值类型</span></span><br><span class="line"><span class="comment">  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"queryHusbandInfoAndSonById"</span> <span class="attr">resultMap</span>=<span class="string">"queryHusbandInfoAndSonByIdMap"</span>&gt;</span></span><br><span class="line">        SELECT * FROM husband WHERE hid = #&#123;hid&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"queryHusbandInfoAndSonByIdMap"</span> <span class="attr">type</span>=<span class="string">"Husband"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span> <span class="attr">column</span>=<span class="string">"hid"</span> <span class="attr">property</span>=<span class="string">"hid"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"hname"</span> <span class="attr">property</span>=<span class="string">"hname"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">collection</span> <span class="attr">property</span>=<span class="string">"sons"</span> <span class="attr">column</span>=<span class="string">"hid"</span> <span class="attr">ofType</span>=<span class="string">"Son"</span> <span class="attr">select</span>=<span class="string">"querySonByHid"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span> <span class="attr">column</span>=<span class="string">"sid"</span> <span class="attr">property</span>=<span class="string">"sid"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"sname"</span> <span class="attr">property</span>=<span class="string">"sname"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"hid"</span> <span class="attr">property</span>=<span class="string">"hid"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">collection</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"querySonByHid"</span> <span class="attr">resultType</span>=<span class="string">"Son"</span>&gt;</span></span><br><span class="line">        SELECT * FROM son WHERE hid = #&#123;hid&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>这里说明一下一对一，多对一查询和一对多查询的区别，首先前者在进行非字段属性映射时是使用association标签且使用javaType来表明返回值类型，后者在进行非字段属性映射时是使用collection标签且使用ofType来表明返回值类型。</p>
+<p>这里说明一下一对一，多对一查询和一对多查询的区别，首先前者在进行非数据库字段属性映射时是使用association标签且使用javaType来表明返回值类型，后者在进行非数据库字段属性映射时是使用collection标签且使用ofType来表明返回值类型。</p>
 <h3 id="批量插入"><a href="#批量插入" class="headerlink" title="批量插入"></a>批量插入</h3><p>批量插入的应用场景有很多，像通过前端导入一张excel，csv入库货品清单然后后台处理成指定格式后批量插入到数据库，或者从一张表查询一批数据后插入到另外一张表中等等。原生SQL可以直接使用navicat的导入功能，或者LOAD DATA LOCAL INFILE 命令。Python的Pymysql也可以使用executemany来进行高效率的批量插入。我这里记录一下使用Mybatis是如何进行批量插入的。</p>
 <p>效率比较高的方式有两种，一种是Mybatis foreach方式，一种是Mybatis batch方式，两种方式的设置稍有不同。</p>
 <p>通过Mybatis foreach对Husband进行批量插入,只需要在xml中设置：</p>
@@ -465,8 +465,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/02/17/str-与-repr-区别/" rel="prev" title="__str__与__repr__区别">
-                __str__与__repr__区别 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/05/Mybatis的使用(三)/" rel="prev" title="Mybatis的使用(三)">
+                Mybatis的使用(三) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -548,7 +548,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
