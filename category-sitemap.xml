@@ -42,13 +42,6 @@
     </url>
 
     <url>
-        <loc>http://123/categories/%E5%89%8D%E7%AB%AF/</loc>
-        <lastmod>2021-05-12T06:56:17.699Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://123/categories/Python/%E7%88%AC%E8%99%AB/</loc>
         <lastmod>2021-05-12T07:05:09.171Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -85,14 +78,28 @@
 
     <url>
         <loc>http://123/categories/Java/</loc>
-        <lastmod>2021-06-28T17:00:50.596Z</lastmod>
+        <lastmod>2021-06-28T17:12:38.070Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://123/categories/Java/Mybatis/</loc>
-        <lastmod>2021-06-28T17:00:50.596Z</lastmod>
+        <lastmod>2021-06-28T17:12:38.070Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://123/categories/%E5%89%8D%E7%AB%AF/</loc>
+        <lastmod>2021-06-30T12:18:16.012Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://123/categories/%E5%89%8D%E7%AB%AF/Vue/</loc>
+        <lastmod>2021-06-30T12:18:16.012Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
