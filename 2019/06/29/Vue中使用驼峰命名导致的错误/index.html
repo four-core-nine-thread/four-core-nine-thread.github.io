@@ -87,10 +87,14 @@
 <meta property="og:site_name" content="ninethread&#39;blog">
 <meta property="og:description" content="前端中需要注意的大小写问题前端中HTML是不区分大小写的，在页面中使用大写字母命名的变量在被浏览器解析时，都会被解析成小写，比如解析之前的变量名为HELLO，解析之后就成为了hello，如下图所示：   而在JS中是大小写敏感的，由于在Java和Python中习惯性通过驼峰命名法来对变量进行命名，我刚开始使用Vue时也是使用这种方法。 驼峰命名导致的页面加载报错在对子组件属性命名时，使用了驼峰：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-06-30T23:55:18.226Z">
+<meta property="og:image" content="http://123/2019/06/29/Vue中使用驼峰命名导致的错误/驼峰命名导致的错误1.png">
+<meta property="og:image" content="http://123/2019/06/29/Vue中使用驼峰命名导致的错误/驼峰命名导致的错误2.png">
+<meta property="og:image" content="http://123/2019/06/29/Vue中使用驼峰命名导致的错误/驼峰命名导致的错误3.png">
+<meta property="og:updated_time" content="2021-07-01T00:06:47.505Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue中使用驼峰命名导致的错误">
 <meta name="twitter:description" content="前端中需要注意的大小写问题前端中HTML是不区分大小写的，在页面中使用大写字母命名的变量在被浏览器解析时，都会被解析成小写，比如解析之前的变量名为HELLO，解析之后就成为了hello，如下图所示：   而在JS中是大小写敏感的，由于在Java和Python中习惯性通过驼峰命名法来对变量进行命名，我刚开始使用Vue时也是使用这种方法。 驼峰命名导致的页面加载报错在对子组件属性命名时，使用了驼峰：">
+<meta name="twitter:image" content="http://123/2019/06/29/Vue中使用驼峰命名导致的错误/驼峰命名导致的错误1.png">
 
 
 
@@ -398,8 +402,8 @@
 
       
         <h3 id="前端中需要注意的大小写问题"><a href="#前端中需要注意的大小写问题" class="headerlink" title="前端中需要注意的大小写问题"></a>前端中需要注意的大小写问题</h3><p>前端中HTML是不区分大小写的，在页面中使用大写字母命名的变量在被浏览器解析时，都会被解析成小写，比如解析之前的变量名为HELLO，解析之后就成为了hello，如下图所示：</p>
-<p><img src="" alt=".\驼峰命名导致的错误1.png"></p>
-<p><img src="" alt=".\驼峰命名导致的错误2.png"></p>
+<p><img src=".\驼峰命名导致的错误1.png" alt=""></p>
+<p><img src=".\驼峰命名导致的错误2.png" alt=""></p>
 <p>而在JS中是大小写敏感的，由于在Java和Python中习惯性通过驼峰命名法来对变量进行命名，我刚开始使用Vue时也是使用这种方法。</p>
 <h3 id="驼峰命名导致的页面加载报错"><a href="#驼峰命名导致的页面加载报错" class="headerlink" title="驼峰命名导致的页面加载报错"></a>驼峰命名导致的页面加载报错</h3><p>在对子组件属性命名时，使用了驼峰：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	Vue.component(&quot;temp&quot;, &#123;</span><br><span class="line">		template: &quot;#t1&quot;,</span><br><span class="line">		props: &#123;</span><br><span class="line">			needData: &#123; // 这里使用了驼峰命名</span><br><span class="line">				type: Object,</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line">	</span><br><span class="line">	new Vue(&#123;</span><br><span class="line">		el: &quot;#app&quot;,</span><br><span class="line">		data: &#123;</span><br><span class="line">			message: &quot;HELLO&quot;,</span><br><span class="line">			info: &quot;WORLD&quot;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
@@ -407,7 +411,7 @@
 <p>在父组件中放入子组件，子组件绑定needData属性：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">	&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">		&lt;temp v-bind:needData=&quot;$data&quot;&gt;&lt;/temp&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
 <p>由于这是HTML代码，所以needData被解析时，会变成needdata，导致Vue无法识别这个属性，产生报错：</p>
-<p><img src="" alt=".\驼峰命名导致的错误3.png"></p>
+<p><img src=".\驼峰命名导致的错误3.png" alt=""></p>
 <p>根据上图的报错信息可知，undefined没有message属性，说明Vue的确无法识别needdata。在最上面的警告信息中，Vue官方建议我们将needData改为need-data，说明官方是不建议这种命名方法的。我将needData改为need-data后页面显示正常。</p>
 
       
