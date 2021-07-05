@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="行走匆忙,诗为远方">
+<meta name="description" content="延迟加载延迟加载又称为懒加载或者按需加载，与之相反的概念为立即加载。从叫法上我喜欢称之为延迟加载，感觉更正式一些，从理解上称之为按需加载，更容易理解一些。所谓按需加载，就是在需要的时候才会去将其读取到内存，不需要时就不去加载它，从性能上来说这种方式更节约内存资源。 在Mybatis的association和collection中如果使用了select属性，就可以通过延迟加载来进行数据查询，此时主查">
 <meta name="keywords" content="Java,Mybatis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mybatis的使用(四)">
 <meta property="og:url" content="http://123/2018/04/21/Mybatis的使用(四)/index.html">
 <meta property="og:site_name" content="ninethread&#39;blog">
-<meta property="og:description" content="行走匆忙,诗为远方">
+<meta property="og:description" content="延迟加载延迟加载又称为懒加载或者按需加载，与之相反的概念为立即加载。从叫法上我喜欢称之为延迟加载，感觉更正式一些，从理解上称之为按需加载，更容易理解一些。所谓按需加载，就是在需要的时候才会去将其读取到内存，不需要时就不去加载它，从性能上来说这种方式更节约内存资源。 在Mybatis的association和collection中如果使用了select属性，就可以通过延迟加载来进行数据查询，此时主查">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-06-28T17:12:38.070Z">
+<meta property="og:updated_time" content="2021-07-04T16:14:39.981Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mybatis的使用(四)">
-<meta name="twitter:description" content="行走匆忙,诗为远方">
+<meta name="twitter:description" content="延迟加载延迟加载又称为懒加载或者按需加载，与之相反的概念为立即加载。从叫法上我喜欢称之为延迟加载，感觉更正式一些，从理解上称之为按需加载，更容易理解一些。所谓按需加载，就是在需要的时候才会去将其读取到内存，不需要时就不去加载它，从性能上来说这种方式更节约内存资源。 在Mybatis的association和collection中如果使用了select属性，就可以通过延迟加载来进行数据查询，此时主查">
 
 
 
@@ -397,7 +397,28 @@
       
 
       
-        
+        <h3 id="延迟加载"><a href="#延迟加载" class="headerlink" title="延迟加载"></a>延迟加载</h3><p>延迟加载又称为懒加载或者按需加载，与之相反的概念为立即加载。从叫法上我喜欢称之为延迟加载，感觉更正式一些，从理解上称之为按需加载，更容易理解一些。所谓按需加载，就是在需要的时候才会去将其读取到内存，不需要时就不去加载它，从性能上来说这种方式更节约内存资源。</p>
+<p>在Mybatis的association和collection中如果使用了select属性，就可以通过延迟加载来进行数据查询，此时主查询SQL中就不要先去进行关联查询，将关联查询放在select属性指向的从查询SQL中，如下图所示：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"queryHusbandInfoAndSonById"</span> <span class="attr">resultMap</span>=<span class="string">"queryHusbandInfoAndSonByIdMap"</span>&gt;</span></span><br><span class="line">    	<span class="comment">&lt;!--这里只进行单表查询，剩下的查询放到collection的select中进行--&gt;</span></span><br><span class="line">        SELECT * FROM husband WHERE hid = #&#123;hid&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"queryHusbandInfoAndSonByIdMap"</span> <span class="attr">type</span>=<span class="string">"Husband"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span> <span class="attr">column</span>=<span class="string">"hid"</span> <span class="attr">property</span>=<span class="string">"hid"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"hname"</span> <span class="attr">property</span>=<span class="string">"hname"</span> /&gt;</span></span><br><span class="line">		</span><br><span class="line">        <span class="comment">&lt;!--这里会根据hid到select关联的SQL标签对应的SQL中去查询，然后对返回结果进行映射--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">collection</span> <span class="attr">property</span>=<span class="string">"sons"</span> <span class="attr">column</span>=<span class="string">"hid"</span> <span class="attr">ofType</span>=<span class="string">"Son"</span> <span class="attr">select</span>=<span class="string">"querySonByHid"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span> <span class="attr">column</span>=<span class="string">"sid"</span> <span class="attr">property</span>=<span class="string">"sid"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"sname"</span> <span class="attr">property</span>=<span class="string">"sname"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"hid"</span> <span class="attr">property</span>=<span class="string">"hid"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">collection</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"querySonByHid"</span> <span class="attr">resultType</span>=<span class="string">"Son"</span>&gt;</span></span><br><span class="line">        SELECT * FROM son WHERE hid = #&#123;hid&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>为了能够使用延迟加载，还需要在mybatis的主配置文件中添加设置，因为默认情况下延迟加载是关闭的。需要注意的是，在主配置文件中是全局配置，所以会将所有的符合条件的查询都变为延迟加载：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--延迟加载--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"lazyLoadingEnabled"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>如果要进行局部设置，那就在XML中对应的<strong>association</strong>和<strong>collection</strong>标签中添加配置且优先级高于全局设置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fetchType=&quot;lazy&quot; 延迟加载策略 // 需要手动开启</span><br><span class="line">fetchType=&quot;eager&quot; 立即加载策略 // 默认开启</span><br></pre></td></tr></table></figure>
+<p>开启之后，就可以对上述的代码进行测试，这里使用logback在控制台打印日志信息，这样更能直观的判断SQL的执行流程，作为对比先使用默认的立即加载方式，然后再开启延迟加载。</p>
+<p>附上单元测试代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">loadTypeTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Husband husband = husbandDao.queryHusbandInfoAndSonById(<span class="number">1001</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>立即加载下控制台的打印信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[main] DEBUG c.w.m.H.queryHusbandInfoAndSonById - ==&gt;  Preparing: SELECT * FROM husband WHERE hid = ?  </span><br><span class="line">[main] DEBUG c.w.m.H.queryHusbandInfoAndSonById - ==&gt; Parameters: 1001(Integer) </span><br><span class="line">[main] DEBUG c.w.mapper.HusbandDao.querySonByHid - ====&gt;  Preparing: SELECT * FROM son WHERE hid = ?  </span><br><span class="line">[main] DEBUG c.w.mapper.HusbandDao.querySonByHid - ====&gt; Parameters: 1001(Integer) </span><br><span class="line">[main] DEBUG c.w.mapper.HusbandDao.querySonByHid - &lt;====      Total: 3 </span><br><span class="line">[main] DEBUG c.w.m.H.queryHusbandInfoAndSonById - &lt;==      Total: 1</span><br></pre></td></tr></table></figure>
+<p>从日志信息可以看出，一共执行了两次查询，虽然我仅仅是查询并没有使用到返回回来的数据</p>
+<p>延迟加载下控制台的打印信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[main] DEBUG c.w.m.H.queryHusbandInfoAndSonById - ==&gt;  Preparing: SELECT * FROM husband WHERE hid = ?  </span><br><span class="line">[main] DEBUG c.w.m.H.queryHusbandInfoAndSonById - ==&gt; Parameters: 1001(Integer) </span><br><span class="line">[main] DEBUG c.w.m.H.queryHusbandInfoAndSonById - &lt;==      Total: 1</span><br></pre></td></tr></table></figure>
+<p>从日志信息可以看出，只执行了一次查询，也就是主SQL查询执行了，collection中select对应的SQL并没有执行，因为我没有使用到从查询返回的数据</p>
+<p>那么接下来，在延迟加载的方式下打印一下返回的数据，因为重写了toString()，会将所有查询的数据信息打印，也就是说会使用到从查询中的数据：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[main] DEBUG c.w.m.H.queryHusbandInfoAndSonById - ==&gt;  Preparing: SELECT * FROM husband WHERE hid = ?  </span><br><span class="line">[main] DEBUG c.w.m.H.queryHusbandInfoAndSonById - ==&gt; Parameters: 1001(Integer) </span><br><span class="line">[main] DEBUG c.w.m.H.queryHusbandInfoAndSonById - &lt;==      Total: 1 </span><br><span class="line">[main] DEBUG c.w.mapper.HusbandDao.querySonByHid - ==&gt;  Preparing: SELECT * FROM son WHERE hid = ?  </span><br><span class="line">[main] DEBUG c.w.mapper.HusbandDao.querySonByHid - ==&gt; Parameters: 1001(Integer) </span><br><span class="line">[main] DEBUG c.w.mapper.HusbandDao.querySonByHid - &lt;==      Total: 3 </span><br><span class="line">Husband(hid=1001, hname=tom, wife=null, sons=[Son(sid=1001, sname=son1, hid=1001, husband=null)........</span><br></pre></td></tr></table></figure>
+<p>从这次日志打印的结果来看，说明了只有在使用到从查询中返回的数据时，mybatis才会去执行从查询。</p>
+<h3 id="延迟加载的优缺点"><a href="#延迟加载的优缺点" class="headerlink" title="延迟加载的优缺点"></a>延迟加载的优缺点</h3><p>优点在于： 当我们暂时只需要使用到实体类非关联属性时，只有在某种条件下才会使用关联属性，这种通过延迟加载可以先只进行主SQL查询，提高查询效率，也比较节省内存。</p>
+<p>缺点在于：当数据量较大且频繁的使用关联属性时，延迟加载会增加查询的次数，消耗数据库性能</p>
+
       
     </div>
     
@@ -439,8 +460,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/29/Vue中使用驼峰命名导致的错误/" rel="prev" title="Vue中使用驼峰命名导致的错误">
-                Vue中使用驼峰命名导致的错误 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/29/Mybatis的使用(五)/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -493,8 +514,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -513,7 +543,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -558,6 +588,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#延迟加载"><span class="nav-number">1.</span> <span class="nav-text">延迟加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#延迟加载的优缺点"><span class="nav-number">2.</span> <span class="nav-text">延迟加载的优缺点</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

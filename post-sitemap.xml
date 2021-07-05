@@ -7,8 +7,8 @@
     </url>
 
     <url>
-        <loc>http://123/2019/06/29/Vue%E4%B8%AD%E4%BD%BF%E7%94%A8%E9%A9%BC%E5%B3%B0%E5%91%BD%E5%90%8D%E5%AF%BC%E8%87%B4%E7%9A%84%E9%94%99%E8%AF%AF/</loc>
-        <lastmod>2021-07-01T00:06:47.505Z</lastmod>
+        <loc>http://123/2018/04/29/Mybatis%E7%9A%84%E4%BD%BF%E7%94%A8(%E4%BA%94)/</loc>
+        <lastmod>2021-07-05T12:01:18.399Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +16,15 @@
 
     <url>
         <loc>http://123/2018/04/21/Mybatis%E7%9A%84%E4%BD%BF%E7%94%A8(%E5%9B%9B)/</loc>
-        <lastmod>2021-06-28T17:12:38.070Z</lastmod>
+        <lastmod>2021-07-04T16:14:39.981Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://123/2019/06/29/Vue%E4%B8%AD%E4%BD%BF%E7%94%A8%E9%A9%BC%E5%B3%B0%E5%91%BD%E5%90%8D%E5%AF%BC%E8%87%B4%E7%9A%84%E9%94%99%E8%AF%AF/</loc>
+        <lastmod>2021-07-01T00:06:47.505Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

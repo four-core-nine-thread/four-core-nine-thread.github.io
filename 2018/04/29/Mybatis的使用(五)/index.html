@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java,Mybatis," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="行走匆忙,诗为远方">
-<meta property="og:type" content="website">
+<meta name="description" content="Mybatis的一级缓存Mybatis默认的一级缓存是SqlSession缓存，也就是说在同一个SqlSession中执行相同的SQL，只有第一次会去查询数据库，接下来再进行该查询都是从Mybatis的缓存中去获取的。当执行增删改操作时，Mybatis会清空SqlSession的缓存。 一级缓存除了有SqlSession级别，还有statement级别，如果需要更改缓存级别，可以在Mybatis的">
+<meta name="keywords" content="Java,Mybatis">
+<meta property="og:type" content="article">
 <meta property="og:title" content="ninethread&#39;blog">
-<meta property="og:url" content="http://123/archives/2019/index.html">
+<meta property="og:url" content="http://123/2018/04/29/Mybatis的使用(五)/index.html">
 <meta property="og:site_name" content="ninethread&#39;blog">
-<meta property="og:description" content="行走匆忙,诗为远方">
+<meta property="og:description" content="Mybatis的一级缓存Mybatis默认的一级缓存是SqlSession缓存，也就是说在同一个SqlSession中执行相同的SQL，只有第一次会去查询数据库，接下来再进行该查询都是从Mybatis的缓存中去获取的。当执行增删改操作时，Mybatis会清空SqlSession的缓存。 一级缓存除了有SqlSession级别，还有statement级别，如果需要更改缓存级别，可以在Mybatis的">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-07-05T12:01:18.399Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ninethread&#39;blog">
-<meta name="twitter:description" content="行走匆忙,诗为远方">
+<meta name="twitter:description" content="Mybatis的一级缓存Mybatis默认的一级缓存是SqlSession缓存，也就是说在同一个SqlSession中执行相同的SQL，只有第一次会去查询数据库，接下来再进行该查询都是从Mybatis的缓存中去获取的。当执行增删改操作时，Mybatis会清空SqlSession的缓存。 一级缓存除了有SqlSession级别，还有statement级别，如果需要更改缓存级别，可以在Mybatis的">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://123/archives/2019/"/>
+  <link rel="canonical" href="http://123/2018/04/29/Mybatis的使用(五)/"/>
 
 
 
 
 
-  <title>归档 | ninethread'blog</title>
+  <title> | ninethread'blog</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -281,73 +283,215 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-         
-          
-        好! 目前共计 53 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://123/2018/04/29/Mybatis的使用(五)/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fourcore">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ninethread'blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/06/29/Vue中使用驼峰命名导致的错误/" itemprop="url">
-              
-                <span itemprop="name">Vue中使用驼峰命名导致的错误</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-06-29T19:39:30+08:00"
-              content="2019-06-29" >
-          06-29
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-29T00:14:45+08:00">
+                2018-04-29
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Mybatis/" itemprop="url" rel="index">
+                    <span itemprop="name">Mybatis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <h3 id="Mybatis的一级缓存"><a href="#Mybatis的一级缓存" class="headerlink" title="Mybatis的一级缓存"></a>Mybatis的一级缓存</h3><p>Mybatis默认的一级缓存是SqlSession缓存，也就是说在同一个SqlSession中执行相同的SQL，只有第一次会去查询数据库，接下来再进行该查询都是从Mybatis的缓存中去获取的。当执行增删改操作时，Mybatis会清空SqlSession的缓存。</p>
+<p>一级缓存除了有SqlSession级别，还有statement级别，如果需要更改缓存级别，可以在Mybatis的主配置文件(核心配置文件)中进行修改，当我们将级别设置为statement后就等于关闭了一级缓存：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">         <span class="comment">&lt;!--默认的--&gt;</span></span><br><span class="line">    	<span class="comment">&lt;!--&lt;setting name="localCacheScope" value="SESSION"/&gt;--&gt;</span></span><br><span class="line">    </span><br><span class="line">        <span class="comment">&lt;!--注意两个value值都是大写，写小写会报错--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"localCacheScope"</span> <span class="attr">value</span>=<span class="string">"STATEMENT"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>当localCacheScope=SESSION时，在同一个SqlSession中进行两次相同的查询：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">loadTypeTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">    List&lt;Husband&gt; allHusband = husbandDao.findAllHusband();</span><br><span class="line">    List&lt;Husband&gt; allHusband2 = husbandDao.findAllHusband();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[main] DEBUG c.w.m.HusbandDao.findAllHusband - ==&gt;  Preparing: SELECT * FROM husband  </span><br><span class="line">[main] DEBUG c.w.m.HusbandDao.findAllHusband - ==&gt; Parameters:  </span><br><span class="line">[main] DEBUG c.w.m.HusbandDao.findAllHusband - &lt;==      Total: 4</span><br></pre></td></tr></table></figure>
+<p>从打印信息可以看出，调用了两次查询但只执行了一次数据库查询，说明第二次查询是从缓存中进行读取的</p>
+<p>当localCacheScope=STATEMENT时，重复进行上述测试结果为:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[main] DEBUG c.w.m.HusbandDao.findAllHusband - ==&gt;  Preparing: SELECT * FROM husband  </span><br><span class="line">[main] DEBUG c.w.m.HusbandDao.findAllHusband - ==&gt; Parameters:  </span><br><span class="line">[main] DEBUG c.w.m.HusbandDao.findAllHusband - &lt;==      Total: 4 </span><br><span class="line">[main] DEBUG c.w.m.HusbandDao.findAllHusband - ==&gt;  Preparing: SELECT * FROM husband  </span><br><span class="line">[main] DEBUG c.w.m.HusbandDao.findAllHusband - ==&gt; Parameters:  </span><br><span class="line">[main] DEBUG c.w.m.HusbandDao.findAllHusband - &lt;==      Total: 4</span><br></pre></td></tr></table></figure>
+<p>这里进行了两次数据库查询，并没有进行缓存</p>
+<h3 id="Mybatis的二级缓存"><a href="#Mybatis的二级缓存" class="headerlink" title="Mybatis的二级缓存"></a>Mybatis的二级缓存</h3><p>一级缓存为local cache，二级缓存为cache。cache是跨session的，既在一个SqlSession中缓存的查询结果，在另外一个SqlSession中也是可以使用的，范围比一级缓存更大。</p>
+<p>开启二级缓存需要进行以下几步操作，首先在主配置文件中将cacheEnabled设置为true：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"cacheEnabled"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>然后在需要使用二级缓存的mapper.xml文件中添加<cache>标签：</cache></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.example.mapper.HusbandDao"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">cache</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>如果要让某个statement不进行二级缓存，就将该statement的useCache标签设置为false:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--开启二级缓存之后，useCache默认为true--&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"findAllHusband"</span> <span class="attr">resultType</span>=<span class="string">"Husband"</span> <span class="attr">useCache</span>=<span class="string">"false"</span>&gt;</span></span><br><span class="line">        SELECT * FROM husband</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>实体类实现序列化接口，这样做的目的是二级缓存的存储介质多种多样，不一定要存储在内存中，可能会进行序列化存储在本地磁盘中：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@Accessors</span>(chain = <span class="keyword">true</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Husband</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123; <span class="comment">// 这里要实现序列化接口</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> hid;</span><br><span class="line">    <span class="keyword">private</span> String hname;</span><br><span class="line">    <span class="keyword">private</span> Wife wife;</span><br><span class="line">    <span class="keyword">private</span> List&lt;Son&gt; sons;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>二级缓存的工作机制：</p>
+<ul>
+<li>在一个会话中查询数据，查询成功后当前会话会将数据放入一级缓存中，此时不同的会话还无法共享数据</li>
+<li>如果当前会话关闭或者提交，该会话中的一级缓存就会被清空，并将一级缓存刷入二级缓存中</li>
+<li>其他会话在进行数据查询时，会先从二级缓存中查询是否有数据，如果没有再在一级缓存中查询，如果还是没有则去数据库中查询</li>
+</ul>
+<p>进行二级缓存的测试：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">loadTypeTest</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">      InputStream is = Resources.getResourceAsStream(<span class="string">"mybatis-config"</span>);</span><br><span class="line">      SqlSessionFactoryBuilder builder = <span class="keyword">new</span> SqlSessionFactoryBuilder();</span><br><span class="line">      SqlSessionFactory factory = builder.build(is);</span><br><span class="line">      SqlSession sqlSession1 = factory.openSession(); <span class="comment">// 开启session1</span></span><br><span class="line">      SqlSession sqlSession2 = factory.openSession(); <span class="comment">// 开启session2</span></span><br><span class="line">      HusbandDao husbandDao1 = sqlSession1.getMapper(HusbandDao.class);</span><br><span class="line">      HusbandDao husbandDao2 = sqlSession2.getMapper(HusbandDao.class);</span><br><span class="line">      Husband husband1 = husbandDao1.findAnHusbandById(<span class="number">1001</span>);</span><br><span class="line">      sqlSession1.close(); <span class="comment">// 关闭session1,此时将数据刷入二级缓存</span></span><br><span class="line">      Husband husband2 = husbandDao2.findAnHusbandById(<span class="number">1001</span>); <span class="comment">// 从二级缓存中读取数据，跨session</span></span><br><span class="line">      sqlSession2.close();</span><br><span class="line"></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[main] DEBUG com.woniuxy.mapper.HusbandDao - Cache Hit Ratio [com.woniuxy.mapper.HusbandDao]: 0.0 </span><br><span class="line">[main] DEBUG c.w.m.HusbandDao.findAnHusbandById - ==&gt;  Preparing: SELECT * FROM husband WHERE hid = ?  </span><br><span class="line">[main] DEBUG c.w.m.HusbandDao.findAnHusbandById - ==&gt; Parameters: 1001(Integer) </span><br><span class="line">[main] DEBUG c.w.m.HusbandDao.findAnHusbandById - &lt;==      Total: 1 </span><br><span class="line">[main] DEBUG com.woniuxy.mapper.HusbandDao - Cache Hit Ratio [com.woniuxy.mapper.HusbandDao]: 0.5</span><br></pre></td></tr></table></figure>
+<p>从上述日志信息可以看出，sqlSession1在执行第一次查询时，由于一级缓存二级缓存中都没有数据，所以去数据库中查询。在sqlSession1关闭之后，sqlSession2进行了同样的查询，此时二级缓存中是有数据的，所以直接从缓存中获取数据。</p>
+<p>### </p>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/Mybatis/" rel="tag"># Mybatis</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/21/Mybatis的使用(四)/" rel="next" title="Mybatis的使用(四)">
+                <i class="fa fa-chevron-left"></i> Mybatis的使用(四)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/29/Vue中使用驼峰命名导致的错误/" rel="prev" title="Vue中使用驼峰命名导致的错误">
+                Vue中使用驼峰命名导致的错误 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -355,6 +499,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -375,8 +523,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -440,6 +597,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mybatis的一级缓存"><span class="nav-number">1.</span> <span class="nav-text">Mybatis的一级缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mybatis的二级缓存"><span class="nav-number">2.</span> <span class="nav-text">Mybatis的二级缓存</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -558,6 +731,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
