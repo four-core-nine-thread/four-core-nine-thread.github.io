@@ -14,13 +14,6 @@
     </url>
 
     <url>
-        <loc>http://123/categories/life/</loc>
-        <lastmod>2021-05-12T06:50:35.884Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://123/categories/Python/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
         <lastmod>2021-05-12T06:55:12.754Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -35,29 +28,8 @@
     </url>
 
     <url>
-        <loc>http://123/categories/Python/</loc>
-        <lastmod>2021-05-12T07:36:17.120Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://123/categories/Python/Django/</loc>
         <lastmod>2021-05-12T07:36:17.120Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://123/categories/Java/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-        <lastmod>2021-05-17T15:53:19.286Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://123/categories/%E5%89%8D%E7%AB%AF/</loc>
-        <lastmod>2021-07-01T00:06:47.505Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -91,22 +63,50 @@
     </url>
 
     <url>
+        <loc>http://123/categories/%E5%89%8D%E7%AB%AF/</loc>
+        <lastmod>2021-07-26T08:59:23.769Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://123/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MySql/</loc>
+        <lastmod>2021-07-26T09:04:31.089Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://123/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-        <lastmod>2021-07-26T07:30:18.979Z</lastmod>
+        <lastmod>2021-07-26T09:06:40.260Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://123/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/</loc>
-        <lastmod>2021-07-26T07:30:18.979Z</lastmod>
+        <lastmod>2021-07-26T09:06:40.260Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://123/categories/life/</loc>
+        <lastmod>2021-07-26T09:09:29.469Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://123/categories/Java/</loc>
-        <lastmod>2021-07-26T08:35:38.397Z</lastmod>
+        <lastmod>2021-07-26T09:09:50.983Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://123/categories/Python/</loc>
+        <lastmod>2021-07-26T09:10:00.047Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
