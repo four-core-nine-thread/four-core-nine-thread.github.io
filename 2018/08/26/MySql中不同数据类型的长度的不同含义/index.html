@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="行走匆忙,诗为远方">
+<meta name="description" content="字符串类型的长度MySql中字符串类型包括CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM和SET。当我们将某个字段类型设置为char或者varchar时，都需要对其长度进行设定，例如char(5)，varchar(5)。这里的长度5代表字符长度，无论是汉字字符还是非汉字字符都占一个字符长度，也就是说该字段最大只能存储长度为5的字符串。虽然中文和非中文都视为">
 <meta name="keywords" content="数据库,MySql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySql中不同数据类型的长度的不同含义">
 <meta property="og:url" content="http://123/2018/08/26/MySql中不同数据类型的长度的不同含义/index.html">
 <meta property="og:site_name" content="ninethread&#39;blog">
-<meta property="og:description" content="行走匆忙,诗为远方">
+<meta property="og:description" content="字符串类型的长度MySql中字符串类型包括CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM和SET。当我们将某个字段类型设置为char或者varchar时，都需要对其长度进行设定，例如char(5)，varchar(5)。这里的长度5代表字符长度，无论是汉字字符还是非汉字字符都占一个字符长度，也就是说该字段最大只能存储长度为5的字符串。虽然中文和非中文都视为">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-07-26T09:01:12.801Z">
+<meta property="og:updated_time" content="2021-07-26T12:42:56.983Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySql中不同数据类型的长度的不同含义">
-<meta name="twitter:description" content="行走匆忙,诗为远方">
+<meta name="twitter:description" content="字符串类型的长度MySql中字符串类型包括CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM和SET。当我们将某个字段类型设置为char或者varchar时，都需要对其长度进行设定，例如char(5)，varchar(5)。这里的长度5代表字符长度，无论是汉字字符还是非汉字字符都占一个字符长度，也就是说该字段最大只能存储长度为5的字符串。虽然中文和非中文都视为">
 
 
 
@@ -397,7 +397,18 @@
       
 
       
-        
+        <h3 id="字符串类型的长度"><a href="#字符串类型的长度" class="headerlink" title="字符串类型的长度"></a>字符串类型的长度</h3><p>MySql中字符串类型包括CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM和SET。当我们将某个字段类型设置为char或者varchar时，都需要对其长度进行设定，例如char(5)，varchar(5)。这里的长度5代表字符长度，无论是汉字字符还是非汉字字符都占一个字符长度，也就是说该字段最大只能存储长度为5的字符串。虽然中文和非中文都视为一个字符，但是他们所占的字节数是不同的，在MySql中编码方式使用UFT8的话，一个中文占3个字节，一个字母占一个字节，所以同样长度的字符串，所占字节不一定相同，下面通过SQL测试来更加直观的说明区分：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 首先创建一个表</span><br><span class="line">CREATE TABLE `test`  (</span><br><span class="line">  `id` int(11) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `name` varchar(3) NULL, # 设置字符长度为3</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">INSERT INTO test VALUES (NULL, &apos;周老八&apos;); # 插入长度为3的中文</span><br><span class="line">INSERT INTO test VALUES (NULL, &apos;tom&apos;); # 插入长度为3的字母</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT LENGTH(`name`) FROM test; # 通过LENGTH()获取字段的字节大小</span><br><span class="line">+----------------+</span><br><span class="line">| LENGTH(`name`) |</span><br><span class="line">+----------------+</span><br><span class="line">|              9 |</span><br><span class="line">|              3 |</span><br><span class="line">+----------------+</span><br><span class="line">2 rows in set (0.01 sec)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT CHAR_LENGTH(`name`) FROM test; # 通过CHAR_LENGTH()获取字段的字符个数</span><br><span class="line">+---------------------+</span><br><span class="line">| CHAR_LENGTH(`name`) |</span><br><span class="line">+---------------------+</span><br><span class="line">|                   3 |</span><br><span class="line">|                   3 |</span><br><span class="line">+---------------------+</span><br><span class="line">2 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+<p>通过上述SQL测试发现，当我们查询name字段不同值所占字节数时，中文占了9个字节，符合UFT8占3个字节的规定，字母字段占了3个字节，也说明了一个非中文占一个字节，然后查询这所占字符数，两行的name字段长度都为一样，也就是我们创建表时设定的长度3。但是，varchar在磁盘中实际存储时还要加上1个字节用于记录长度，所以上述9个字节实际会占用10个字节的磁盘空间。</p>
+<h3 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h3><p>数值类型中包括int，float，double等，在创建数值字段设置长度时，该长度代表数值的宽度，但是该宽度并不会限制我们存入该字段的数据长度，也就是说我们设置int(5)并不是只能存宽度为5的数值，就算放入一个很大的数如1000000，也是没有问题的，int类型占4个字节，能表示的数范围为-2^31-1 ——2^32-1，只要存入一个该范围内的数都是可以的，那么这个宽度的作用是什么呢？当我们给字段设置</p>
+<p>零填充ZEROFILL时，这个长度就发挥作用了，如设置int(5)但是该字段只存入宽度为4的数据，那么MySql就会在该数据的左边填充一个零，和宽度差多少就填充多少个零，数据长度大于等于时将不会进行填充。</p>
+<p>这和字符串类型有明显的区别，字符串类型长度设置之后，存入的数据不能超过该长度，否者报错，而数值类型就不会有任何问题，还有一个区别在于，当我们使用LENGTH和CHAR_LENGTH去获取数据字节长度和字符长度时，类型不同结果也是不同的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 给上述表添加一个字段</span><br><span class="line">ALTER TABLE test ADD height int(3); # 给身高设置int类型宽度为3</span><br><span class="line"></span><br><span class="line">UPDATE test SET height = 180 WHERE id = 1;</span><br><span class="line">UPDATE test SET height = 99 WHERE id = 2;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT LENGTH(height) FROM test; # 字符类型是获取字节长度，但是数值类型这里是获取数值的长度</span><br><span class="line">+----------------+</span><br><span class="line">| LENGTH(height) |</span><br><span class="line">+----------------+</span><br><span class="line">|              3 |</span><br><span class="line">|              2 |</span><br><span class="line">+----------------+</span><br><span class="line">2 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT CHAR_LENGTH(height) FROM test; # 和上述作用一样，也是获取数值的长度</span><br><span class="line">+---------------------+</span><br><span class="line">| CHAR_LENGTH(height) |</span><br><span class="line">+---------------------+</span><br><span class="line">|                   3 |</span><br><span class="line">|                   2 |</span><br><span class="line">+---------------------+</span><br><span class="line">2 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -439,7 +450,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/14/MySQL主从配置/" rel="prev" title="MySQL主从配置">
+              <a href="/2018/10/14/MySQL主从配置/" rel="prev" title="MySQL主从配置">
                 MySQL主从配置 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -493,8 +504,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -513,7 +533,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -558,6 +578,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串类型的长度"><span class="nav-number">1.</span> <span class="nav-text">字符串类型的长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数值类型"><span class="nav-number">2.</span> <span class="nav-text">数值类型</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
