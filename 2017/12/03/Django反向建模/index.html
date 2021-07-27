@@ -402,7 +402,7 @@
         <h3 id="从model到数据库的正向迁移"><a href="#从model到数据库的正向迁移" class="headerlink" title="从model到数据库的正向迁移"></a>从model到数据库的正向迁移</h3><p>通过model然后使用makemigrations可以将模型中的类迁移到数据库,一个类就对应一张表,这种方式也是建立数据库最快速的方法,但是有一个弊端就是会添加一些Django自带的表,很多时候并不需要这些自带表</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将数据添加到缓存</span></span><br><span class="line">python manage.py makemigrations</span><br><span class="line"><span class="comment"># 添加到数据库</span></span><br><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
 <h3 id="从数据库到model的反向建模"><a href="#从数据库到model的反向建模" class="headerlink" title="从数据库到model的反向建模"></a>从数据库到model的反向建模</h3><p>使用powerdesigner创建数据库模型,它基本支持目前所有的关系型数据库,提供了企业级的建模和设计解决方案,需要注意的是powerdesigner中设置主键为自增需要手动设置,并不是默认行为.</p>
-<p><img src=".\designer.png" alt=""></p>
+<p><img src="/2017/12/03/Django反向建模/designer.png" alt=""></p>
 <p>通过逻辑模型然后生成物理模型然后生成sql语句就可以在相应的数据库中创建数据,当有了这些数据之后,可以将数据库中中表在Django的模型中生成相应的class</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py inspectdb &gt; user/model.py</span><br></pre></td></tr></table></figure>
 <p>通过上述语句,就可以将连接的数据库中的数据在模型中生成相应的class.</p>

@@ -389,7 +389,7 @@
 
       
         <h3 id="访问控制修饰符"><a href="#访问控制修饰符" class="headerlink" title="访问控制修饰符"></a>访问控制修饰符</h3><p>对于访问修饰符的作用，种类这里不进行具体描述，关于这方面的东西有太多的参考资料了，放上一张菜鸟教程对各修饰符的说明：</p>
-<p><img src="./fangwenxiushifu.png" alt=""></p>
+<p><img src="/2018/07/09/访问权限修饰符protected和default的区别/fangwenxiushifu.png" alt=""></p>
 <p>这里需要记录的是上面图片中红圈内protected和default在不同包的子孙类的区别。</p>
 <h3 id="protected和default的区别"><a href="#protected和default的区别" class="headerlink" title="protected和default的区别"></a>protected和default的区别</h3><p>java中并没有default关键字，当一个方法没有使用任何访问权限修饰符时，就认为该方法使用了默认的修饰符default。而default和protected就只有在不同包子孙类中才会有区别，在其他情况下都是没有区别的。</p>
 <p>在A包中创建父类，show方法使用默认修饰符：</p>
